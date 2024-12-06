@@ -64,265 +64,268 @@
           <button style="background-color: orange;" onclick="themeColor('orange')"></button>
           <button style="background-color: lightblue;" onclick="themeColor('lightblue')"></button>
           <button style="background-color: lightgreen;" onclick="themeColor('lightgreen')"></button>
-          <button style="background-color: purple;" onclick="themeColor('purple')"></button>
+          <button style="background-color: rgb(183, 255, 0);" onclick="themeColor('rgb(183, 255, 0)')"></button>
         </div>
       </div>
-      <script>
-        const root = document.documentElement;
-        const savedTheme = JSON.parse(localStorage.getItem('theme'));
-        const savedBg = JSON.parse(localStorage.getItem('bgColor'));
-        const savedHeader = JSON.parse(localStorage.getItem('headerColor'));
-        const savedText = JSON.parse(localStorage.getItem('textColor'));
-        const savedDisc = JSON.parse(localStorage.getItem('discColor'));
-      
-        // Apply saved theme preferences to the document
-        root.style.setProperty('--accent-color', `${savedTheme}`);
-        root.style.setProperty('--bg-color', `${savedBg}`);
-        root.style.setProperty('--text-color', `${savedText}`);
-        root.style.setProperty('--header-color', `${savedHeader}`);
-        root.style.setProperty('--disc-color', `${savedDisc}`);
-      
-        // Loading screen logic
-        function preloadImages(callback) {
-          const images = document.querySelectorAll('img'); // Select all img elements
-          let imagesLoaded = 0;
-      
-          images.forEach((img) => {
-            if (img.complete) {
-              // If the image is already cached, count it as loaded
-              imagesLoaded++;
-              if (imagesLoaded === images.length) callback();
-            } else {
-              img.onload = () => {
-                imagesLoaded++;
-                if (imagesLoaded === images.length) callback();
-              };
-              img.onerror = () => {
-                console.error(`Failed to load image: ${img.src}`);
-                imagesLoaded++;
-                if (imagesLoaded === images.length) callback();
-              };
-            }
-          });
+    <script>
+      //loading screen
+      function preloadImages(callback) {
+      const images = document.querySelectorAll('img'); // Select all img elements
+      let imagesLoaded = 0;
+
+      images.forEach((img) => {
+        if (img.complete) {
+          // If the image is already cached, count it as loaded
+          imagesLoaded++;
+          if (imagesLoaded === images.length) callback();
+        } else {
+          img.onload = () => {
+            imagesLoaded++;
+            if (imagesLoaded === images.length) callback();
+          };
+          img.onerror = () => {
+            console.error(`Failed to load image: ${img.src}`);
+            imagesLoaded++;
+            if (imagesLoaded === images.length) callback();
+          };
         }
-      
-        document.addEventListener("DOMContentLoaded", () => {
-          preloadImages(() => {
-            const loadingScreen = document.querySelector('.loading-screen');
-            const behindScreen = document.querySelector('.behind-screen');
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      preloadImages(() => {
+        const loadingScreen = document.querySelector('.loading-screen');
+        const behindScreen = document.querySelector('.behind-screen');
+        setTimeout(() => {
+          loadingScreen.classList.add('done');
+        }, 700);
+        setTimeout(() => {
+          behindScreen.classList.add('done');
+        }, 1000);
+      });
+    });
+
+      // Custom Cursor
+      const cursor = document.querySelector('.cursor');
+      document.addEventListener('mousemove', (e) => {
+        cursor.setAttribute('style', `top: ${e.pageY - window.scrollY}px; left: ${e.pageX}px;`);
+      });
+      document.addEventListener('click', () => {
+        cursor.classList.add('active');
+        setTimeout(() => {
+          cursor.classList.remove('active');
+        }, 200);
+      });
+
+      // Typing Effect
+      const highliteTwo = document.querySelector('.highlite-two');
+      const words = ['Web Developer', 'Front-end Developer', 'Web Designer', 'FreeLancer'];
+      let currentWordIndex = 0;
+      let currentText = words[currentWordIndex];
+      let isDeleting = false;
+      let charIndex = 0;
+      let isPaused = false;
+
+      function typeEffect() {
+        if (isPaused) return; // Exit early if paused
+
+        if (isDeleting) {
+          // Decrease letters
+          charIndex--;
+          highliteTwo.textContent = currentText.slice(0, charIndex);
+          if (charIndex === 0) {
+            isDeleting = false;
+            currentWordIndex = (currentWordIndex + 1) % words.length;
+            currentText = words[currentWordIndex];
+          }
+        } else {
+          // Increase letters
+          charIndex++;
+          highliteTwo.textContent = currentText.slice(0, charIndex);
+          if (charIndex === currentText.length) {
+            isPaused = true; // Pause after writing the word
             setTimeout(() => {
-              loadingScreen.classList.add('done');
-            }, 700);
-            setTimeout(() => {
-              behindScreen.classList.add('done');
-            }, 1000);
-          });
-        });
-      
-        // Custom cursor logic
-        const cursor = document.querySelector('.cursor');
-        document.addEventListener('mousemove', (e) => {
-          cursor.setAttribute('style', `top: ${e.pageY - window.scrollY}px; left: ${e.pageX}px;`);
-        });
-        document.addEventListener('click', () => {
-          cursor.classList.add('active');
-          setTimeout(() => {
-            cursor.classList.remove('active');
-          }, 200);
-        });
-      
-        // Typing effect logic
-        const highliteTwo = document.querySelector('.highlite-two');
-        const words = ['Web Developer', 'Front-end Developer', 'Web Designer', 'FreeLancer'];
-        let currentWordIndex = 0;
-        let currentText = words[currentWordIndex];
-        let isDeleting = false;
-        let charIndex = 0;
-        let isPaused = false;
-      
-        function typeEffect() {
-          if (isPaused) return; // Exit early if paused
-      
-          if (isDeleting) {
-            // Decrease letters
-            charIndex--;
-            highliteTwo.textContent = currentText.slice(0, charIndex);
-            if (charIndex === 0) {
-              isDeleting = false;
-              currentWordIndex = (currentWordIndex + 1) % words.length;
-              currentText = words[currentWordIndex];
-            }
-          } else {
-            // Increase letters
-            charIndex++;
-            highliteTwo.textContent = currentText.slice(0, charIndex);
-            if (charIndex === currentText.length) {
-              isPaused = true; // Pause after writing the word
-              setTimeout(() => {
-                isPaused = false; // Reset pause after delay
-                isDeleting = true; // Start deleting
-                typeEffect(); // Resume typing
-              }, 2000); // Pause for 2 seconds
-              return;
-            }
+              isPaused = false; // Reset pause after delay
+              isDeleting = true; // Start deleting
+              typeEffect(); // Resume typing
+            }, 2000); // Pause for 2 seconds
+            return;
           }
-      
-          const typingSpeed = isDeleting ? 100 : 200; // Faster when deleting
-          setTimeout(typeEffect, typingSpeed);
         }
-        typeEffect();
-      
-        // Light mode toggle logic
-        const lightMode = document.querySelector('.lightmode');
-        const icons = document.querySelectorAll('.icon');
-        const signimg = document.querySelector('.signimg');
-        lightMode.addEventListener('click', () => {
-          root.classList.toggle('active');
-          icons.forEach(icon => {
-            icon.classList.toggle('active');
-          });
-          signimg.classList.toggle('active');
-          if (root.classList.contains('active')) {
-            lightMode.innerHTML = `<img src="icons/moon.png" class="icon active" style="filter: invert(1) brightness(2);">`;
-          } else {
-            lightMode.innerHTML = `<img src="icons/sun.png" class="icon" style="filter: invert(0) brightness(0.8);">`;
-          }
-          const style = getComputedStyle(root);
-          const bgColor = style.getPropertyValue('--bg-color').trim();
-          const headerColor = style.getPropertyValue('--header-color').trim();
-          const textColor = style.getPropertyValue('--text-color').trim();
-          const discColor = style.getPropertyValue('--disc-color').trim();
-          let mode;
-          if(bgColor === 'rgb(237, 240, 244)') {
-            mode = 'light';
-            localStorage.setItem('bgColor', JSON.stringify(bgColor));
-            localStorage.setItem('headerColor', JSON.stringify(headerColor));
-            localStorage.setItem('textColor', JSON.stringify(textColor));
-            localStorage.setItem('discColor', JSON.stringify(discColor));
-          } else {
-            mode = 'dark';
-            localStorage.setItem('bgColor', JSON.stringify(bgColor));
-            localStorage.setItem('headerColor', JSON.stringify(headerColor));
-            localStorage.setItem('textColor', JSON.stringify(textColor));
-            localStorage.setItem('discColor', JSON.stringify(discColor));
-          }
-        });
-      
-        // Theme color logic
-        function themeColor(color) {
-          root.style.setProperty('--accent-color', `${color}`);
-          // Save mode and theme
-          const style = getComputedStyle(root);
-          const theme = style.getPropertyValue('--accent-color').trim();
-          
-          localStorage.setItem('theme', JSON.stringify(theme));
-        }
-      
-        // Select buttons and panel
-        const settingsButton = document.querySelector('.settings');
-        const lightModeButton = document.querySelector('.lightmode');
-        const settingsPanel = document.querySelector('.settings-panel');
-        const upperbuttons = document.querySelectorAll('.upperbutton');
-      
-        // Toggle panel visibility on settings button click
-        settingsButton.addEventListener('click', () => {
-          settingsPanel.classList.toggle('active');
-          upperbuttons.forEach((upperbutton) => {
-            upperbutton.classList.toggle('push');
-          });
-        });
-      
+
+        const typingSpeed = isDeleting ? 100 : 200; // Faster when deleting
+        setTimeout(typeEffect, typingSpeed);
+      }
+      typeEffect();
+
+
+      document.addEventListener("DOMContentLoaded", () => {
+  const lightMode = document.querySelector('.lightmode');
+  const root = document.documentElement; 
+  const icons = document.querySelectorAll('.icon');
+  const signimg = document.querySelector('.signimg');
+
+  // Load light mode state from localStorage
+  const isLightModeActive = localStorage.getItem("lightMode") === "true";
+
+  if (isLightModeActive) {
+    activateLightMode();
+  }
+
+  lightMode.addEventListener('click', () => {
+    root.classList.toggle('active');
+    icons.forEach(icon => {
+      icon.classList.toggle('active');
+    });
+    signimg.classList.toggle('active');
+
+    if (root.classList.contains('active')) {
+      lightMode.innerHTML = `<img src="icons/moon.png" class="icon active" style="filter: invert(1) brightness(2);">`;
+      localStorage.setItem("lightMode", "true"); // Save state
+    } else {
+      lightMode.innerHTML = `<img src="icons/sun.png" class="icon" style="filter: invert(0) brightness(0.8);">`;
+      localStorage.setItem("lightMode", "false"); // Save state
+    }
+  });
+
+  function activateLightMode() {
+    root.classList.add('active');
+    icons.forEach(icon => {
+      icon.classList.add('active');
+    });
+    signimg.classList.add('active');
+    lightMode.innerHTML = `<img src="icons/moon.png" class="icon active" style="filter: invert(1) brightness(2);">`;
+  }
+});
+      //theme color
+      function themeColor (color) {
+        root.style.setProperty('--accent-color', `${color}`);
+      }
+
+      // Select buttons and panel
+      const settingsButton = document.querySelector('.settings');
+      const lightModeButton = document.querySelector('.lightmode');
+      const settingsPanel = document.querySelector('.settings-panel');
+      const upperbuttons = document.querySelectorAll('.upperbutton');
+
+
+      // Toggle panel visibility on settings button click
+      settingsButton.addEventListener('click', () => {
+        settingsPanel.classList.toggle('active');
+        upperbuttons.forEach((upperbutton) => {
+          upperbutton.classList.toggle('push');
+        })
+      });
+
         let isTransitioning = false; // Flag to track if a transition is happening
-      
+
         const header = document.querySelector('header');
         const headerbtns = document.querySelectorAll('header button');
         const signatureCont = document.querySelector('.signature-container');
         const homeContent = document.querySelector('.home-content');
         const profileimg = document.querySelector('.profileimg');
-      
-        // Header behavior on small screens
-        function updateHeaderForSmallScreens() {
-          if (window.innerWidth < 1000) {
-            header.classList.add('trans');
-            headerbtns.forEach((headerbtn) => {
-              headerbtn.classList.add('trans');
-            });
-            signatureCont.classList.add('trans');
-            lightModeButton.classList.add('trans');
-            settingsPanel.classList.add('trans');
-            settingsButton.classList.add('trans');
-            homeContent.classList.add('small');
-            profileimg.classList.add('small');
-            headerbtns.forEach((headerbtn) => {
-              headerbtn.classList.add('transtwo');
-            });
-          } else {
-            homeContent.classList.remove('small');
-            profileimg.classList.remove('small');
-          }
-        }
-      
-        // Initial check on page load
-        updateHeaderForSmallScreens();
-      
-        // Handle header transformation
-        function transHeader() {
-          if (isTransitioning) return; // Prevent further transitions if already transitioning
-      
-          isTransitioning = true; // Set the flag to true when transitioning
-      
-          header.classList.add('trans');
-          headerbtns.forEach((headerbtn) => {
-            headerbtn.classList.add('trans');
-          });
-          signatureCont.classList.add('trans');
-      
-          setTimeout(() => {
-            header.classList.add('transtwo');
-            lightModeButton.classList.add('trans');
-            settingsPanel.classList.add('trans');
-            settingsButton.classList.add('trans');
-            homeContent.classList.add('trans');
-            isTransitioning = false; // Reset the flag once the transition is complete
-          }, 400);
-          setTimeout(() => {
-            headerbtns.forEach((headerbtn) => {
-              headerbtn.classList.add('transtwo');
-            });
-          }, 600);
-        }
-      
-        // Reverse header transformation
-        function reverseTrans() {
-          if (isTransitioning) return; // Prevent reverse transition while transitioning
-      
-          isTransitioning = true; // Set the flag to true when transitioning
-      
-          homeContent.classList.remove('trans');
-          headerbtns.forEach((headerbtn) => {
-            headerbtn.classList.remove('transtwo');
-          });
-          header.classList.remove('transtwo');
-          header.classList.add('transthree');
-          lightModeButton.classList.remove('trans');
-          settingsButton.classList.remove('trans');
-          settingsPanel.classList.remove('trans');
-      
-          setTimeout(() => {
-            homeContent.classList.remove('small');
-            profileimg.classList.remove('small');
-            isTransitioning = false; // Reset the flag once the reverse transition is complete
-          }, 600);
-        }
-      
-        // Event listeners for header and window resize
-        window.addEventListener('resize', () => {
-          updateHeaderForSmallScreens();
+      //header in small screens 
+      if(window.innerWidth < 1000) {
+        header.classList.add('trans');
+        headerbtns.forEach((headerbtn) => {
+          headerbtn.classList.add('trans');
         });
-      
-        // Initial function call for header transition
-        updateHeaderForSmallScreens();
-      </script>
-      
+        signatureCont.classList.add('trans');
+          header.classList.add('transtwo');
+          lightModeButton.classList.add('trans');
+          settingsPanel.classList.add('trans');
+          settingsButton.classList.add('trans');
+          homeContent.classList.add('small');
+          profileimg.classList.add('small');
+          headerbtns.forEach((headerbtn) => {
+            headerbtn.classList.add('transtwo');
+          });
+      } else if(window.innerWidth > 1000) {
+          homeContent.classList.remove('small');
+          profileimg.classList.remove('small');
+      }
+
+      //transforming header
+
+      function transHeader() {
+        if (isTransitioning) return; // Prevent further transitions if already transitioning
+
+        isTransitioning = true; // Set the flag to true when transitioning
+
+        header.classList.add('trans');
+        headerbtns.forEach((headerbtn) => {
+          headerbtn.classList.add('trans');
+        });
+        signatureCont.classList.add('trans');
+
+        setTimeout(() => {
+          header.classList.add('transtwo');
+          lightModeButton.classList.add('trans');
+          settingsPanel.classList.add('trans');
+          settingsButton.classList.add('trans');
+          homeContent.classList.add('trans');
+          isTransitioning = false; // Reset the flag once the transition is complete
+        }, 400);
+        setTimeout(() => {
+          headerbtns.forEach((headerbtn) => {
+            headerbtn.classList.add('transtwo');
+          });
+        }, 600);
+      }
+
+      function reverseTrans() {
+        if (isTransitioning) return; // Prevent reverse transition while transitioning
+
+        isTransitioning = true; // Set the flag to true when transitioning
+
+        homeContent.classList.remove('trans');
+        headerbtns.forEach((headerbtn) => {
+          headerbtn.classList.remove('transtwo');
+        });
+        header.classList.remove('transtwo');
+        header.classList.add('transthree');
+        lightModeButton.classList.remove('trans');
+        settingsButton.classList.remove('trans');
+        settingsPanel.classList.remove('trans');
+
+        setTimeout(() => {
+          header.classList.remove('trans', 'transthree');
+          signatureCont.classList.remove('trans');
+          isTransitioning = false;
+        }, 300);
+        setTimeout(() => {
+          headerbtns.forEach((headerbtn) => {
+            headerbtn.classList.remove('trans', 'transtwo');
+          });
+        }, 500);
+      }
+
+      function handleScroll() {
+      if (window.scrollY > 2) {
+        if (!header.classList.contains('trans')) {
+          transHeader();
+        }
+      } else if (window.scrollY === 0) {
+        if (header.classList.contains('trans')) {
+          reverseTrans();
+        }
+      }
+    }
+
+    // Attach or detach scroll event based on window width
+    function updateScrollHandler() {
+      if (window.innerWidth >= 1000) {
+        window.onscroll = handleScroll; // Attach scroll handler
+      } else {
+        window.onscroll = null; // Detach scroll handler
+      }
+    }
+
+    // Run the update check on page load
+    updateScrollHandler();
+
+    // Listen for window resize and recheck
+    window.addEventListener('resize', updateScrollHandler);
+    </script>
   </body>
 </html>

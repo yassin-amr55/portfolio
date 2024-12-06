@@ -1,0 +1,5 @@
+const defaultTheme = '#ff0000'; // Blue accent
+        const defaultBg = 'rgb(237, 240, 244)'; // Light background
+        const defaultHeader = 'white'; // Dark header color
+        const defaultText = 'rgb(48, 48, 48)'; // Dark text color
+        const defaultDisc = 'rgba(48, 48, 48, 0.716)'; // Red accent for disc
