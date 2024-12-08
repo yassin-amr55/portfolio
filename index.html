@@ -6,6 +6,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yuji+Mai&display=swap" rel="stylesheet">
     <title>Yassin Amr portfolio</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="homecontent.css">
+    <link rel="stylesheet" href="aboutcontent.css">
   </head>
   <body>
     <div class="loading-screen">
@@ -26,47 +28,56 @@
       <button><img src="icons/list.png" class="icon"> Projects</button>
       <button><img src="icons/chat.png" class="icon"> Contact</button>
     </header>
-    <div class="home-content">
-      <div class="text-content">
-        <p>Hello, my name is <span class="highlite-one">Yassin Amr</span></p>
-        <p>I'm a <span class="highlite-two">Web Developer</span><strong>I</strong></p>
-        <p class="disc">I'm a front-end Developer covering 5 months experience<br> but with high coding skills and pation.
-           I love working<br> with others to build there dream website.</p>
+      <section class="home-content">
+        <div class="text-content">
+          <p>Hello, my name is <span class="highlite-one">Yassin Amr</span></p>
+          <p>I'm a <span class="highlite-two">Web Developer</span><strong>I</strong></p>
+          <p class="disc">I'm a front-end Developer covering 5 months experience<br> but with high coding skills and pation.
+            I love working<br> with others to build there dream website.</p>
+        </div>
+        <div class="image-container">
+          <img src="images/yassin.png" class="profileimg">
+          <div class="Lone">
+            <span class="lineone"></span>
+            <span class="linetwo"></span>
+          </div>
+          <div class="Ltwo">
+            <span class="lineone"></span>
+            <span class="linetwo"></span>
+          </div>
+        </div>
       </div>
-      <div class="image-container">
-        <img src="images/yassin.png" class="profileimg">
-        <div class="Lone">
+      <div class="signature-container">
+        <img src="icons/signature.png" class="signimg">
+        <div class="Lthree">
           <span class="lineone"></span>
           <span class="linetwo"></span>
         </div>
-        <div class="Ltwo">
+        <div class="Lfour">
           <span class="lineone"></span>
           <span class="linetwo"></span>
         </div>
-      </div>
-    </div>
-    <div class="signature-container">
-      <img src="icons/signature.png" class="signimg">
-      <div class="Lthree">
-        <span class="lineone"></span>
-        <span class="linetwo"></span>
-      </div>
-      <div class="Lfour">
-        <span class="lineone"></span>
-        <span class="linetwo"></span>
-      </div>
-      <button class="upperbutton settings"><img src="icons/setting.png" class="icon" style="animation: rotate 2s linear infinite;"></button>
-      <button class="upperbutton lightmode"><img src="icons/sun.png" class="icon"></button>
-      <div class="settings-panel">
-        <p>Theme Color</p>
-        <div class="button-container">
-          <button style="background-color: red;" onclick="themeColor('red')"></button>
-          <button style="background-color: orange;" onclick="themeColor('orange')"></button>
-          <button style="background-color: lightblue;" onclick="themeColor('lightblue')"></button>
-          <button style="background-color: lightgreen;" onclick="themeColor('lightgreen')"></button>
-          <button style="background-color: rgb(183, 255, 0);" onclick="themeColor('rgb(183, 255, 0)')"></button>
-        </div>
-      </div>
+        <button class="upperbutton settings" style="z-index: 100;"><img src="icons/setting.png" class="icon" style="animation: rotate 2s linear infinite;"></button>
+        <button class="upperbutton lightmode" style="z-index: 100;"><img src="icons/sun.png" class="icon"></button>
+        <div class="settings-panel">
+          <p>Theme Color</p>
+          <div class="button-container">
+            <button style="background-color: red;" onclick="themeColor('red')"></button>
+            <button style="background-color: orange;" onclick="themeColor('orange')"></button>
+            <button style="background-color: lightblue;" onclick="themeColor('lightblue')"></button>
+            <button style="background-color: lightgreen;" onclick="themeColor('lightgreen')"></button>
+            <button style="background-color: purple;" onclick="themeColor('purple')"></button>
+          </div>
+        </section>
+        <section class="about-content">
+          <div class="about-title">
+            <p>About Me</p>
+            <div class="double-underline">
+              <span class="underline"></span>
+              <span class="underlinetwo"></span>
+            </div>
+          </div>
+        </section>
     <script>
       //loading screen
       function preloadImages(callback) {
@@ -158,49 +169,56 @@
       }
       typeEffect();
 
-
+      const root = document.documentElement; 
       document.addEventListener("DOMContentLoaded", () => {
-  const lightMode = document.querySelector('.lightmode');
-  const root = document.documentElement; 
-  const icons = document.querySelectorAll('.icon');
-  const signimg = document.querySelector('.signimg');
+      const lightMode = document.querySelector('.lightmode');
+      const icons = document.querySelectorAll('.icon');
+      const signimg = document.querySelector('.signimg');
 
-  // Load light mode state from localStorage
-  const isLightModeActive = localStorage.getItem("lightMode") === "true";
+      // Load light mode state from localStorage
+      const isLightModeActive = localStorage.getItem("lightMode") === "true";
 
-  if (isLightModeActive) {
-    activateLightMode();
-  }
-
-  lightMode.addEventListener('click', () => {
-    root.classList.toggle('active');
-    icons.forEach(icon => {
-      icon.classList.toggle('active');
-    });
-    signimg.classList.toggle('active');
-
-    if (root.classList.contains('active')) {
-      lightMode.innerHTML = `<img src="icons/moon.png" class="icon active" style="filter: invert(1) brightness(2);">`;
-      localStorage.setItem("lightMode", "true"); // Save state
-    } else {
-      lightMode.innerHTML = `<img src="icons/sun.png" class="icon" style="filter: invert(0) brightness(0.8);">`;
-      localStorage.setItem("lightMode", "false"); // Save state
-    }
-  });
-
-  function activateLightMode() {
-    root.classList.add('active');
-    icons.forEach(icon => {
-      icon.classList.add('active');
-    });
-    signimg.classList.add('active');
-    lightMode.innerHTML = `<img src="icons/moon.png" class="icon active" style="filter: invert(1) brightness(2);">`;
-  }
-});
-      //theme color
-      function themeColor (color) {
-        root.style.setProperty('--accent-color', `${color}`);
+      if (isLightModeActive) {
+        activateLightMode();
       }
+
+      lightMode.addEventListener('click', () => {
+        root.classList.toggle('active');
+        icons.forEach(icon => {
+          icon.classList.toggle('active');
+        });
+        signimg.classList.toggle('active');
+
+        if (root.classList.contains('active')) {
+          lightMode.innerHTML = `<img src="icons/moon.png" class="icon active" style="filter: invert(1) brightness(2);">`;
+          localStorage.setItem("lightMode", "true"); // Save state
+        } else {
+          lightMode.innerHTML = `<img src="icons/sun.png" class="icon" style="filter: invert(0) brightness(0.8);">`;
+          localStorage.setItem("lightMode", "false"); // Save state
+        }
+      });
+
+      function activateLightMode() {
+        root.classList.add('active');
+        icons.forEach(icon => {
+          icon.classList.add('active');
+        });
+        signimg.classList.add('active');
+        lightMode.innerHTML = `<img src="icons/moon.png" class="icon active" style="filter: invert(1) brightness(2);">`;
+      }
+    });
+
+      function themeColor(color) {
+        root.style.setProperty('--accent-color', `${color}`);
+        localStorage.setItem('themeColor', color);
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedColor = localStorage.getItem('themeColor');
+        if (savedColor) {
+          root.style.setProperty('--accent-color', savedColor);
+        }
+      });
+
 
       // Select buttons and panel
       const settingsButton = document.querySelector('.settings');

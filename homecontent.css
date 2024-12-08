@@ -1,0 +1,93 @@
+.home-content {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  left: 20%;
+  top: 0;
+  gap: 30px;
+  background-color: var(--bg-color);
+  transition: all 0.5s;
+}
+
+.text-content {
+  font-size: 1.8rem;
+}
+
+.text-content strong {
+  font-size: 1.9rem;
+  font-weight: 750;
+  animation: blink 0.8s steps(2, start) infinite;
+}
+
+.disc {
+  font-weight: 300;
+  color: var(--disc-color);
+  transition: all 0.5s;
+}
+
+.image-container {
+  position: relative;
+}
+
+.Lone {
+  position: absolute;
+  bottom: -10px;
+  left: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+.Ltwo {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: -10px;
+  transform: rotate(180deg);
+  right: 10px;
+}
+
+.lineone {
+  width: 50px; 
+  height: 5px;
+  position: absolute;
+  background-color: var(--accent-color);
+  bottom: 0;
+  transition: all 0.5s;
+}
+
+.linetwo {
+  height: 50px; 
+  width: 5px;
+  position: absolute;
+  background-color: var(--accent-color);
+  left: 0;
+  transition: all 0.5s;
+}
+
+.highlite-one {
+  color: var(--accent-color);
+  font-family: "Yuji Mai", serif;
+  transition: all 0.5s;
+}
+
+.highlite-two {
+  color: var(--accent-color);
+  font-weight: 900;
+  transition: all 0.5s;
+}
+
+/*trans*/
+.home-content.trans {
+  width: 100%;
+  left: 0;
+}
+.home-content.small {
+  width: 100%;
+  left: 0;
+  top: 150px;
+  height: auto;
+  flex-direction: column;
+}
