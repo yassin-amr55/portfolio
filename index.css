@@ -15,6 +15,13 @@ p {
   color: var(--text-color);
   font-weight: 700;
 }
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: none;
+  color: var(--accent-color);
+  font-size: inherit;
+}
+
 :root {
   --header-color: white;
   --bg-color: rgb(237, 240, 244);
@@ -111,7 +118,7 @@ header {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  left: 2%;
+  left: 1%;
   top: 5%;
   bottom: 5%;
   border: solid 2px rgba(127, 127, 127, 0.271);
@@ -177,7 +184,7 @@ main {
 .signature-container {
   position: fixed;
   top: 50px;
-  left: 120px;
+  left: 110px;
   width: 100px;
   height: 50px;
   z-index: 300;
@@ -388,6 +395,7 @@ header.transtwo {
   height: 80px;
   width: 96%;
   right: 2%;
+  left: 2%;
   border-bottom: solid 2px rgba(127, 127, 127, 0.271);
   flex-direction: row;
 }

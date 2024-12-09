@@ -23,7 +23,7 @@
 
     <header>
       <button><img src="icons/home.png" class="icon"> Home</button>
-      <button><img src="icons/user.png" class="icon"> About</button>
+      <button onclick="document.getElementById('about-content').scrollIntoView({ behavior: 'smooth' });"><img src="icons/user.png" class="icon"> About</button>
       <button><img src="icons/briefcase.png" class="icon"> Services</button>
       <button><img src="icons/list.png" class="icon"> Projects</button>
       <button><img src="icons/chat.png" class="icon"> Contact</button>
@@ -69,7 +69,7 @@
             <button style="background-color: purple;" onclick="themeColor('purple')"></button>
           </div>
         </section>
-        <section class="about-content">
+        <section class="about-content hover-content" id="about-content">
           <div class="about-title">
             <p>About Me</p>
             <div class="double-underline">
@@ -77,6 +77,29 @@
               <span class="underlinetwo"></span>
             </div>
           </div>
+          <div class="about-text-content">
+            <p>I'm Yassin Amr and I am a <span class="highlite-two">Web Developer</span></p><br>
+            <p class="disc disctwo" style="font-size: 1.2rem;">I am a self-taught web developer with a strong passion for coding and creating impactful digital experiences. Over the past five months, I have dedicated
+               myself to learning and mastering web development through hands-on projects, self-directed study, and constant practice. Despite being relatively new to this 
+               field, my skills and experience reflect a high level of competence and attention to detail. I thrive on working collaboratively with clients and team members to
+                bring their vision to life by building user-friendly, visually appealing, and functional websites. My dedication to continuous learning and problem-solving has
+                 allowed me to develop a deep understanding of web technologies in a short period. I am eager to take on new challenges, grow my expertise, and contribute
+                  meaningfully to innovative projects.</p>
+          </div>
+          <div class="more-info">
+            <div class="info-column">
+              <p><strong>Birthday:</strong> 10 December 2009</p>
+              <p><strong>Age:</strong> 15</p>
+              <p><strong>Email:</strong> <a href="mailto:yassin5amr55@gmail.com">yassin5amr55@gmail.com</a></p>
+              <p><strong>Phone:</strong> <a href="tel:+01066004890">01066004890</a></p>
+            </div>
+            <div class="info-column">
+              <p><strong>Freelance:</strong> Available</p>
+              <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/zmjqNV1cFJiTuof18">Giza Governorate, Egypt</a></p>
+              <p><strong>Education:</strong> Self-taught</p>
+              <p><strong>Experience:</strong> 5 months</p>
+            </div>
+          </div>           
         </section>
     <script>
       //loading screen
@@ -128,6 +151,43 @@
         }, 200);
       });
 
+      // disc typing Effect
+      document.addEventListener("DOMContentLoaded", () => {
+      const disctwo = document.querySelector('.disctwo');
+      const text = `I am a self-taught web developer with a strong passion for coding and creating impactful digital experiences. Over the past five months, I have dedicated myself to learning and mastering web development through hands-on projects, self-directed study, and constant practice. Despite being relatively new to this field, my skills and experience reflect a high level of competence and attention to detail. I thrive on working collaboratively with clients and team members to bring their vision to life by building user-friendly, visually appealing, and functional websites. My dedication to continuous learning and problem-solving has allowed me to develop a deep understanding of web technologies in a short period. I am eager to take on new challenges, grow my expertise, and contribute meaningfully to innovative projects.`;
+
+      let charIndex = 0;
+      const totalLength = text.length;
+      let ticking = false; // Prevent multiple scroll events from queuing
+
+      function updateTextBasedOnScroll() {
+        const rect = disctwo.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        // Calculate visibility and scrolling progress
+        const visibleHeight = Math.min(viewportHeight, Math.max(0, viewportHeight - rect.top));
+        const totalHeight = rect.height + viewportHeight;
+        const scrollProgress = Math.min(1, Math.max(0, visibleHeight / totalHeight));
+
+        // Faster progression: Increase the speed multiplier
+        charIndex = Math.round(scrollProgress * totalLength * 2.5); // Speed multiplier (e.g., 1.5x)
+        disctwo.textContent = text.slice(0, charIndex);
+
+        ticking = false; // Allow the next scroll update
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(updateTextBasedOnScroll);
+        }
+      }
+
+      window.addEventListener('scroll', onScroll);
+      updateTextBasedOnScroll();
+    });
+
+
       // Typing Effect
       const highliteTwo = document.querySelector('.highlite-two');
       const words = ['Web Developer', 'Front-end Developer', 'Web Designer', 'FreeLancer'];
@@ -169,6 +229,7 @@
       }
       typeEffect();
 
+//...
       const root = document.documentElement; 
       document.addEventListener("DOMContentLoaded", () => {
       const lightMode = document.querySelector('.lightmode');
