@@ -1,5 +1,7 @@
 html, body {
   height: 100%;
+  
+  overflow-x: hidden; 
 }
 body {
   background-color: var(--bg-color);
@@ -412,4 +414,25 @@ header.transthree {
   header button.trans {
     width: 110px;
   }
+}
+/* Initial state: invisible and positioned to the left */
+.scroll-content {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.5s;
+}
+.scrolls {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.5s;
+}
+.scrolls.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Active state: visible and in its final position */
+.scroll-content.active {
+  opacity: 1;
+  transform: translateX(0); /* Return to original position */
 }

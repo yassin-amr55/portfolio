@@ -69,10 +69,10 @@
             <button style="background-color: purple;" onclick="themeColor('purple')"></button>
           </div>
         </section>
-        <section class="about-content hover-content" id="about-content">
+        <section class="about-content" id="about-content">
           <div class="about-title">
-            <p>About Me</p>
-            <div class="double-underline">
+            <p class="about scrolls" style="transition: all 0.5s;">About Me</p>
+            <div class="double-underline scrolls" style="transition: all 0.5s;">
               <span class="underline"></span>
               <span class="underlinetwo"></span>
             </div>
@@ -102,42 +102,79 @@
           </div>           
         </section>
     <script>
-      //loading screen
-      function preloadImages(callback) {
-      const images = document.querySelectorAll('img'); // Select all img elements
-      let imagesLoaded = 0;
+      const scrollss = document.querySelectorAll('.scrolls');
 
-      images.forEach((img) => {
-        if (img.complete) {
-          // If the image is already cached, count it as loaded
-          imagesLoaded++;
-          if (imagesLoaded === images.length) callback();
-        } else {
-          img.onload = () => {
-            imagesLoaded++;
-            if (imagesLoaded === images.length) callback();
-          };
-          img.onerror = () => {
-            console.error(`Failed to load image: ${img.src}`);
-            imagesLoaded++;
-            if (imagesLoaded === images.length) callback();
-          };
+      function scrollanimation() {
+        if (window.scrollY > 10) {
+          scrollss.forEach((scrolls) => {
+            scrolls.classList.add('active');
+          });
+        } else if (window.scrollY === 0) {
+          scrollss.forEach((scrolls) => {
+            scrolls.classList.remove('active');
+          });
         }
-      });
-    }
+      }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      preloadImages(() => {
-        const loadingScreen = document.querySelector('.loading-screen');
-        const behindScreen = document.querySelector('.behind-screen');
-        setTimeout(() => {
-          loadingScreen.classList.add('done');
-        }, 700);
-        setTimeout(() => {
-          behindScreen.classList.add('done');
-        }, 1000);
+      // Attach scroll animation listener
+      window.addEventListener('scroll', scrollanimation);
+
+      // Loading Screen
+      function preloadImages(callback) {
+        const images = document.querySelectorAll('img'); // Select all img elements
+        let imagesLoaded = 0;
+
+        images.forEach((img) => {
+          if (img.complete) {
+            imagesLoaded++;
+            if (imagesLoaded === images.length) callback();
+          } else {
+            img.onload = () => {
+              imagesLoaded++;
+              if (imagesLoaded === images.length) callback();
+            };
+            img.onerror = () => {
+              console.error(`Failed to load image: ${img.src}`);
+              imagesLoaded++;
+              if (imagesLoaded === images.length) callback();
+            };
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        preloadImages(() => {
+          const loadingScreen = document.querySelector('.loading-screen');
+          const behindScreen = document.querySelector('.behind-screen');
+
+          setTimeout(() => {
+            loadingScreen.classList.add('done');
+          }, 700);
+
+          setTimeout(() => {
+            behindScreen.classList.add('done');
+
+            // Initialize scroll animation observer after the loading screen is gone
+            const elements = document.querySelectorAll('.scroll-content'); // Select the elements to observe
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add('active'); // Add 'active' class
+                    observer.unobserve(entry.target); // Optional: stop observing after triggering
+                  }
+                });
+              },
+              { threshold: 0.3 } // Trigger when 30% of the element is visible
+            );
+
+            // Attach the observer to each element
+            elements.forEach((element) => observer.observe(element));
+          }, 1000); // Matches the behindScreen animation timing
+        });
       });
-    });
+
+
 
       // Custom Cursor
       const cursor = document.querySelector('.cursor');
@@ -151,7 +188,7 @@
         }, 200);
       });
 
-      // disc typing Effect
+      // disc scrolling Effect
       document.addEventListener("DOMContentLoaded", () => {
       const disctwo = document.querySelector('.disctwo');
       const text = `I am a self-taught web developer with a strong passion for coding and creating impactful digital experiences. Over the past five months, I have dedicated myself to learning and mastering web development through hands-on projects, self-directed study, and constant practice. Despite being relatively new to this field, my skills and experience reflect a high level of competence and attention to detail. I thrive on working collaboratively with clients and team members to bring their vision to life by building user-friendly, visually appealing, and functional websites. My dedication to continuous learning and problem-solving has allowed me to develop a deep understanding of web technologies in a short period. I am eager to take on new challenges, grow my expertise, and contribute meaningfully to innovative projects.`;
@@ -170,7 +207,7 @@
         const scrollProgress = Math.min(1, Math.max(0, visibleHeight / totalHeight));
 
         // Faster progression: Increase the speed multiplier
-        charIndex = Math.round(scrollProgress * totalLength * 2.5); // Speed multiplier (e.g., 1.5x)
+        charIndex = Math.round(scrollProgress * totalLength * 2); // Speed multiplier (e.g., 1.5x)
         disctwo.textContent = text.slice(0, charIndex);
 
         ticking = false; // Allow the next scroll update
