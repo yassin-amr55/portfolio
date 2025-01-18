@@ -92,10 +92,8 @@
           I'm a <span class="highlite-two">Web Developer</span
           ><strong>I</strong>
         </p>
-        <p class="disc">
-          I'm a front-end Developer covering 6 months experience<br />
-          but with high coding skills and pation. I love working<br />
-          with others to build there dream website.
+        <p class="disc discone">
+          <!-- discone text -->
         </p>
       </div>
 
@@ -127,18 +125,7 @@
         </p>
         <br />
         <p class="disc disctwo" style="font-size: 1.2rem">
-          I am a self-taught web developer with a strong passion for coding and
-          creating impactful digital experiences. Over the past six months, I
-          have dedicated myself to learning and mastering web development
-          through hands-on projects, self-directed study, and constant practice.
-          Despite being relatively new to this field, my skills and experience
-          reflect a high level of competence and attention to detail. I thrive
-          on working collaboratively with clients and team members to bring
-          their vision to life by building user-friendly, visually appealing,
-          and functional websites. My dedication to continuous learning and
-          problem-solving has allowed me to develop a deep understanding of web
-          technologies in a short period. I am eager to take on new challenges,
-          grow my expertise, and contribute meaningfully to innovative projects.
+          <!-- disctwo text -->
         </p>
       </div>
       <div class="more-info">
@@ -162,11 +149,22 @@
             >
           </p>
           <p><strong>Education:</strong> Self-taught</p>
-          <p><strong>Experience:</strong> 6 months</p>
+          <p class="experienceinfo"><strong>Experience:</strong> 6 months</p>
         </div>
       </div>
     </section>
     <script>
+      //info
+
+      const experience = 6;
+      
+      const discone = document.querySelector(".discone");
+      const experienceinfo = document.querySelector(".experienceinfo");
+      discone.innerHTML = `I'm a front-end Developer covering ${experience} months experience<br />but with high coding skills and pation. I love working<br />with others to build there dream website.`;
+      experienceinfo.innerHTML = `<strong>Experience:</strong> ${experience} months`;
+
+      //
+
       window.addEventListener('resize', updateAboutContentPosition);
       window.addEventListener('DOMContentLoaded', updateAboutContentPosition);
 
@@ -288,7 +286,7 @@
 
       // Disc scrolling Effect
       const disctwo = document.querySelector(".disctwo");
-      const text = `I am a self-taught web developer with a strong passion for coding and creating impactful digital experiences. Over the past five months, I have dedicated myself to learning and mastering web development through hands-on projects, self-directed study, and constant practice. Despite being relatively new to this field, my skills and experience reflect a high level of competence and attention to detail. I thrive on working collaboratively with clients and team members to bring their vision to life by building user-friendly, visually appealing, and functional websites. My dedication to continuous learning and problem-solving has allowed me to develop a deep understanding of web technologies in a short period. I am eager to take on new challenges, grow my expertise, and contribute meaningfully to innovative projects.`;
+      const text = `I am a self-taught web developer with a strong passion for coding and creating impactful digital experiences. Over the past ${experience} months, I have dedicated myself to learning and mastering web development through hands-on projects, self-directed study, and constant practice. Despite being relatively new to this field, my skills and experience reflect a high level of competence and attention to detail. I thrive on working collaboratively with clients and team members to bring their vision to life by building user-friendly, visually appealing, and functional websites. My dedication to continuous learning and problem-solving has allowed me to develop a deep understanding of web technologies in a short period. I am eager to take on new challenges, grow my expertise, and contribute meaningfully to innovative projects.`;
 
       // Split the text into individual characters wrapped in span elements
       disctwo.innerHTML = text.split('').map(char => `<span>${char}</span>`).join('');
