@@ -93,7 +93,7 @@
           ><strong>I</strong>
         </p>
         <p class="disc">
-          I'm a front-end Developer covering 5 months experience<br />
+          I'm a front-end Developer covering 6 months experience<br />
           but with high coding skills and pation. I love working<br />
           with others to build there dream website.
         </p>
@@ -128,7 +128,7 @@
         <br />
         <p class="disc disctwo" style="font-size: 1.2rem">
           I am a self-taught web developer with a strong passion for coding and
-          creating impactful digital experiences. Over the past five months, I
+          creating impactful digital experiences. Over the past six months, I
           have dedicated myself to learning and mastering web development
           through hands-on projects, self-directed study, and constant practice.
           Despite being relatively new to this field, my skills and experience
@@ -162,7 +162,7 @@
             >
           </p>
           <p><strong>Education:</strong> Self-taught</p>
-          <p><strong>Experience:</strong> 5 months</p>
+          <p><strong>Experience:</strong> 6 months</p>
         </div>
       </div>
     </section>
@@ -271,45 +271,73 @@
 
       // disc scrolling Effect
       document.addEventListener("DOMContentLoaded", () => {
-        const disctwo = document.querySelector(".disctwo");
-        const text = `I am a self-taught web developer with a strong passion for coding and creating impactful digital experiences. Over the past five months, I have dedicated myself to learning and mastering web development through hands-on projects, self-directed study, and constant practice. Despite being relatively new to this field, my skills and experience reflect a high level of competence and attention to detail. I thrive on working collaboratively with clients and team members to bring their vision to life by building user-friendly, visually appealing, and functional websites. My dedication to continuous learning and problem-solving has allowed me to develop a deep understanding of web technologies in a short period. I am eager to take on new challenges, grow my expertise, and contribute meaningfully to innovative projects.`;
-
-        let charIndex = 0;
-        const totalLength = text.length;
-        let ticking = false; // Prevent multiple scroll events from queuing
-
-        function updateTextBasedOnScroll() {
-          const rect = disctwo.getBoundingClientRect();
-          const viewportHeight = window.innerHeight;
-
-          // Calculate visibility and scrolling progress
-          const visibleHeight = Math.min(
-            viewportHeight,
-            Math.max(0, viewportHeight - rect.top)
-          );
-          const totalHeight = rect.height + viewportHeight;
-          const scrollProgress = Math.min(
-            1,
-            Math.max(0, visibleHeight / totalHeight)
-          );
-
-          // Faster progression: Increase the speed multiplier
-          charIndex = Math.round(scrollProgress * totalLength * 2); // Speed multiplier (e.g., 1.5x)
-          disctwo.textContent = text.slice(0, charIndex);
-
-          ticking = false; // Allow the next scroll update
-        }
-
-        function onScroll() {
-          if (!ticking) {
-            ticking = true;
-            requestAnimationFrame(updateTextBasedOnScroll);
-          }
-        }
-
-        window.addEventListener("scroll", onScroll);
-        updateTextBasedOnScroll();
+      // Custom Cursor
+      const cursor = document.querySelector(".cursor");
+      document.addEventListener("mousemove", (e) => {
+        cursor.setAttribute(
+          "style",
+          `top: ${e.pageY - window.scrollY}px; left: ${e.pageX}px;`
+        );
       });
+      document.addEventListener("click", () => {
+        cursor.classList.add("active");
+        setTimeout(() => {
+          cursor.classList.remove("active");
+        }, 200);
+      });
+
+      // Disc scrolling Effect
+      const disctwo = document.querySelector(".disctwo");
+      const text = `I am a self-taught web developer with a strong passion for coding and creating impactful digital experiences. Over the past five months, I have dedicated myself to learning and mastering web development through hands-on projects, self-directed study, and constant practice. Despite being relatively new to this field, my skills and experience reflect a high level of competence and attention to detail. I thrive on working collaboratively with clients and team members to bring their vision to life by building user-friendly, visually appealing, and functional websites. My dedication to continuous learning and problem-solving has allowed me to develop a deep understanding of web technologies in a short period. I am eager to take on new challenges, grow my expertise, and contribute meaningfully to innovative projects.`;
+
+      // Split the text into individual characters wrapped in span elements
+      disctwo.innerHTML = text.split('').map(char => `<span>${char}</span>`).join('');
+
+      const spans = disctwo.querySelectorAll('span');
+      const totalLength = spans.length;
+      let ticking = false;
+
+      function updateTextBasedOnScroll() {
+        const rect = disctwo.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        // Calculate visibility and scrolling progress
+        const visibleHeight = Math.min(
+          viewportHeight,
+          Math.max(0, viewportHeight - rect.top)
+        );
+        const totalHeight = rect.height + viewportHeight;
+        const scrollProgress = Math.min(
+          1,
+          Math.max(0, (visibleHeight - rect.height) / totalHeight)
+        );
+
+        // Speed up the effect by applying a multiplier to scrollProgress
+        const speedMultiplier = 2; // Adjust this value to control the speed
+        const charsToShow = Math.round(scrollProgress * totalLength * speedMultiplier);
+
+        // Update the color of each character based on scroll progress
+        spans.forEach((span, index) => {
+          if (index < charsToShow) {
+            span.style.color = 'var(--disc-color)';
+          } else {
+            span.style.color = 'var(--disc-scroll-color)';
+          }
+        });
+
+        ticking = false; // Allow the next scroll update
+      }
+
+      function onScroll() {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(updateTextBasedOnScroll);
+        }
+      }
+
+      window.addEventListener("scroll", onScroll);
+      updateTextBasedOnScroll(); // Initial call to set the text based on initial scroll position
+    });
 
       // Typing Effect
       const highliteTwo = document.querySelector(".highlite-two");

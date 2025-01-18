@@ -30,6 +30,7 @@ a {
   --bg-colortwo: rgb(195, 195, 195);
   --text-color: rgb(48, 48, 48);
   --disc-color: rgba(48, 48, 48, 0.716);
+  --disc-scroll-color: rgba(216, 216, 216, 0.716);
   --accent-color: #ff0000;
   --shadow-color: rgb(72, 72, 72);
   transition: all 0.5s;
@@ -40,6 +41,7 @@ a {
   --bg-colortwo: rgb(74, 74, 74);
   --text-color: rgb(211, 211, 211);
   --disc-color: rgba(211, 211, 211, 0.716);
+  --disc-scroll-color: rgb(81, 81, 81);
   --accent-color: #ff0000;
   --shadow-color: rgb(255, 255, 255);
   transition: all 0.5s;
@@ -186,7 +188,7 @@ main {
 .signature-container {
   position: absolute;
   top: 20px;
-  left: calc(50% - 50px);
+  left: calc(50% - 50px); /* calc must be added when calculation in css debugged #1 */
   width: 100px;
   height: 50px;
   z-index: 300;
@@ -424,6 +426,9 @@ header.transthree {
 
 /*phone*/
 @media (max-width: 1000px) {
+  body {
+    height: 5000px;
+  }
   .home-content {
     flex-direction: column !important;
     width: 100% !important;
