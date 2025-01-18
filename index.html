@@ -149,7 +149,7 @@
             >
           </p>
           <p><strong>Education:</strong> Self-taught</p>
-          <p class="experienceinfo"><strong>Experience:</strong> 6 months</p>
+          <p class="experienceinfo"> <!-- experienceinfo here --> </p>
         </div>
       </div>
     </section>
@@ -157,7 +157,7 @@
       //info
 
       const experience = 6;
-      
+
       const discone = document.querySelector(".discone");
       const experienceinfo = document.querySelector(".experienceinfo");
       discone.innerHTML = `I'm a front-end Developer covering ${experience} months experience<br />but with high coding skills and pation. I love working<br />with others to build there dream website.`;
@@ -194,7 +194,6 @@
         }
       }
 
-      // Attach scroll animation listener
       window.addEventListener("scroll", scrollanimation);
 
       // Loading Screen
