@@ -1,6 +1,5 @@
 .about-content {
   background-color: var(--bg-colortwo);
-  width: 100%;
   box-sizing: border-box;
   padding: 20px;
   z-index: 1;
@@ -96,10 +95,4 @@
   transition: opacity 0.3s ease-out;
   overflow: hidden;
   white-space: pre-wrap;
-}
-
-@media (max-width: 1000px) {
-  .about-content {
-    top: 40%;
-  }
 }

@@ -184,9 +184,9 @@ main {
   transition: transform 0.3s ease-in-out;
 }
 .signature-container {
-  position: fixed;
-  top: 50px;
-  left: 110px;
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 50px);
   width: 100px;
   height: 50px;
   z-index: 300;
@@ -366,16 +366,12 @@ header.trans {
   height: 80px;
   border-bottom: solid 2px rgba(127, 127, 127, 0.271);
 }
-.profileimg.small {
-  width: 400px;
-  height: 400px;
-}
 header button.trans {
   opacity: 0;
 }
 .signature-container.trans {
-  top: 30px;
-  left: 70px;
+  top: 13px;
+  left: 60px;
 }
 .lightmode.trans {
   top: 110px;
@@ -386,7 +382,7 @@ header button.trans {
   right: 80px;
 }
 .settings-panel.trans {
-  top: 90px;
+  top: 110px;
 }
 /*transtwo*/
 header button.transtwo {
@@ -403,17 +399,6 @@ header.transtwo {
 }
 header.transthree {
   flex-direction: row;
-}
-@media (max-width: 1000px) {
-  .cursor {
-    opacity: 0;
-  }
-  .signature-container {
-    left: 20px;
-  }
-  header button.trans {
-    width: 110px;
-  }
 }
 /* Initial state: invisible and positioned to the left */
 .scroll-content {
@@ -435,4 +420,57 @@ header.transthree {
 .scroll-content.active {
   opacity: 1;
   transform: translateX(0); /* Return to original position */
+}
+
+/*phone*/
+@media (max-width: 1000px) {
+  .home-content {
+    flex-direction: column !important;
+    width: 100% !important;
+    left: 0 !important;
+    top: 150px !important;
+    height: auto !important;
+  }
+  .about-content {
+    height: auto;
+  }
+  .scrolls {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  header button {
+    opacity: 1;
+    width: 100px;
+  }
+  header {
+    height: 80px;
+    width: 96%;
+    right: 2%;
+    left: 2%;
+    top: 17px;
+    border-bottom: solid 2px rgba(127, 127, 127, 0.271);
+    flex-direction: row;
+  }
+  .profileimg {
+    width: 400px;
+    height: 400px;
+  }
+  .signature-container {
+    top: 13px;
+    left: 60px;
+  }
+  .settings-panel {
+    top: 90px;
+  }
+  .lightmode {
+    top: 110px;
+    right: 30px;
+  }
+  .settings {
+    top: 110px;
+    right: 80px;
+  }
+  .cursor {
+    opacity: 0;
+  }
 }

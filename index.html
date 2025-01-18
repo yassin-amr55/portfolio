@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yuji+Mai&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yuji+Mai&display=swap"
+      rel="stylesheet"
+    />
     <title>Yassin Amr portfolio</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="homecontent.css">
-    <link rel="stylesheet" href="aboutcontent.css">
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="homecontent.css" />
+    <link rel="stylesheet" href="aboutcontent.css" />
   </head>
   <body>
     <div class="loading-screen">
@@ -16,112 +19,189 @@
         <span class="dots">...</span>
       </p>
     </div>
-    
+
     <div class="behind-screen"></div>
     <!-- Custom Cursor -->
     <div class="cursor"></div>
 
     <header>
-      <button><img src="icons/home.png" class="icon"> Home</button>
-      <button onclick="document.getElementById('about-content').scrollIntoView({ behavior: 'smooth' });"><img src="icons/user.png" class="icon"> About</button>
-      <button><img src="icons/briefcase.png" class="icon"> Services</button>
-      <button><img src="icons/list.png" class="icon"> Projects</button>
-      <button><img src="icons/chat.png" class="icon"> Contact</button>
-    </header>
-      <section class="home-content">
-        <div class="text-content">
-          <p>Hello, my name is <span class="highlite-one">Yassin Amr</span></p>
-          <p>I'm a <span class="highlite-two">Web Developer</span><strong>I</strong></p>
-          <p class="disc">I'm a front-end Developer covering 5 months experience<br> but with high coding skills and pation.
-            I love working<br> with others to build there dream website.</p>
-        </div>
-        <div class="image-container">
-          <img src="images/yassin.png" class="profileimg">
-          <div class="Lone">
-            <span class="lineone"></span>
-            <span class="linetwo"></span>
-          </div>
-          <div class="Ltwo">
-            <span class="lineone"></span>
-            <span class="linetwo"></span>
-          </div>
-        </div>
-      </div>
       <div class="signature-container">
-        <img src="icons/signature.png" class="signimg">
+        <img src="icons/signature.png" class="signimg" />
         <div class="Lthree">
           <span class="lineone"></span>
           <span class="linetwo"></span>
         </div>
+
         <div class="Lfour">
           <span class="lineone"></span>
           <span class="linetwo"></span>
         </div>
-        <button class="upperbutton settings" style="z-index: 100;"><img src="icons/setting.png" class="icon" style="animation: rotate 2s linear infinite;"></button>
-        <button class="upperbutton lightmode" style="z-index: 100;"><img src="icons/sun.png" class="icon"></button>
-        <div class="settings-panel">
-          <p>Theme Color</p>
-          <div class="button-container">
-            <button style="background-color: red;" onclick="themeColor('red')"></button>
-            <button style="background-color: orange;" onclick="themeColor('orange')"></button>
-            <button style="background-color: lightblue;" onclick="themeColor('lightblue')"></button>
-            <button style="background-color: lightgreen;" onclick="themeColor('lightgreen')"></button>
-            <button style="background-color: purple;" onclick="themeColor('purple')"></button>
-          </div>
-        </section>
-        <section class="about-content" id="about-content">
-          <div class="about-title">
-            <p class="about scrolls" style="transition: all 0.5s;">About Me</p>
-            <div class="double-underline scrolls" style="transition: all 0.5s;">
-              <span class="underline"></span>
-              <span class="underlinetwo"></span>
-            </div>
-          </div>
-          <div class="about-text-content">
-            <p>I'm Yassin Amr and I am a <span class="highlite-two">Web Developer</span></p><br>
-            <p class="disc disctwo" style="font-size: 1.2rem;">I am a self-taught web developer with a strong passion for coding and creating impactful digital experiences. Over the past five months, I have dedicated
-               myself to learning and mastering web development through hands-on projects, self-directed study, and constant practice. Despite being relatively new to this 
-               field, my skills and experience reflect a high level of competence and attention to detail. I thrive on working collaboratively with clients and team members to
-                bring their vision to life by building user-friendly, visually appealing, and functional websites. My dedication to continuous learning and problem-solving has
-                 allowed me to develop a deep understanding of web technologies in a short period. I am eager to take on new challenges, grow my expertise, and contribute
-                  meaningfully to innovative projects.</p>
-          </div>
-          <div class="more-info">
-            <div class="info-column">
-              <p><strong>Birthday:</strong> 10 December 2009</p>
-              <p><strong>Age:</strong> 15</p>
-              <p><strong>Email:</strong> <a href="mailto:yassin5amr55@gmail.com">yassin5amr55@gmail.com</a></p>
-              <p><strong>Phone:</strong> <a href="tel:+01066004890">01066004890</a></p>
-            </div>
-            <div class="info-column">
-              <p><strong>Freelance:</strong> Available</p>
-              <p><strong>Location:</strong> <a href="https://maps.app.goo.gl/zmjqNV1cFJiTuof18">Giza Governorate, Egypt</a></p>
-              <p><strong>Education:</strong> Self-taught</p>
-              <p><strong>Experience:</strong> 5 months</p>
-            </div>
-          </div>           
-        </section>
+      </div>
+
+      <button><img src="icons/home.png" class="icon" /> Home</button>
+      <button
+        onclick="document.getElementById('about-content').scrollIntoView({ behavior: 'smooth' });"
+      >
+        <img src="icons/user.png" class="icon" /> About
+      </button>
+      <button><img src="icons/briefcase.png" class="icon" /> Services</button>
+      <button><img src="icons/list.png" class="icon" /> Projects</button>
+      <button><img src="icons/chat.png" class="icon" /> Contact</button>
+    </header>
+
+    <button class="upperbutton settings" style="z-index: 100">
+      <img
+        src="icons/setting.png"
+        class="icon"
+        style="animation: rotate 2s linear infinite"
+      />
+    </button>
+    <button class="upperbutton lightmode" style="z-index: 100">
+      <img src="icons/sun.png" class="icon" />
+    </button>
+    <div class="settings-panel">
+      <p>Theme Color</p>
+      <div class="button-container">
+        <button
+          style="background-color: red"
+          onclick="themeColor('red')"
+        ></button>
+        <button
+          style="background-color: orange"
+          onclick="themeColor('orange')"
+        ></button>
+        <button
+          style="background-color: lightblue"
+          onclick="themeColor('lightblue')"
+        ></button>
+        <button
+          style="background-color: lightgreen"
+          onclick="themeColor('lightgreen')"
+        ></button>
+        <button
+          style="background-color: purple"
+          onclick="themeColor('purple')"
+        ></button>
+      </div>
+    </div>
+
+    <section class="home-content">
+      <div class="text-content">
+        <p>Hello, my name is <span class="highlite-one">Yassin Amr</span></p>
+        <p>
+          I'm a <span class="highlite-two">Web Developer</span
+          ><strong>I</strong>
+        </p>
+        <p class="disc">
+          I'm a front-end Developer covering 5 months experience<br />
+          but with high coding skills and pation. I love working<br />
+          with others to build there dream website.
+        </p>
+      </div>
+
+      <div class="image-container">
+        <img src="images/yassin.png" class="profileimg" />
+        <div class="Lone">
+          <span class="lineone"></span>
+          <span class="linetwo"></span>
+        </div>
+        <div class="Ltwo">
+          <span class="lineone"></span>
+          <span class="linetwo"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-content" id="about-content">
+      <div class="about-title">
+        <p class="about scrolls" style="transition: all 0.5s">About Me</p>
+        <div class="double-underline scrolls" style="transition: all 0.5s">
+          <span class="underline"></span>
+          <span class="underlinetwo"></span>
+        </div>
+      </div>
+      <div class="about-text-content">
+        <p>
+          I'm Yassin Amr and I am a
+          <span class="highlite-two">Web Developer</span>
+        </p>
+        <br />
+        <p class="disc disctwo" style="font-size: 1.2rem">
+          I am a self-taught web developer with a strong passion for coding and
+          creating impactful digital experiences. Over the past five months, I
+          have dedicated myself to learning and mastering web development
+          through hands-on projects, self-directed study, and constant practice.
+          Despite being relatively new to this field, my skills and experience
+          reflect a high level of competence and attention to detail. I thrive
+          on working collaboratively with clients and team members to bring
+          their vision to life by building user-friendly, visually appealing,
+          and functional websites. My dedication to continuous learning and
+          problem-solving has allowed me to develop a deep understanding of web
+          technologies in a short period. I am eager to take on new challenges,
+          grow my expertise, and contribute meaningfully to innovative projects.
+        </p>
+      </div>
+      <div class="more-info">
+        <div class="info-column">
+          <p><strong>Birthday:</strong> 10 December 2009</p>
+          <p><strong>Age:</strong> 15</p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:yassin5amr55@gmail.com">yassin5amr55@gmail.com</a>
+          </p>
+          <p>
+            <strong>Phone:</strong> <a href="tel:+01066004890">01066004890</a>
+          </p>
+        </div>
+        <div class="info-column">
+          <p><strong>Freelance:</strong> Available</p>
+          <p>
+            <strong>Location:</strong>
+            <a href="https://maps.app.goo.gl/zmjqNV1cFJiTuof18"
+              >Giza Governorate, Egypt</a
+            >
+          </p>
+          <p><strong>Education:</strong> Self-taught</p>
+          <p><strong>Experience:</strong> 5 months</p>
+        </div>
+      </div>
+    </section>
     <script>
-      const scrollss = document.querySelectorAll('.scrolls');
+      window.addEventListener('resize', updateAboutContentPosition);
+      window.addEventListener('DOMContentLoaded', updateAboutContentPosition);
+
+      function updateAboutContentPosition() {
+        const homeContent = document.querySelector('.home-content');
+        const aboutContent = document.querySelector('.about-content');
+
+        if (window.innerWidth <= 1000) {
+          const homeContentHeight = homeContent.offsetHeight;
+          aboutContent.style.top = `${homeContentHeight +250}px`;
+        } else {
+          aboutContent.style.top = ''; // Reset to default when not in mobile view
+        }
+      }
+
+      const scrollss = document.querySelectorAll(".scrolls");
 
       function scrollanimation() {
         if (window.scrollY > 10) {
           scrollss.forEach((scrolls) => {
-            scrolls.classList.add('active');
+            scrolls.classList.add("active");
           });
         } else if (window.scrollY === 0) {
           scrollss.forEach((scrolls) => {
-            scrolls.classList.remove('active');
+            scrolls.classList.remove("active");
           });
         }
       }
 
       // Attach scroll animation listener
-      window.addEventListener('scroll', scrollanimation);
+      window.addEventListener("scroll", scrollanimation);
 
       // Loading Screen
       function preloadImages(callback) {
-        const images = document.querySelectorAll('img'); // Select all img elements
+        const images = document.querySelectorAll("img"); // Select all img elements
         let imagesLoaded = 0;
 
         images.forEach((img) => {
@@ -144,23 +224,23 @@
 
       document.addEventListener("DOMContentLoaded", () => {
         preloadImages(() => {
-          const loadingScreen = document.querySelector('.loading-screen');
-          const behindScreen = document.querySelector('.behind-screen');
+          const loadingScreen = document.querySelector(".loading-screen");
+          const behindScreen = document.querySelector(".behind-screen");
 
           setTimeout(() => {
-            loadingScreen.classList.add('done');
+            loadingScreen.classList.add("done");
           }, 700);
 
           setTimeout(() => {
-            behindScreen.classList.add('done');
+            behindScreen.classList.add("done");
 
             // Initialize scroll animation observer after the loading screen is gone
-            const elements = document.querySelectorAll('.scroll-content'); // Select the elements to observe
+            const elements = document.querySelectorAll(".scroll-content"); // Select the elements to observe
             const observer = new IntersectionObserver(
               (entries) => {
                 entries.forEach((entry) => {
                   if (entry.isIntersecting) {
-                    entry.target.classList.add('active'); // Add 'active' class
+                    entry.target.classList.add("active"); // Add 'active' class
                     observer.unobserve(entry.target); // Optional: stop observing after triggering
                   }
                 });
@@ -174,60 +254,71 @@
         });
       });
 
-
-
       // Custom Cursor
-      const cursor = document.querySelector('.cursor');
-      document.addEventListener('mousemove', (e) => {
-        cursor.setAttribute('style', `top: ${e.pageY - window.scrollY}px; left: ${e.pageX}px;`);
+      const cursor = document.querySelector(".cursor");
+      document.addEventListener("mousemove", (e) => {
+        cursor.setAttribute(
+          "style",
+          `top: ${e.pageY - window.scrollY}px; left: ${e.pageX}px;`
+        );
       });
-      document.addEventListener('click', () => {
-        cursor.classList.add('active');
+      document.addEventListener("click", () => {
+        cursor.classList.add("active");
         setTimeout(() => {
-          cursor.classList.remove('active');
+          cursor.classList.remove("active");
         }, 200);
       });
 
       // disc scrolling Effect
       document.addEventListener("DOMContentLoaded", () => {
-      const disctwo = document.querySelector('.disctwo');
-      const text = `I am a self-taught web developer with a strong passion for coding and creating impactful digital experiences. Over the past five months, I have dedicated myself to learning and mastering web development through hands-on projects, self-directed study, and constant practice. Despite being relatively new to this field, my skills and experience reflect a high level of competence and attention to detail. I thrive on working collaboratively with clients and team members to bring their vision to life by building user-friendly, visually appealing, and functional websites. My dedication to continuous learning and problem-solving has allowed me to develop a deep understanding of web technologies in a short period. I am eager to take on new challenges, grow my expertise, and contribute meaningfully to innovative projects.`;
+        const disctwo = document.querySelector(".disctwo");
+        const text = `I am a self-taught web developer with a strong passion for coding and creating impactful digital experiences. Over the past five months, I have dedicated myself to learning and mastering web development through hands-on projects, self-directed study, and constant practice. Despite being relatively new to this field, my skills and experience reflect a high level of competence and attention to detail. I thrive on working collaboratively with clients and team members to bring their vision to life by building user-friendly, visually appealing, and functional websites. My dedication to continuous learning and problem-solving has allowed me to develop a deep understanding of web technologies in a short period. I am eager to take on new challenges, grow my expertise, and contribute meaningfully to innovative projects.`;
 
-      let charIndex = 0;
-      const totalLength = text.length;
-      let ticking = false; // Prevent multiple scroll events from queuing
+        let charIndex = 0;
+        const totalLength = text.length;
+        let ticking = false; // Prevent multiple scroll events from queuing
 
-      function updateTextBasedOnScroll() {
-        const rect = disctwo.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
+        function updateTextBasedOnScroll() {
+          const rect = disctwo.getBoundingClientRect();
+          const viewportHeight = window.innerHeight;
 
-        // Calculate visibility and scrolling progress
-        const visibleHeight = Math.min(viewportHeight, Math.max(0, viewportHeight - rect.top));
-        const totalHeight = rect.height + viewportHeight;
-        const scrollProgress = Math.min(1, Math.max(0, visibleHeight / totalHeight));
+          // Calculate visibility and scrolling progress
+          const visibleHeight = Math.min(
+            viewportHeight,
+            Math.max(0, viewportHeight - rect.top)
+          );
+          const totalHeight = rect.height + viewportHeight;
+          const scrollProgress = Math.min(
+            1,
+            Math.max(0, visibleHeight / totalHeight)
+          );
 
-        // Faster progression: Increase the speed multiplier
-        charIndex = Math.round(scrollProgress * totalLength * 2); // Speed multiplier (e.g., 1.5x)
-        disctwo.textContent = text.slice(0, charIndex);
+          // Faster progression: Increase the speed multiplier
+          charIndex = Math.round(scrollProgress * totalLength * 2); // Speed multiplier (e.g., 1.5x)
+          disctwo.textContent = text.slice(0, charIndex);
 
-        ticking = false; // Allow the next scroll update
-      }
-
-      function onScroll() {
-        if (!ticking) {
-          ticking = true;
-          requestAnimationFrame(updateTextBasedOnScroll);
+          ticking = false; // Allow the next scroll update
         }
-      }
 
-      window.addEventListener('scroll', onScroll);
-      updateTextBasedOnScroll();
-    });
+        function onScroll() {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(updateTextBasedOnScroll);
+          }
+        }
 
+        window.addEventListener("scroll", onScroll);
+        updateTextBasedOnScroll();
+      });
 
       // Typing Effect
-      const highliteTwo = document.querySelector('.highlite-two');
-      const words = ['Web Developer', 'Front-end Developer', 'Web Designer', 'FreeLancer'];
+      const highliteTwo = document.querySelector(".highlite-two");
+      const words = [
+        "Web Developer",
+        "Front-end Developer",
+        "Web Designer",
+        "FreeLancer",
+      ];
       let currentWordIndex = 0;
       let currentText = words[currentWordIndex];
       let isDeleting = false;
@@ -266,100 +357,78 @@
       }
       typeEffect();
 
-//...
-      const root = document.documentElement; 
+      //...
+      const root = document.documentElement;
       document.addEventListener("DOMContentLoaded", () => {
-      const lightMode = document.querySelector('.lightmode');
-      const icons = document.querySelectorAll('.icon');
-      const signimg = document.querySelector('.signimg');
+        const lightMode = document.querySelector(".lightmode");
+        const icons = document.querySelectorAll(".icon");
+        const signimg = document.querySelector(".signimg");
 
-      // Load light mode state from localStorage
-      const isLightModeActive = localStorage.getItem("lightMode") === "true";
+        // Load light mode state from localStorage
+        const isLightModeActive = localStorage.getItem("lightMode") === "true";
 
-      if (isLightModeActive) {
-        activateLightMode();
-      }
+        if (isLightModeActive) {
+          activateLightMode();
+        }
 
-      lightMode.addEventListener('click', () => {
-        root.classList.toggle('active');
-        icons.forEach(icon => {
-          icon.classList.toggle('active');
+        lightMode.addEventListener("click", () => {
+          root.classList.toggle("active");
+          icons.forEach((icon) => {
+            icon.classList.toggle("active");
+          });
+          signimg.classList.toggle("active");
+
+          if (root.classList.contains("active")) {
+            lightMode.innerHTML = `<img src="icons/moon.png" class="icon active" style="filter: invert(1) brightness(2);">`;
+            localStorage.setItem("lightMode", "true"); // Save state
+          } else {
+            lightMode.innerHTML = `<img src="icons/sun.png" class="icon" style="filter: invert(0) brightness(0.8);">`;
+            localStorage.setItem("lightMode", "false"); // Save state
+          }
         });
-        signimg.classList.toggle('active');
 
-        if (root.classList.contains('active')) {
+        function activateLightMode() {
+          root.classList.add("active");
+          icons.forEach((icon) => {
+            icon.classList.add("active");
+          });
+          signimg.classList.add("active");
           lightMode.innerHTML = `<img src="icons/moon.png" class="icon active" style="filter: invert(1) brightness(2);">`;
-          localStorage.setItem("lightMode", "true"); // Save state
-        } else {
-          lightMode.innerHTML = `<img src="icons/sun.png" class="icon" style="filter: invert(0) brightness(0.8);">`;
-          localStorage.setItem("lightMode", "false"); // Save state
         }
       });
-
-      function activateLightMode() {
-        root.classList.add('active');
-        icons.forEach(icon => {
-          icon.classList.add('active');
-        });
-        signimg.classList.add('active');
-        lightMode.innerHTML = `<img src="icons/moon.png" class="icon active" style="filter: invert(1) brightness(2);">`;
-      }
-    });
 
       function themeColor(color) {
-        root.style.setProperty('--accent-color', `${color}`);
-        localStorage.setItem('themeColor', color);
+        root.style.setProperty("--accent-color", `${color}`);
+        localStorage.setItem("themeColor", color);
       }
-      document.addEventListener('DOMContentLoaded', () => {
-        const savedColor = localStorage.getItem('themeColor');
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedColor = localStorage.getItem("themeColor");
         if (savedColor) {
-          root.style.setProperty('--accent-color', savedColor);
+          root.style.setProperty("--accent-color", savedColor);
         }
       });
 
-
       // Select buttons and panel
-      const settingsButton = document.querySelector('.settings');
-      const lightModeButton = document.querySelector('.lightmode');
-      const settingsPanel = document.querySelector('.settings-panel');
-      const upperbuttons = document.querySelectorAll('.upperbutton');
-
+      const settingsButton = document.querySelector(".settings");
+      const lightModeButton = document.querySelector(".lightmode");
+      const settingsPanel = document.querySelector(".settings-panel");
+      const upperbuttons = document.querySelectorAll(".upperbutton");
 
       // Toggle panel visibility on settings button click
-      settingsButton.addEventListener('click', () => {
-        settingsPanel.classList.toggle('active');
+      settingsButton.addEventListener("click", () => {
+        settingsPanel.classList.toggle("active");
         upperbuttons.forEach((upperbutton) => {
-          upperbutton.classList.toggle('push');
-        })
+          upperbutton.classList.toggle("push");
+        });
       });
 
-        let isTransitioning = false; // Flag to track if a transition is happening
+      let isTransitioning = false; // Flag to track if a transition is happening
 
-        const header = document.querySelector('header');
-        const headerbtns = document.querySelectorAll('header button');
-        const signatureCont = document.querySelector('.signature-container');
-        const homeContent = document.querySelector('.home-content');
-        const profileimg = document.querySelector('.profileimg');
-      //header in small screens 
-      if(window.innerWidth < 1000) {
-        header.classList.add('trans');
-        headerbtns.forEach((headerbtn) => {
-          headerbtn.classList.add('trans');
-        });
-        signatureCont.classList.add('trans');
-          header.classList.add('transtwo');
-          lightModeButton.classList.add('trans');
-          settingsPanel.classList.add('trans');
-          settingsButton.classList.add('trans');
-          homeContent.classList.add('small');
-          profileimg.classList.add('small');
-          headerbtns.forEach((headerbtn) => {
-            headerbtn.classList.add('transtwo');
-          });
-      } else if(window.innerWidth > 1000) {
-          homeContent.classList.remove('small');
-          profileimg.classList.remove('small');
-      }
+      const header = document.querySelector("header");
+      const headerbtns = document.querySelectorAll("header button");
+      const signatureCont = document.querySelector(".signature-container");
+      const homeContent = document.querySelector(".home-content");
+      const profileimg = document.querySelector(".profileimg");
 
       //transforming header
 
@@ -368,25 +437,27 @@
 
         isTransitioning = true; // Set the flag to true when transitioning
 
-        header.classList.add('trans');
-        headerbtns.forEach((headerbtn) => {
-          headerbtn.classList.add('trans');
-        });
-        signatureCont.classList.add('trans');
+        signatureCont.classList.add("trans");
+        setTimeout(() => {
+          header.classList.add("trans");
+          headerbtns.forEach((headerbtn) => {
+            headerbtn.classList.add("trans");
+          })
+        }, 100);
 
         setTimeout(() => {
-          header.classList.add('transtwo');
-          lightModeButton.classList.add('trans');
-          settingsPanel.classList.add('trans');
-          settingsButton.classList.add('trans');
-          homeContent.classList.add('trans');
+          header.classList.add("transtwo");
+          lightModeButton.classList.add("trans");
+          settingsPanel.classList.add("trans");
+          settingsButton.classList.add("trans");
+          homeContent.classList.add("trans");
           isTransitioning = false; // Reset the flag once the transition is complete
-        }, 400);
+        }, 500);
         setTimeout(() => {
           headerbtns.forEach((headerbtn) => {
-            headerbtn.classList.add('transtwo');
+            headerbtn.classList.add("transtwo");
           });
-        }, 600);
+        }, 700);
       }
 
       function reverseTrans() {
@@ -394,54 +465,53 @@
 
         isTransitioning = true; // Set the flag to true when transitioning
 
-        homeContent.classList.remove('trans');
+        homeContent.classList.remove("trans");
         headerbtns.forEach((headerbtn) => {
-          headerbtn.classList.remove('transtwo');
+          headerbtn.classList.remove("transtwo");
         });
-        header.classList.remove('transtwo');
-        header.classList.add('transthree');
-        lightModeButton.classList.remove('trans');
-        settingsButton.classList.remove('trans');
-        settingsPanel.classList.remove('trans');
+        header.classList.remove("transtwo");
+        header.classList.add("transthree");
+        lightModeButton.classList.remove("trans");
+        settingsButton.classList.remove("trans");
+        settingsPanel.classList.remove("trans");
 
         setTimeout(() => {
-          header.classList.remove('trans', 'transthree');
-          signatureCont.classList.remove('trans');
+          header.classList.remove("trans", "transthree");
           isTransitioning = false;
         }, 300);
         setTimeout(() => {
           headerbtns.forEach((headerbtn) => {
-            headerbtn.classList.remove('trans', 'transtwo');
+            headerbtn.classList.remove("trans", "transtwo");
           });
+          signatureCont.classList.remove("trans");
         }, 500);
       }
 
       function handleScroll() {
-      if (window.scrollY > 2) {
-        if (!header.classList.contains('trans')) {
-          transHeader();
-        }
-      } else if (window.scrollY === 0) {
-        if (header.classList.contains('trans')) {
-          reverseTrans();
+        if (window.scrollY > 2) {
+          if (!header.classList.contains("trans")) {
+            transHeader();
+          }
+        } else if (window.scrollY === 0) {
+          if (header.classList.contains("trans")) {
+            reverseTrans();
+          }
         }
       }
-    }
 
-    // Attach or detach scroll event based on window width
-    function updateScrollHandler() {
+      // Attach or detach scroll event based on window width
+      function updateScrollHandler() {
+        if (window.innerWidth >= 1000) {
+          window.onscroll = handleScroll;
+        } else {
+          window.onscroll = null;
+        }
+      }
       if (window.innerWidth >= 1000) {
-        window.onscroll = handleScroll; // Attach scroll handler
-      } else {
-        window.onscroll = null; // Detach scroll handler
+        updateScrollHandler();
+
+        window.addEventListener("resize", updateScrollHandler);
       }
-    }
-
-    // Run the update check on page load
-    updateScrollHandler();
-
-    // Listen for window resize and recheck
-    window.addEventListener('resize', updateScrollHandler);
     </script>
   </body>
 </html>
