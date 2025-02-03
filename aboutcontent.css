@@ -97,3 +97,73 @@
   white-space: pre-wrap;
   color: lightgray;
 }
+
+.path {
+  width: 80%;
+  margin-left: calc(50% - 40%);
+  margin-top: 20px;
+  transition: all 0.5s;
+}
+
+.path h1,
+.path p, 
+.path h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  transition: all 0.5s;
+}
+
+.path h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  color: var(--text-color);
+  text-shadow: 2px 2px 4px var(--shadow-color);
+  margin-left: 10px;
+  transition: all 0.5s;
+}
+
+.path-container {
+  background-color: var(--disc-scroll-color);
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  min-height: 100px;
+  border-radius: 15px;
+  transition: all 0.5s;
+  padding-bottom: 30px;
+  padding-right: 15px;
+}
+
+.path-left,
+.path-right {
+  width: 50%;
+}
+
+.path-item {
+  margin-left: 20px;
+  transition: all 0.5s;
+  padding-left: 10px;
+  border-left: solid var(--accent-color) 5px;
+  border-radius: 5px;
+}
+
+.about-date {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.about-date p {
+  display: inline;
+  transition: all 0.5s;
+}
+
+.about-date img {
+  width: 16px;
+  height: 16px;
+  transition: all 0.5s;
+}
+
+.path-content p {
+  margin-top: 15px;
+  line-height: 20px;
+}

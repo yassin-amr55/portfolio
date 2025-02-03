@@ -152,11 +152,29 @@
           <p class="experienceinfo"> <!-- experienceinfo here --> </p>
         </div>
       </div>
+
+      <div class="path">
+        <h1>Path</h1>
+        <div class="path-container">
+
+          <div class="path-left">
+            
+          </div>
+
+          <div class="path-right">
+            
+          </div>
+
+        </div>
+      </div>
+
     </section>
+    <script src="data/paths.js"></script>
     <script>
+
       //info
 
-      const experience = 6;
+      const experience = 7;
 
       const discone = document.querySelector(".discone");
       const experienceinfo = document.querySelector(".experienceinfo");
@@ -537,6 +555,45 @@
 
         window.addEventListener("resize", updateScrollHandler);
       }
+
+      
+      let leftPathHtml = ``;
+      //path generator
+      for (let i = 0; i < paths.length/2; i++) {
+        console.log(i);
+        leftPathHtml += `
+          <div class="path-item">
+              <div class="about-date">
+                <img src="icons/calendar.png" class="icon">
+                <p>${paths[i].date}</p>
+              </div>
+              <div class="path-content">
+                <h2>${paths[i].title}</h2>
+                <p>${paths[i].disc}</p>
+              </div>
+            </div>
+          </div>
+      `;
+      }
+      document.querySelector('.path-left').innerHTML = leftPathHtml;
+      let rightPathHtml = ``;
+      for (let i = Math.ceil(paths.length / 2); i < paths.length; i++) {
+        console.log(i);
+        rightPathHtml += `
+          <div class="path-item">
+              <div class="about-date">
+                <img src="icons/calendar.png" class="icon">
+                <p>${paths[i].date}</p>
+              </div>
+              <div class="path-content">
+                <h2>${paths[i].title}</h2>
+                <p>${paths[i].disc}</p>
+              </div>
+            </div>
+          </div>
+      `;
+      }
+      document.querySelector('.path-right').innerHTML = rightPathHtml;
     </script>
   </body>
 </html>

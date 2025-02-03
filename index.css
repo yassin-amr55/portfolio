@@ -32,7 +32,7 @@ a {
   --disc-color: rgba(48, 48, 48, 0.716);
   --disc-scroll-color: rgba(216, 216, 216, 0.716);
   --accent-color: #ff0000;
-  --shadow-color: rgb(72, 72, 72);
+  --shadow-color: rgba(48, 48, 48, 0.716);
   transition: all 0.5s;
 }
 :root.active {
@@ -43,7 +43,7 @@ a {
   --disc-color: rgba(211, 211, 211, 0.716);
   --disc-scroll-color: rgb(81, 81, 81);
   --accent-color: #ff0000;
-  --shadow-color: rgb(255, 255, 255);
+  --shadow-color: rgba(211, 211, 211, 0.716);
   transition: all 0.5s;
 }
 /* Loading Screen */
@@ -426,9 +426,6 @@ header.transthree {
 
 /*phone*/
 @media (max-width: 1000px) {
-  body {
-    height: 5000px;
-  }
   .home-content {
     flex-direction: column !important;
     width: 100% !important;

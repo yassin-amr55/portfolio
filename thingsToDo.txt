@@ -1,4 +1,4 @@
-1. add an areafor teaching coding tricks or coding function where there is a div
+1. add an area for teaching coding tricks or coding function where there is a div
 when clicked it expands to full screen with x on top right and 
 instructions on how to do the coding trick or function.
 2. after learning canvas add a water fall from left that falls and slides through about us section to left and goes to bottom at a pool    in dark mode it is lava
