@@ -28,7 +28,10 @@ a {
   --header-color: white;
   --bg-color: rgb(237, 240, 244);
   --bg-colortwo: rgb(195, 195, 195);
+  --bg-colorthree: rgb(154, 154, 154);
+  --bg-colorfour: rgb(121, 121, 121);
   --text-color: rgb(48, 48, 48);
+  --text-colortwo: rgb(211, 211, 211);
   --disc-color: rgba(48, 48, 48, 0.716);
   --disc-scroll-color: rgba(216, 216, 216, 0.716);
   --accent-color: #ff0000;
@@ -39,7 +42,10 @@ a {
   --header-color: rgb(0, 0, 0);
   --bg-color: rgb(48, 48, 48);
   --bg-colortwo: rgb(74, 74, 74);
+  --bg-colorthree: rgb(99, 99, 99);
+  --bg-colorfour: rgb(150, 150, 150);
   --text-color: rgb(211, 211, 211);
+  --text-colortwo: rgb(48, 48, 48);
   --disc-color: rgba(211, 211, 211, 0.716);
   --disc-scroll-color: rgb(81, 81, 81);
   --accent-color: #ff0000;

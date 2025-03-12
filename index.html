@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="homecontent.css" />
     <link rel="stylesheet" href="aboutcontent.css" />
+    <link rel="stylesheet" href="services.css" />
+    <link rel="stylesheet" href="projectscontent.css" />
   </head>
   <body>
     <div class="loading-screen">
@@ -167,36 +169,118 @@
 
         </div>
       </div>
-
     </section>
+
+    <section class="services-content">
+      <div class="services-title">
+        <p class="services scrolls" style="transition: all 0.5s">services</p>
+        <div class="double-underlines scrolls" style="transition: all 0.5s">
+          <span class="underlines"></span>
+          <span class="underlinetwos"></span>
+        </div>
+      </div>
+
+      <div class="services-services">
+        <div class="upper-services service-column">
+          <div class="service-item">
+            <img class="icon" src="icons/user.png">
+            <h1>Personal Website</h1>
+            <p>I can help create any high-end personal website for anyone.</p>
+          </div>
+          <div class="service-item">
+            <img class="icon" src="icons/briefcase.png">
+            <h1>Company Website</h1>
+            <p>I help companies in creating their own website that is designed and developed according to their business to attract more customers.</p>
+          </div>
+        </div>
+        <div class="lower-services service-column">
+          <div class="service-item">
+            <img class="icon" src="icons/code.png">
+            <h1>Interactive Websites</h1>
+            <p>I can create the most interactive website with animation and a lot of other features that will make your website stand out.</p>
+          </div>
+          <div class="service-item">
+            <img class="icon" src="icons/chat.png">
+            <h1>Developing Partner</h1>
+            <p>I can join other developers to help them develop and create their website or a project they are working on.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-content">
+      <div class="projects-title">
+        <p class="projects scrolls" style="transition: all 0.5s">Projects</p>
+        <div class="double-underline scrolls" style="transition: all 0.5s">
+          <span class="underline"></span>
+          <span class="underlinetwo"></span>
+        </div>
+      </div>
+      
+      <div class="projects-projects">
+        <div class="upper-services projects-column">
+          <div class="projects-item">
+            <img src="images/summit.png">
+            <a href="summittecs.com" class="projectsTitle"><h1>Summit Tecs</h1></a>
+            <p>Summit Tecs is a company and is my first client. <a href="summittecs.com">summittecs.com</a> is one of my greatest projects with multiple pages and over 9000 lines of code taking a month to complete.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script src="data/paths.js"></script>
     <script>
 
       //info
 
-      const experience = 7;
+      const experience = 9;
 
       const discone = document.querySelector(".discone");
       const experienceinfo = document.querySelector(".experienceinfo");
       discone.innerHTML = `I'm a front-end Developer covering ${experience} months experience<br />but with high coding skills and pation. I love working<br />with others to build there dream website.`;
       experienceinfo.innerHTML = `<strong>Experience:</strong> ${experience} months`;
 
-      //
-
-      window.addEventListener('resize', updateAboutContentPosition);
-      window.addEventListener('DOMContentLoaded', updateAboutContentPosition);
-
+      // Adjust about content position in different screens
       function updateAboutContentPosition() {
         const homeContent = document.querySelector('.home-content');
         const aboutContent = document.querySelector('.about-content');
 
-        if (window.innerWidth <= 1000) {
-          const homeContentHeight = homeContent.offsetHeight;
-          aboutContent.style.top = `${homeContentHeight +250}px`;
-        } else {
-          aboutContent.style.top = ''; // Reset to default when not in mobile view
-        }
+        const homeContentHeight = homeContent.offsetHeight;
+        aboutContent.style.top = `${homeContentHeight -100}px`;
       }
+
+      // Adjust services content position in different screens
+      function updateServicesContentPosition() {
+        const aboutContent = document.querySelector('.about-content');
+        const servicesContent = document.querySelector('.services-content');
+
+        const aboutContentHeight = aboutContent.offsetHeight;
+        servicesContent.style.top = `${aboutContentHeight + aboutContent.offsetTop -100}px`;
+      }
+
+      // Adjust projects content position in different screens
+      function updateProjectsContentPosition() {
+        const servicesContent = document.querySelector('.services-content');
+        const projectsContent = document.querySelector('.projects-content');
+
+        const servicesContentHeight = servicesContent.offsetHeight;
+        projectsContent.style.top = `${servicesContentHeight + servicesContent.offsetTop -100}px`;
+      }
+
+      // Add event listeners
+      window.addEventListener('resize', () => {
+        updateAboutContentPosition();
+        updateServicesContentPosition();
+        updateProjectsContentPosition();
+      });
+
+      window.addEventListener('DOMContentLoaded', () => {
+        updateAboutContentPosition();
+        updateServicesContentPosition();
+        updateProjectsContentPosition();
+      });
+
+      //
 
       const scrollss = document.querySelectorAll(".scrolls");
 
@@ -530,23 +614,40 @@
         }, 500);
       }
 
+      const servicesTitle = document.querySelector('.services-title');
+      const projectsTitle = document.querySelector('.projects-title');
       function handleScroll() {
-        if (window.scrollY > 2) {
-          if (!header.classList.contains("trans")) {
-            transHeader();
-          }
-        } else if (window.scrollY === 0) {
-          if (header.classList.contains("trans")) {
-            reverseTrans();
-          }
+      // Handle header transition
+      if (window.scrollY > 2) {
+        if (!header.classList.contains("trans")) {
+          transHeader();
+        }
+      } else {
+        if (header.classList.contains("trans")) {
+          reverseTrans();
         }
       }
+
+      // Handle services title transition
+      if (window.scrollY > 1450) {
+        servicesTitle.classList.add('trans');
+      } else {
+        servicesTitle.classList.remove('trans');
+      }
+
+      // Handle services title transition
+      if (window.scrollY > 2450) {
+        projectsTitle.classList.add('trans');
+      } else {
+        projectsTitle.classList.remove('trans');
+      }
+    }
 
       // Attach or detach scroll event based on window width
       function updateScrollHandler() {
         if (window.innerWidth >= 1000) {
           window.onscroll = handleScroll;
-        } else {
+        } else { 
           window.onscroll = null;
         }
       }
@@ -554,8 +655,11 @@
         updateScrollHandler();
 
         window.addEventListener("resize", updateScrollHandler);
+      } else if (window.innerWidth < 1000) {
+        servicesTitle.classList.add('trans');
       }
 
+      //
       
       let leftPathHtml = ``;
       //path generator

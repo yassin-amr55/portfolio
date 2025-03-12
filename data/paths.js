@@ -7,7 +7,7 @@ const paths = [
   {
     date: '8/2024',
     title: 'JavaScript',
-    disc: 'I then went along the programming path after mastering html and css by learning javascript by <a href="https://youtu.be/EerdGm-ehJQ?si=Nv14RrofFL_LJmgH">SuperSimpleDev</a> whome I also give a huge respect and shout out as his tutorials made me finally master html, css and javascript in only 2 months.'
+    disc: 'I then went along the programming path after mastering html and css by learning javascript by <a href="https://youtu.be/EerdGm-ehJQ?si=Nv14RrofFL_LJmgH">SuperSimpleDev</a> whom I also give a huge respect and shout out as his tutorials made me finally master html, css and javascript in only 2 months.'
   },
   {
     date: '9/2024 - 10/2024',
@@ -20,8 +20,13 @@ const paths = [
     disc: 'I got my first ever client (SUMMIT) and created a nice website for their company <a href="https://summittecs.com/">summitecs.com</a> which took me a month to complete and I was very happy with the result.'
   },
   {
-    date: '12/2024 - 1/2025',
+    date: '12/2024 - 2/2025',
     title: 'Slow progress',
-    disc: 'In those 2 months I got some more clients but I had to decline and slow my progress as I had studies and exams that I had to focus on but I still learnt html5 Canvas by <a href="https://youtu.be/EO6OkltgudE?si=BhwTRVUPre1qe2ww">Chris Courses</a> who also had some really nice tutorials for html5 Canvas.'
+    disc: 'In those 3 months I got some more clients but I had to decline and slow my progress as I had studies and exams that I had to focus on but I still learnt html5 Canvas by <a href="https://youtu.be/EO6OkltgudE?si=BhwTRVUPre1qe2ww">Chris Courses</a> who also had some really nice tutorials for html5 Canvas.'
+  },
+  {
+    date: '3/2025',
+    title: 'New language',
+    disc: 'In this month I learnt a new language called lua by a coarse that <a href="https://youtu.be/EerdGm-ehJQ?si=Nv14RrofFL_LJmgH">Steve\'s teacher</a> made which was an awsome coarse. And I mostly choose this language for its simplicity and also because I wanted an easy language to develope games mostly for fun.'
   }
 ]

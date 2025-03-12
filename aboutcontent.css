@@ -102,6 +102,7 @@
   width: 80%;
   margin-left: calc(50% - 40%);
   margin-top: 20px;
+  margin-bottom: 200px;
   transition: all 0.5s;
 }
 
