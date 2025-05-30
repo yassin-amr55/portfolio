@@ -2,7 +2,7 @@
   background-color: var(--bg-colorfour);
   box-sizing: border-box;
   padding: 20px;
-  z-index: 1;
+  z-index: 3;
   margin: 0;
   position: absolute;
   left: 0;
@@ -85,17 +85,27 @@
   transition: all 0.5s;
 }
 .projects-item {
-  background-color: var(--disc-scroll-color);
-  border-radius: 50px;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--accent-color);
   display: flex;
+  padding: 5px;
+  border-radius: 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--text-color);
-  width: 350px;
-  padding: 20px;
+  position: relative;
   transition: all 0.5s;
+}
+
+.project-date {
+  color: var(--text-colortwo);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: 10px;
+  position: absolute;
+  bottom: -15px;
+  background-color: var(--accent-color);
+  border-radius: 20px;
+  z-index: 450;
 }
 
 .projects-item.trans {
@@ -103,28 +113,76 @@
   transition: all 0.5s;
 }
 
+.projects-item .window.active {
+  height: 100%;
+  border-radius: 10px;
+}
+
 .projects-item img {
-  height: 140px;
-  border-radius: 20px;
-  margin-bottom: 20px;
+  position: relative;
+  height: 200px;
+  width: 350px;
   transition: all 0.5s;
 }
 
-.projectsTitle {
-  color: var(--text-color);
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.window {
+  position: absolute;
+  top: 0;
+  background-color: var(--accent-color);
+  width: 100%;
+  height: 7px;
+  z-index: 400;
+  justify-content: center;
   transition: all 0.5s;
 }
 
-.projects-item p {
-  color: var(--disc-color);
-  width: 85%;
-  display: none;
+.window .web-name,
+.window .web-disc,
+.window .web-button {
+  opacity: 0;
+  transform: translate(-50%, -40px);
+  color: var(--text-colortwo);
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  transition:
+    opacity 0.5s cubic-bezier(.4,0,.2,1),
+    transform 0.5s cubic-bezier(.4,0,.2,1);
+}
+
+.window .web-name {
+  top: 30%;
+  z-index: 2;
+}
+.window .web-disc {
+  top: 45%;
+  z-index: 2;
   text-align: center;
-  transition: all 0.5s;
 }
-.projects-item p.trans {
-  display: block;
-  transition: all 0.5s;
+.window .web-button {
+  top: 65%;
+  z-index: 2;
+  background-color: var(--accent-color);
+  padding: 3px 8px;
+  border-radius: 15px;
+}
+
+/* When .window is active, these effects will happen */
+.window.active .web-name {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition-delay: 0.1s;
+  pointer-events: auto;
+}
+.window.active .web-disc {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition-delay: 0.25s;
+  pointer-events: auto;
+}
+.window.active .web-button {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition-delay: 0.4s;
+  pointer-events: auto;
 }

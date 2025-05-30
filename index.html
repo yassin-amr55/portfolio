@@ -8,11 +8,12 @@
       rel="stylesheet"
     />
     <title>Yassin Amr portfolio</title>
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="homecontent.css" />
-    <link rel="stylesheet" href="aboutcontent.css" />
-    <link rel="stylesheet" href="services.css" />
-    <link rel="stylesheet" href="projectscontent.css" />
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/aboutcontent.css" />
+    <link rel="stylesheet" href="styles/homecontent.css" />
+    <link rel="stylesheet" href="styles/projectscontent.css" />
+    <link rel="stylesheet" href="styles/services.css" />
+    <link rel="stylesheet" href="styles/contactcontent.css" />
   </head>
   <body>
     <div class="loading-screen">
@@ -220,10 +221,24 @@
       <div class="projects-projects">
         <div class="upper-services projects-column">
           <div class="projects-item">
+            <div class="window">
+              <p class="web-name">Summit Tecs</p>
+              <p class="web-disc">A website for a contracting company</p>
+              <a href="https://summittecs.com/" target="_blank"><button class="web-button">Website</button></a>
+            </div>
             <img src="images/summit.png">
-            <a href="https://summittecs.com/" class="projectsTitle"><h1>Summit Tecs</h1></a>
-            <p>Summit Tecs is a company and is my first client. <a href="https://summittecs.com/">summittecs.com</a> is one of my greatest projects with multiple pages and over 9000 lines of code taking a month to complete.</p>
+            <p class="project-date">January 2025</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-content">
+      <div class="contact-title">
+        <p class="contact scrolls" style="transition: all 0.5s">Contact</p>
+        <div class="double-underline scrolls" style="transition: all 0.5s">
+          <span class="underline"></span>
+          <span class="underlinetwo"></span>
         </div>
       </div>
     </section>
@@ -236,5 +251,6 @@
     <script src="scripts/theme.js"></script>
     <script src="scripts/transitions.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="scripts/generator.js"></script>
   </body>
 </html>
