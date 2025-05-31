@@ -58,3 +58,15 @@ function typeEffect() {
   setTimeout(typeEffect, typingSpeed);
 }
 typeEffect();
+// Project Item Hover Effect
+const projectItems = document.querySelectorAll(".projects-item");
+
+projectItems.forEach(item => {
+  const projectWindow = item.querySelector(".project-window");
+  item.addEventListener("mouseenter", () => {
+    projectWindow.classList.add("active");
+  });
+  item.addEventListener("mouseleave", () => {
+    projectWindow.classList.remove("active");
+  });
+});

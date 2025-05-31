@@ -41,15 +41,20 @@
         </div>
       </div>
 
-      <button><img src="icons/home.png" class="icon" /> Home</button>
-      <button
-        onclick="document.getElementById('about-content').scrollIntoView({ behavior: 'smooth' });"
-      >
+      <button onclick="document.querySelector('.home-content').scrollIntoView({ behavior: 'smooth' });">
+        <img src="icons/home.png" class="icon" /> Home</button>
+      <button onclick="document.querySelector('.about-content').scrollIntoView({ behavior: 'smooth' });">
         <img src="icons/user.png" class="icon" /> About
       </button>
-      <button><img src="icons/briefcase.png" class="icon" /> Services</button>
-      <button><img src="icons/list.png" class="icon" /> Projects</button>
-      <button><img src="icons/chat.png" class="icon" /> Contact</button>
+      <button onclick="document.querySelector('.services-content').scrollIntoView({ behavior: 'smooth' });">
+        <img src="icons/briefcase.png" class="icon" /> Services
+      </button>
+      <button onclick="document.querySelector('.projects-content').scrollIntoView({ behavior: 'smooth' });">
+        <img src="icons/list.png" class="icon" /> Projects
+      </button>
+      <button onclick="document.querySelector('.contact-content').scrollIntoView({ behavior: 'smooth' });">
+        <img src="icons/chat.png" class="icon" /> Contact
+      </button>
     </header>
 
     <button class="upperbutton settings" style="z-index: 100">
@@ -221,7 +226,7 @@
       <div class="projects-projects">
         <div class="upper-services projects-column">
           <div class="projects-item">
-            <div class="window">
+            <div class="project-window">
               <p class="web-name">Summit Tecs</p>
               <p class="web-disc">A website for a contracting company</p>
               <a href="https://summittecs.com/" target="_blank"><button class="web-button">Website</button></a>
@@ -241,6 +246,26 @@
           <span class="underlinetwo"></span>
         </div>
       </div>
+      <div class="contact-main">
+        <div class="contact-info">
+          <h2>Contact Info</h2>
+          <div class="info-row">
+            <img src="icons/email.png" alt="Email" class="contact-icon icon" />
+            <a href="mailto:yassin5amr55@gmail.com">yassin5amr55@gmail.com</a>
+          </div>
+          <div class="info-row">
+            <img src="icons/whatsapp.png" alt="WhatsApp" class="contact-icon icon" />
+            <a href="https://wa.me/201066004890" target="_blank">+20 106 600 4890</a>
+          </div>
+        </div>
+        <form class="contact-form" action="https://formspree.io/f/movwakzv" method="POST">
+          <h2>Send a Message</h2>
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit" class="send-btn">Send</button>
+        </form>
+      </div>
     </section>
 
     <script src="data/paths.js"></script>
@@ -249,7 +274,6 @@
     <script src="scripts/scrollEffects.js"></script>
     <script src="scripts/otherEffects.js"></script>
     <script src="scripts/theme.js"></script>
-    <script src="scripts/transitions.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/generator.js"></script>
   </body>

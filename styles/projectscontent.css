@@ -126,20 +126,25 @@
   transition: all 0.5s;
 }
 
-.window {
+.project-window {
   position: absolute;
   top: 0;
   background-color: var(--accent-color);
   width: 100%;
-  height: 7px;
+  height: 6px;
   z-index: 400;
   justify-content: center;
   transition: all 0.5s;
 }
 
-.window .web-name,
-.window .web-disc,
-.window .web-button {
+.project-window.active {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.project-window .web-name,
+.project-window .web-disc,
+.project-window .web-button {
   opacity: 0;
   transform: translate(-50%, -40px);
   color: var(--text-colortwo);
@@ -151,16 +156,16 @@
     transform 0.5s cubic-bezier(.4,0,.2,1);
 }
 
-.window .web-name {
+.project-window .web-name {
   top: 30%;
   z-index: 2;
 }
-.window .web-disc {
+.project-window .web-disc {
   top: 45%;
   z-index: 2;
   text-align: center;
 }
-.window .web-button {
+.project-window .web-button {
   top: 65%;
   z-index: 2;
   background-color: var(--accent-color);
@@ -169,19 +174,19 @@
 }
 
 /* When .window is active, these effects will happen */
-.window.active .web-name {
+.project-window.active .web-name {
   opacity: 1;
   transform: translate(-50%, 0);
   transition-delay: 0.1s;
   pointer-events: auto;
 }
-.window.active .web-disc {
+.project-window.active .web-disc {
   opacity: 1;
   transform: translate(-50%, 0);
   transition-delay: 0.25s;
   pointer-events: auto;
 }
-.window.active .web-button {
+.project-window.active .web-button {
   opacity: 1;
   transform: translate(-50%, 0);
   transition-delay: 0.4s;
