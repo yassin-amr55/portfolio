@@ -1,6 +1,6 @@
 //info
 
-const experience = 10;
+const experience = 11;
 
 const discone = document.querySelector(".discone");
 const experienceinfo = document.querySelector(".experienceinfo");

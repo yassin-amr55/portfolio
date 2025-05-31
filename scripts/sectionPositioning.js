@@ -25,15 +25,27 @@ function updateProjectsContentPosition() {
   projectsContent.style.top = `${servicesContentHeight + servicesContent.offsetTop -100}px`;
 }
 
-// Add event listeners
+// Adjust contact content position in different screens
+function updateContactContentPosition() {
+  const servicesContent = document.querySelector('.services-content');
+  const projectsContent = document.querySelector('.projects-content');
+  const contactContent = document.querySelector('.contact-content');
+
+  const servicesContentHeight = servicesContent.offsetHeight;
+  const projectsContentHeight = projectsContent.offsetHeight;
+  contactContent.style.top = `${projectsContentHeight + servicesContentHeight + servicesContent.offsetTop - 200}px`;
+}
+
 window.addEventListener('resize', () => {
   updateAboutContentPosition();
   updateServicesContentPosition();
   updateProjectsContentPosition();
+  updateContactContentPosition()
 });
 
 window.addEventListener('DOMContentLoaded', () => {
   updateAboutContentPosition();
   updateServicesContentPosition();
   updateProjectsContentPosition();
+  updateContactContentPosition();
 });

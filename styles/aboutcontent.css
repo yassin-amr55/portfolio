@@ -129,6 +129,8 @@
   flex-direction: row;
   margin-top: 20px;
   min-height: 100px;
+  max-height: 640px;
+  overflow-y: auto;
   border-radius: 15px;
   transition: all 0.5s;
   padding-bottom: 30px;

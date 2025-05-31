@@ -30,6 +30,7 @@ a {
   --bg-colortwo: rgb(195, 195, 195);
   --bg-colorthree: rgb(154, 154, 154);
   --bg-colorfour: rgb(121, 121, 121);
+  --bg-colorfive: rgb(99, 99, 99);
   --text-color: rgb(48, 48, 48);
   --text-colortwo: rgb(211, 211, 211);
   --disc-color: rgba(48, 48, 48, 0.716);
@@ -43,7 +44,8 @@ a {
   --bg-color: rgb(48, 48, 48);
   --bg-colortwo: rgb(74, 74, 74);
   --bg-colorthree: rgb(99, 99, 99);
-  --bg-colorfour: rgb(150, 150, 150);
+  --bg-colorfour: rgb(154, 154, 154);
+  --bg-colorfive: rgb(195, 195, 195);
   --text-color: rgb(211, 211, 211);
   --text-colortwo: rgb(48, 48, 48);
   --disc-color: rgba(211, 211, 211, 0.716);
