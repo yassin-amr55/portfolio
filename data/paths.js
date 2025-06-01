@@ -27,6 +27,11 @@ const paths = [
   {
     date: '2/2025 - 4/2025',
     title: 'more projects',
-    disc: 'In those 3 months I completed a few more projects gaining extra experience and unlocking new abilities in programming..'
+    disc: 'In those 3 months I completed a few more projects gaining extra experience and unlocking new abilities in programming.'
+  },
+  {
+    date: '5/2025 - 6/2025',
+    title: 'Portfolio',
+    disc: 'I made my portfolio website and put it online.' 
   }
 ]
