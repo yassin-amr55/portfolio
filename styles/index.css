@@ -111,6 +111,10 @@ a {
 .behind-screen.done {
   bottom: 100%;
 }
+body.loading {
+  overflow: hidden !important;
+  height: 100vh;
+}
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 7px;

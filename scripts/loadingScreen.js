@@ -3,6 +3,11 @@ function preloadImages(callback) {
   const images = document.querySelectorAll("img"); // Select all img elements
   let imagesLoaded = 0;
 
+  if (images.length === 0) {
+    callback();
+    return;
+  }
+
   images.forEach((img) => {
     if (img.complete) {
       imagesLoaded++;
@@ -22,6 +27,9 @@ function preloadImages(callback) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Prevent scrolling while loading
+  document.body.classList.add("loading");
+
   preloadImages(() => {
     const loadingScreen = document.querySelector(".loading-screen");
     const behindScreen = document.querySelector(".behind-screen");
@@ -32,6 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       behindScreen.classList.add("done");
+
+      // Allow scrolling after loading
+      document.body.classList.remove("loading");
 
       // Initialize scroll animation observer after the loading screen is gone
       const elements = document.querySelectorAll(".scroll-content"); // Select the elements to observe
