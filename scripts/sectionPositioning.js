@@ -4,7 +4,11 @@ function updateAboutContentPosition() {
   const aboutContent = document.querySelector('.about-content');
 
   const homeContentHeight = homeContent.offsetHeight;
-  aboutContent.style.top = `${homeContentHeight -100}px`;
+  if (window.innerWidth > 1000) {
+    aboutContent.style.top = `${homeContentHeight + homeContent.offsetTop - 100}px`;
+  } else {
+    aboutContent.style.top = `${homeContentHeight + homeContent.offsetTop}px`;
+  }
 }
 
 // Adjust services content position in different screens
