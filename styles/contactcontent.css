@@ -25,6 +25,12 @@
   height: 55px;
   transition: all 0.5s;
 }
+@media (max-width: 1000px) {
+  .contact-title {
+    left: 10px;
+    opacity: 1;
+  }
+}
 .contact-title.trans {
   opacity: 1;
   left: 10px;
