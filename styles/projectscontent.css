@@ -26,7 +26,14 @@
   width: 120px;
   height: 50px;
   transition: all 0.5s;
-}.projects-title.trans {
+}
+@media (max-width: 1000px) {
+  .projects-title {
+    right: 20px;
+    opacity: 1;
+  }
+}
+.projects-title.trans {
   opacity: 1;
   right: 20px;
 }
