@@ -74,14 +74,7 @@ projectItems.forEach(item => {
 //open studio
 const studioButton = document.querySelector(".studio-button");
 
-function openStudio() {
-  const studioImg = document.querySelector(".studio-img");
   studioButton.addEventListener('click', () => {
-    studioImg.classList.add("active");
-  setTimeout(() => {
     window.location.assign('projects/animation studio/pixelAnimationStudio.html');
-  }, 500);
   })
-}
-openStudio();
 
