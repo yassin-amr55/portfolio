@@ -200,14 +200,3 @@
   transition-delay: 0.4s;
   pointer-events: auto;
 }
-.studio-img {
-  position: fixed;
-  z-index: 99999;
-  height: 100%;
-  width: 100%;
-  right: -100%;
-  transition: all 0.5s;
-}
-.studio-img.active {
-  right: 0;
-}
