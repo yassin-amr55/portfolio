@@ -92,7 +92,8 @@
   gap: 190px;
   transition: all 0.5s;
 }
-.projects-item {
+.projects-item,
+.studio-item {
   background-color: var(--accent-color);
   display: flex;
   padding: 5px;
@@ -198,4 +199,15 @@
   transform: translate(-50%, 0);
   transition-delay: 0.4s;
   pointer-events: auto;
+}
+.studio-img {
+  position: fixed;
+  z-index: 99999;
+  height: 100%;
+  width: 100%;
+  right: -100%;
+  transition: all 0.5s;
+}
+.studio-img.active {
+  right: 0;
 }
