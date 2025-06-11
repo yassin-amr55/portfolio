@@ -32,6 +32,6 @@ const paths = [
   {
     date: '5/2025 - 6/2025',
     title: 'Portfolio',
-    disc: 'I made my portfolio website and put it online.' 
+    disc: 'I made my portfolio website using html, css and javascript then I bought a domain and put it online. I also made a facebook page to make it easier to get new clients.' 
   }
 ]
