@@ -1,11 +1,11 @@
 //info
 
-const experience = 11;
+const experience = 1;
 
 const discone = document.querySelector(".discone");
 const experienceinfo = document.querySelector(".experienceinfo");
-discone.innerHTML = `I'm a front-end Developer covering ${experience} months experience<br />but with high coding skills and passion. I love working<br />with others to build thier dream website.`;
-experienceinfo.innerHTML = `<strong>Experience:</strong> ${experience} months`;
+discone.innerHTML = `I'm a front-end Developer covering ${experience} year(s) experience<br />but with high coding skills and passion. I love working<br />with others to build thier dream website.`;
+experienceinfo.innerHTML = `<strong>Experience:</strong> ${experience} year(s)`;
 
 
 
