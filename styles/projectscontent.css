@@ -172,9 +172,10 @@
   top: 45%;
   z-index: 2;
   text-align: center;
+  font-size: 0.9rem;
 }
 .project-window .web-button {
-  top: 65%;
+  top: 70%;
   z-index: 2;
   background-color: var(--accent-color);
   padding: 3px 8px;
