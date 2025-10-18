@@ -1,0 +1,3 @@
+- [x] Fix services section headline overlap by reducing h1 font-size in styles/services.css
+- [x] Add new path entry to data/paths.js for AI mastery
+- [x] Add new project "Todo Master" to index.html in projects section
