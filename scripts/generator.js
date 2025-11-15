@@ -1,6 +1,17 @@
 //info
 
-const experience = 1;
+// Calculate dynamic experience based on start date (July 11, 2024)
+function calculateExperience() {
+  const startDate = new Date('2024-07-11');
+  const today = new Date();
+  
+  const diffTime = Math.abs(today - startDate);
+  const diffYears = diffTime / (1000 * 60 * 60 * 24 * 365.25);
+  
+  return Math.floor(diffYears * 10) / 10; // Round to 1 decimal place
+}
+
+const experience = calculateExperience();
 
 const discone = document.querySelector(".discone");
 const experienceinfo = document.querySelector(".experienceinfo");
