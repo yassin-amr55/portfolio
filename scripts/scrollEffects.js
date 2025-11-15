@@ -53,13 +53,11 @@ let isTransitioning = false; // Flag to track if a transition is happening
 
         setTimeout(() => {
           header.classList.remove("trans", "transthree");
-          isTransitioning = false;
-        }, 300);
-        setTimeout(() => {
           headerbtns.forEach((headerbtn) => {
             headerbtn.classList.remove("trans", "transtwo");
           });
           signatureCont.classList.remove("trans");
+          isTransitioning = false;
         }, 500);
       }
 
