@@ -161,11 +161,18 @@ header button {
   transition: all 0.5s, opacity 0.1s;
 }
 header button:hover {
-  color: var(--accent-color);
+  color: var(--accent-color) !important;
+}
+header button:hover .icon {
+  stroke: var(--accent-color) !important;
 }
 
-header img {
+header button .icon {
   width: 20px;
+  height: 20px;
+  stroke: var(--text-color) !important;
+  fill: none !important;
+  transition: all 0.5s;
 }
 main {
   width: 100%;
@@ -352,11 +359,14 @@ main {
   transition: all 0.5s;
 }
 .icon {
-  filter: invert(0) brightness(0);
   transition: all 0.5s;
+  filter: invert(0) brightness(0);
 }
 .icon.active {
   filter: invert(1) brightness(2);
+}
+header button .icon {
+  filter: none !important;
 }
 .lightmode {
   top: 60px;
