@@ -17,7 +17,8 @@ document.addEventListener("click", () => {
 const highliteTwo = document.querySelector(".highlite-two");
 const words = [
   "Web Developer",
-  "Front-end Developer",
+  "App Developer",
+  "Full-Stack Developer",
   "Web Designer",
   "FreeLancer",
 ];

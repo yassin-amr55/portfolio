@@ -15,7 +15,7 @@ const experience = calculateExperience();
 
 const discone = document.querySelector(".discone");
 const experienceinfo = document.querySelector(".experienceinfo");
-discone.innerHTML = `I'm a front-end Developer covering ${experience} year(s) experience<br />but with high coding skills and passion. I love working<br />with others to build thier dream website.`;
+discone.innerHTML = `I'm a Full-Stack Developer covering ${experience} year(s) experience<br />with high coding skills and passion. I create amazing websites,<br />mobile apps, and interactive applications that bring ideas to life.`;
 experienceinfo.innerHTML = `<strong>Experience:</strong> ${experience} year(s)`;
 
 
