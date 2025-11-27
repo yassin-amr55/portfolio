@@ -92,6 +92,18 @@
   gap: 190px;
   transition: all 0.5s;
 }
+
+@media (max-width: 1450px) {
+  .projects-projects {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .projects-column {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
 .projects-item,
 .studio-item {
   background-color: var(--accent-color);
