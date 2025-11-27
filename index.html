@@ -1,19 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta property="og:title" content="Yassin" />
-    <meta property="og:description" content="Yassin Amr - Full-stack developer creating amazing websites and applications for all your digital needs." />
-    <meta property="og:url" content="https://yassinamr.com" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://yassinamr.com/images/yassin.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yuji+Mai&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/png" href="images/icon.png" />
-    <title>Yassin Amr portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yassin Amr - Full-stack developer from Egypt specializing in creating amazing websites, mobile apps, and interactive applications. Available for freelance work.">
+    <meta name="keywords" content="Yassin Amr, full-stack developer, web developer Egypt, mobile app developer, freelance developer, JavaScript, React, HTML, CSS, interactive websites, Giza Egypt">
+    <meta name="author" content="Yassin Amr">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yassinamr.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yassinamr.com">
+    <meta property="og:title" content="Yassin Amr - Full-Stack Developer | Portfolio">
+    <meta property="og:description" content="Full-stack developer creating amazing websites and applications. Specializing in interactive web apps, mobile solutions, and business websites.">
+    <meta property="og:image" content="https://yassinamr.com/images/yassin.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yassinamr.com">
+    <meta property="twitter:title" content="Yassin Amr - Full-Stack Developer | Portfolio">
+    <meta property="twitter:description" content="Full-stack developer creating amazing websites and applications. Specializing in interactive web apps, mobile solutions, and business websites.">
+    <meta property="twitter:image" content="https://yassinamr.com/images/yassin.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yuji+Mai&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <title>Yassin Amr - Full-Stack Developer | Portfolio</title>
     <link rel="stylesheet" href="styles/index.css" />
     <link rel="stylesheet" href="styles/aboutcontent.css" />
     <link rel="stylesheet" href="styles/homecontent.css" />
@@ -33,53 +47,55 @@
     <!-- Custom Cursor -->
     <div class="cursor"></div>
 
-    <header>
-      <div class="signature-container">
-        <img src="icons/signature.png" class="signimg" />
-        <div class="Lthree">
-          <span class="lineone"></span>
-          <span class="linetwo"></span>
+    <nav role="navigation" aria-label="Main navigation">
+      <header>
+        <div class="signature-container">
+          <img src="icons/signature.png" class="signimg" alt="Yassin Amr signature logo" />
+          <div class="Lthree">
+            <span class="lineone"></span>
+            <span class="linetwo"></span>
+          </div>
+
+          <div class="Lfour">
+            <span class="lineone"></span>
+            <span class="linetwo"></span>
+          </div>
         </div>
 
-        <div class="Lfour">
-          <span class="lineone"></span>
-          <span class="linetwo"></span>
-        </div>
-      </div>
-
-      <button onclick="document.querySelector('.home-content').scrollIntoView({ behavior: 'smooth' });">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-          <polyline points="9 22 9 12 15 12 15 22"></polyline>
-        </svg> Home</button>
-      <button onclick="document.querySelector('.about-content').scrollIntoView({ behavior: 'smooth' });">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-          <circle cx="12" cy="7" r="4"></circle>
-        </svg> About
-      </button>
-      <button onclick="document.querySelector('.services-content').scrollIntoView({ behavior: 'smooth' });">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-        </svg> Services
-      </button>
-      <button onclick="document.querySelector('.projects-content').scrollIntoView({ behavior: 'smooth' });">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="8" y1="6" x2="21" y2="6"></line>
-          <line x1="8" y1="12" x2="21" y2="12"></line>
-          <line x1="8" y1="18" x2="21" y2="18"></line>
-          <line x1="3" y1="6" x2="3.01" y2="6"></line>
-          <line x1="3" y1="12" x2="3.01" y2="12"></line>
-          <line x1="3" y1="18" x2="3.01" y2="18"></line>
-        </svg> Projects
-      </button>
-      <button onclick="document.querySelector('.contact-content').scrollIntoView({ behavior: 'smooth' });">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-        </svg> Contact
-      </button>
-    </header>
+        <button onclick="document.querySelector('.home-content').scrollIntoView({ behavior: 'smooth' });" aria-label="Navigate to home section">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg> Home</button>
+        <button onclick="document.querySelector('.about-content').scrollIntoView({ behavior: 'smooth' });" aria-label="Navigate to about section">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg> About
+        </button>
+        <button onclick="document.querySelector('.services-content').scrollIntoView({ behavior: 'smooth' });" aria-label="Navigate to services section">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg> Services
+        </button>
+        <button onclick="document.querySelector('.projects-content').scrollIntoView({ behavior: 'smooth' });" aria-label="Navigate to projects section">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+          </svg> Projects
+        </button>
+        <button onclick="document.querySelector('.contact-content').scrollIntoView({ behavior: 'smooth' });" aria-label="Navigate to contact section">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg> Contact
+        </button>
+      </header>
+    </nav>
 
     <button class="upperbutton settings" style="z-index: 100">
       <img
@@ -117,30 +133,31 @@
       </div>
     </div>
 
-    <section class="home-content">
-      <div class="text-content">
-        <p>Hello, my name is <span class="highlite-one">Yassin Amr</span></p>
-        <p>
-          I'm a <span class="highlite-two">Full-Stack Developer</span
-          ><strong>I</strong>
-        </p>
-        <p class="disc discone">
-          <!-- discone text -->
-        </p>
-      </div>
+    <main>
+      <section class="home-content">
+        <div class="text-content">
+          <h1>Hello, my name is <span class="highlite-one">Yassin Amr</span></h1>
+          <p>
+            I'm a <span class="highlite-two">Full-Stack Developer</span
+            ><strong>I</strong>
+          </p>
+          <p class="disc discone">
+            <!-- discone text -->
+          </p>
+        </div>
 
-      <div class="image-container">
-        <img src="images/yassin.png" class="profileimg" />
-        <div class="Lone">
-          <span class="lineone"></span>
-          <span class="linetwo"></span>
+        <div class="image-container">
+          <img src="images/yassin.png" class="profileimg" alt="Yassin Amr - Full-Stack Developer profile picture" />
+          <div class="Lone">
+            <span class="lineone"></span>
+            <span class="linetwo"></span>
+          </div>
+          <div class="Ltwo">
+            <span class="lineone"></span>
+            <span class="linetwo"></span>
+          </div>
         </div>
-        <div class="Ltwo">
-          <span class="lineone"></span>
-          <span class="linetwo"></span>
-        </div>
-      </div>
-    </section>
+      </section>
 
     <section class="about-content" id="about-content">
       <div class="about-title">
@@ -213,25 +230,25 @@
       <div class="services-services">
         <div class="upper-services service-column">
           <div class="service-item">
-            <img class="icon" src="icons/user.png">
-            <h1>Web & Mobile Apps</h1>
+            <img class="icon" src="icons/user.png" alt="Web and mobile apps icon">
+            <h2>Web & Mobile Apps</h2>
             <p>I create amazing websites and mobile applications with stunning designs and powerful functionality tailored to your needs.</p>
           </div>
           <div class="service-item">
-            <img class="icon" src="icons/briefcase.png">
-            <h1>Business Solutions</h1>
+            <img class="icon" src="icons/briefcase.png" alt="Business solutions icon">
+            <h2>Business Solutions</h2>
             <p>I help businesses build custom applications and websites designed to grow their brand and attract more customers.</p>
           </div>
         </div>
         <div class="lower-services service-column">
           <div class="service-item">
-            <img class="icon" src="icons/code.png">
-            <h1>Interactive Applications</h1>
+            <img class="icon" src="icons/code.png" alt="Interactive applications icon">
+            <h2>Interactive Applications</h2>
             <p>I build highly interactive apps with animations, real-time features, and cutting-edge technology that make your project stand out.</p>
           </div>
           <div class="service-item">
-            <img class="icon" src="icons/chat.png">
-            <h1>Development Partner</h1>
+            <img class="icon" src="icons/chat.png" alt="Development partner icon">
+            <h2>Development Partner</h2>
             <p>I collaborate with developers and teams to build innovative applications and bring ambitious projects to life.</p>
           </div>
         </div>
@@ -255,7 +272,7 @@
               <p class="web-disc">A website for a contracting company</p>
               <a href="https://summittecs.com/" target="_blank"><button class="web-button">Open website</button></a>
             </div>
-            <img src="projects/summit.png">
+            <img src="projects/summit.png" alt="Summit Tecs contracting company website screenshot" loading="lazy">
             <p class="project-date">January 2025</p>
           </div>
 
@@ -265,7 +282,7 @@
               <p class="web-disc">A simple 2d pixel animations studio.</p>
               <button class="web-button studio-button">Open studio</button>
             </div>
-            <img src="projects/pixel.png">
+            <img src="projects/pixel.png" alt="Pixel animation studio interface screenshot" loading="lazy">
             <p class="project-date">June 2025</p>
           </div>
 
@@ -273,9 +290,9 @@
             <div class="project-window">
               <p class="web-name">HydroNative</p>
               <p class="web-disc">Online US store for selling Loofahs.</p>
-              <a href="https://hydronative.com/" target="_blank"><button class="web-button">Open website</button></a>
+              <a href="https://hydronative.com/" target="_blank" rel="noopener noreferrer"><button class="web-button">Open website</button></a>
             </div>
-            <img src="projects/hydronative.png">
+            <img src="projects/hydronative.png" alt="HydroNative e-commerce store for loofahs screenshot" loading="lazy">
             <p class="project-date">August 2025</p>
           </div>
         </div>
@@ -284,9 +301,9 @@
               <div class="project-window">
                 <p class="web-name">Todo Master</p>
                 <p class="web-disc">An android todo app with all features needed to make life easier.</p>
-                <a href="https://t-o-d-o-master.netlify.app/" target="_blank"><button class="web-button">Open website</button></a>
+                <a href="https://t-o-d-o-master.netlify.app/" target="_blank" rel="noopener noreferrer"><button class="web-button">Open website</button></a>
               </div>
-              <img src="projects/todo master.png">
+              <img src="projects/todo master.png" alt="Todo Master android todo application screenshot" loading="lazy">
               <p class="project-date">October 2025</p>
             </div>
 
@@ -294,9 +311,9 @@
               <div class="project-window">
                 <p class="web-name">Goal Defender</p>
                 <p class="web-disc">Fast-paced arcade game with skill-based ball deflection mechanics.</p>
-                <a href="https://goal-defender.netlify.app/" target="_blank"><button class="web-button">Play Game</button></a>
+                <a href="https://goal-defender.netlify.app/" target="_blank" rel="noopener noreferrer"><button class="web-button">Play Game</button></a>
               </div>
-              <img src="projects/goal-defender.png">
+              <img src="projects/goal-defender.png" alt="Goal Defender arcade game screenshot" loading="lazy">
               <p class="project-date">November 2025</p>
             </div>
         </div>
@@ -314,16 +331,16 @@
       <div class="contact-main">
         <div class="contact-info">
           <div class="info-row">
-            <img src="icons/email.png" alt="Email" class="contact-icon icon" />
+            <img src="icons/email.png" alt="Email contact icon" class="contact-icon icon" />
             <a href="mailto:yassin5amr55@gmail.com">yassin5amr55@gmail.com</a>
           </div>
           <div class="info-row">
-            <img src="icons/whatsapp.png" alt="WhatsApp" class="contact-icon icon" />
-            <a href="https://wa.me/201066004890" target="_blank">+20 106 600 4890</a>
+            <img src="icons/whatsapp.png" alt="WhatsApp contact icon" class="contact-icon icon" />
+            <a href="https://wa.me/201066004890" target="_blank" rel="noopener noreferrer">+20 106 600 4890</a>
           </div>
           <div class="info-row info-row-report">
             <div class="report-icon-wrap">
-              <img src="icons/caution.png" alt="Report" class="contact-icon report-icon icon" />
+              <img src="icons/caution.png" alt="Report issue icon" class="contact-icon report-icon icon" />
             </div>
             <span class="report-text">
               Please contact me if there are any problems with the website or if you want to report anything about it.
@@ -339,6 +356,30 @@
         </form>
       </div>
     </section>
+    </main>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yassin Amr",
+      "jobTitle": "Full-Stack Developer",
+      "url": "https://yassinamr.com",
+      "image": "https://yassinamr.com/images/yassin.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Giza",
+        "addressCountry": "Egypt"
+      },
+      "email": "yassin5amr55@gmail.com",
+      "birthDate": "2009-12-10",
+      "knowsAbout": ["JavaScript", "HTML", "CSS", "React", "Web Development", "Mobile App Development", "Full-Stack Development"],
+      "description": "Self-taught full-stack developer specializing in creating amazing websites, mobile apps, and interactive applications.",
+      "sameAs": [
+        "https://yassinamr.com"
+      ]
+    }
+    </script>
 
     <script src="data/paths.js"></script>
     <script src="scripts/sectionPositioning.js"></script>
