@@ -1,6 +1,7 @@
 // Loading Screen
 function preloadImages(callback) {
-  const images = document.querySelectorAll("img"); // Select all img elements
+  // Only check images that are not lazy-loaded
+  const images = document.querySelectorAll("img:not([loading='lazy'])");
   let imagesLoaded = 0;
 
   if (images.length === 0) {
