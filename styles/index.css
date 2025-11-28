@@ -472,17 +472,18 @@ header.transthree {
     width: 96%;
     right: 2%;
     left: 2%;
-    top: 17px;
+    top: 10px;
     border-bottom: solid 2px rgba(127, 127, 127, 0.271);
     flex-direction: row;
+    overflow: hidden;
   }
   .profileimg {
     width: 400px;
     height: 400px;
   }
   .signature-container {
-    top: 13px;
-    left: 60px;
+    top: 15px;
+    left: 20px;
   }
   .settings-panel {
     top: 90px;
