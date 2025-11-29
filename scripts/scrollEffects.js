@@ -102,17 +102,23 @@ let isTransitioning = false; // Flag to track if a transition is happening
       function updateScrollHandler() {
         if (window.innerWidth >= 1000) {
           window.onscroll = handleScroll;
+          // Trigger handleScroll to update header state immediately
+          handleScroll();
         } else { 
           window.onscroll = null;
+          servicesTitle.classList.add('trans');
+          // Reset header to mobile state
+          if (header.classList.contains("trans")) {
+            reverseTrans();
+          }
         }
       }
-      if (window.innerWidth >= 1000) {
-        updateScrollHandler();
-
-        window.addEventListener("resize", updateScrollHandler);
-      } else if (window.innerWidth < 1000) {
-        servicesTitle.classList.add('trans');
-      }
+      
+      // Initialize on load
+      updateScrollHandler();
+      
+      // Update on resize
+      window.addEventListener("resize", updateScrollHandler);
 
       //
 
