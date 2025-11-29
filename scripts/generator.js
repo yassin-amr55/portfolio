@@ -25,7 +25,6 @@ experienceinfo.innerHTML = `<strong>Experience:</strong> ${experience} year(s)`;
 let leftPathHtml = ``;
 //path generator
 for (let i = 0; i < paths.length/2; i++) {
-  console.log(i);
   leftPathHtml += `
     <div class="path-item">
         <div class="about-date">
@@ -43,7 +42,6 @@ for (let i = 0; i < paths.length/2; i++) {
 document.querySelector('.path-left').innerHTML = leftPathHtml;
 let rightPathHtml = ``;
 for (let i = Math.ceil(paths.length / 2); i < paths.length; i++) {
-  console.log(i);
   rightPathHtml += `
     <div class="path-item">
         <div class="about-date">

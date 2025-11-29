@@ -41,11 +41,11 @@
 - [ ] Consider combining/minifying CSS files
 
 ### Code Quality
-- [ ] Fix typo: "whome" → "whom" in paths.js
-- [ ] Fix typo: "webisite" → "website" in paths.js
-- [ ] Fix typo: "web-devolpment" → "web-development" in paths.js
-- [ ] Fix typo: "coarse" → "course" in paths.js
-- [ ] Remove console.log statements from production code (generator.js)
+- [x] Fix typo: "whome" → "whom" in paths.js
+- [x] Fix typo: "webisite" → "website" in paths.js
+- [x] Fix typo: "web-devolpment" → "web-development" in paths.js
+- [x] Fix typo: "coarse" → "course" in paths.js
+- [x] Remove console.log statements from production code (generator.js)
 
 ### HTML Structure Issues
 - [ ] Fix buttons inside anchor tags (invalid HTML)

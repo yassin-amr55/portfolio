@@ -2,7 +2,7 @@ const paths = [
   {
     date: '7/2024',
     title: 'Html and Css',
-    disc: 'I started my journey by learning html and css by <a href="https://youtu.be/G3e-cpL7ofc?si=ktMARaYx4-MVXJ3U">SuperSimpleDev</a> whome I give huge respect for his amazing free tutorial starting my programming path.'
+    disc: 'I started my journey by learning html and css by <a href="https://youtu.be/G3e-cpL7ofc?si=ktMARaYx4-MVXJ3U">SuperSimpleDev</a> whom I give huge respect for his amazing free tutorial starting my programming path.'
   },
   {
     date: '8/2024',
@@ -12,11 +12,11 @@ const paths = [
   {
     date: '9/2024 - 10/2024',
     title: 'First projects',
-    disc: 'After mastering html, css and javascript I started my first projects by creating a scientific calculator and few other projects which gave me a bigger understanding, knowledge and experience about web-devolpment.'
+    disc: 'After mastering html, css and javascript I started my first projects by creating a scientific calculator and few other projects which gave me a bigger understanding, knowledge and experience about web-development.'
   },
   {
     date: '11/2024',
-    title: '1st client/webisite',
+    title: '1st client/website',
     disc: 'I got my first ever client (SUMMIT) and created a nice website for their company <a href="https://summittecs.com/">summitecs.com</a> which took me a month to complete and I was very happy with the result.'
   },
   {
@@ -37,7 +37,7 @@ const paths = [
   {
     date: '7/2025',
     title: 'React',
-    disc: 'I learnt react from the coarse made by <a href="https://youtu.be/-L0BSSQBWOI?si=9e-XKGpt7lMzZu68">SuperSimpleDev</a> then decided to start a business with my friend so I used react and started creating an ecomerce website.'
+    disc: 'I learnt react from the course made by <a href="https://youtu.be/-L0BSSQBWOI?si=9e-XKGpt7lMzZu68">SuperSimpleDev</a> then decided to start a business with my friend so I used react and started creating an ecomerce website.'
   },
   {
     date: '9/2025 - now',
