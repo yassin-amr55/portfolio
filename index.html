@@ -1,19 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta property="og:title" content="Yassin" />
-    <meta property="og:description" content="Yassin Amr - Full-stack developer creating amazing websites and applications for all your digital needs." />
-    <meta property="og:url" content="https://yassinamr.com" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://yassinamr.com/images/yassin.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yuji+Mai&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" type="image/png" href="images/icon.png" />
-    <title>Yassin Amr portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yassin Amr - Full-stack developer from Egypt specializing in creating amazing websites, mobile apps, and interactive applications. Available for freelance work.">
+    <meta name="keywords" content="Yassin Amr, full-stack developer, web developer Egypt, mobile app developer, freelance developer, JavaScript, React, HTML, CSS, interactive websites, Giza Egypt">
+    <meta name="author" content="Yassin Amr">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yassinamr.com">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yassinamr.com">
+    <meta property="og:title" content="Yassin Amr - Full-Stack Developer | Portfolio">
+    <meta property="og:description" content="Full-stack developer creating amazing websites and applications. Specializing in interactive web apps, mobile solutions, and business websites.">
+    <meta property="og:image" content="https://yassinamr.com/images/yassin.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yassinamr.com">
+    <meta property="twitter:title" content="Yassin Amr - Full-Stack Developer | Portfolio">
+    <meta property="twitter:description" content="Full-stack developer creating amazing websites and applications. Specializing in interactive web apps, mobile solutions, and business websites.">
+    <meta property="twitter:image" content="https://yassinamr.com/images/yassin.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yuji+Mai&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <title>Yassin Amr - Full-Stack Developer | Web & Mobile Apps | Egypt</title>
     <link rel="stylesheet" href="styles/index.css" />
     <link rel="stylesheet" href="styles/aboutcontent.css" />
     <link rel="stylesheet" href="styles/homecontent.css" />
@@ -33,9 +47,9 @@
     <!-- Custom Cursor -->
     <div class="cursor"></div>
 
-    <header>
+    <header role="navigation" aria-label="Main navigation">
       <div class="signature-container">
-        <img src="icons/signature.png" class="signimg" />
+        <img src="icons/signature.png" class="signimg" alt="Yassin Amr signature logo" />
         <div class="Lthree">
           <span class="lineone"></span>
           <span class="linetwo"></span>
@@ -47,25 +61,25 @@
         </div>
       </div>
 
-      <button onclick="document.querySelector('.home-content').scrollIntoView({ behavior: 'smooth' });">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button onclick="document.querySelector('.home-content').scrollIntoView({ behavior: 'smooth' });" aria-label="Navigate to home section">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg>
           <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
           <polyline points="9 22 9 12 15 12 15 22"></polyline>
         </svg> Home</button>
-      <button onclick="document.querySelector('.about-content').scrollIntoView({ behavior: 'smooth' });">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button onclick="document.querySelector('.about-content').scrollIntoView({ behavior: 'smooth' });" aria-label="Navigate to about section">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
           <circle cx="12" cy="7" r="4"></circle>
         </svg> About
       </button>
-      <button onclick="document.querySelector('.services-content').scrollIntoView({ behavior: 'smooth' });">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button onclick="document.querySelector('.services-content').scrollIntoView({ behavior: 'smooth' });" aria-label="Navigate to services section">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
           <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
         </svg> Services
       </button>
-      <button onclick="document.querySelector('.projects-content').scrollIntoView({ behavior: 'smooth' });">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button onclick="document.querySelector('.projects-content').scrollIntoView({ behavior: 'smooth' });" aria-label="Navigate to projects section">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <line x1="8" y1="6" x2="21" y2="6"></line>
           <line x1="8" y1="12" x2="21" y2="12"></line>
           <line x1="8" y1="18" x2="21" y2="18"></line>
@@ -74,8 +88,8 @@
           <line x1="3" y1="18" x2="3.01" y2="18"></line>
         </svg> Projects
       </button>
-      <button onclick="document.querySelector('.contact-content').scrollIntoView({ behavior: 'smooth' });">
-        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button onclick="document.querySelector('.contact-content').scrollIntoView({ behavior: 'smooth' });" aria-label="Navigate to contact section">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
         </svg> Contact
       </button>
