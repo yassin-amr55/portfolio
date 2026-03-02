@@ -1,0 +1,500 @@
+html, body {
+  height: 100%;
+  
+  overflow-x: hidden; 
+}
+body {
+  background-color: var(--bg-color);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  font-weight: 700;
+}
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: none;
+  color: var(--accent-color);
+  font-size: inherit;
+}
+
+:root {
+  --header-color: white;
+  --bg-color: rgb(237, 240, 244);
+  --bg-colortwo: rgb(195, 195, 195);
+  --bg-colorthree: rgb(154, 154, 154);
+  --bg-colorfour: rgb(121, 121, 121);
+  --bg-colorfive: rgb(99, 99, 99);
+  --text-color: rgb(48, 48, 48);
+  --text-colortwo: rgb(211, 211, 211);
+  --disc-color: rgba(48, 48, 48, 0.716);
+  --disc-scroll-color: rgba(216, 216, 216, 0.716);
+  --accent-color: #ff0000;
+  --shadow-color: rgba(48, 48, 48, 0.716);
+  transition: all 0.5s;
+}
+:root.active {
+  --header-color: rgb(0, 0, 0);
+  --bg-color: rgb(48, 48, 48);
+  --bg-colortwo: rgb(74, 74, 74);
+  --bg-colorthree: rgb(99, 99, 99);
+  --bg-colorfour: rgb(154, 154, 154);
+  --bg-colorfive: rgb(195, 195, 195);
+  --text-color: rgb(211, 211, 211);
+  --text-colortwo: rgb(48, 48, 48);
+  --disc-color: rgba(211, 211, 211, 0.716);
+  --disc-scroll-color: rgb(81, 81, 81);
+  --accent-color: #ff0000;
+  --shadow-color: rgba(211, 211, 211, 0.716);
+  transition: all 0.5s;
+}
+/* Loading Screen */
+.loading-screen {
+  background-color: var(--bg-color);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.7s ease;
+  font-family: 'Arial', sans-serif;
+}
+
+.loading-screen p {
+  font-size: 3rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loading-screen .dots {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 3rem;
+  color: rgb(211, 211, 211);
+  animation: dots 1.5s infinite;
+}
+
+@keyframes dots {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.behind-screen {
+  background-color: var(--accent-color);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 499;
+  transition: all 0.7s;
+}
+.loading-screen.done {
+  bottom: 100%;
+}
+.behind-screen.done {
+  bottom: 100%;
+}
+body.loading {
+  overflow: hidden !important;
+  height: 100vh;
+}
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 5px;
+  transition: all 0.5s;
+}
+/*header*/
+header {
+  position: fixed;
+  background-color: var(--header-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  left: 1%;
+  top: 5%;
+  bottom: 5%;
+  border: solid 2px rgba(127, 127, 127, 0.271);
+  height: 90%;
+  width: 20%;
+  z-index: 100;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 0 10px #1f1f1f;
+        box-shadow: 0 0 10px #1a1a1a;
+  transition: all 0.5s;
+}
+header button {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text-color);
+  font-weight: 700;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  padding-bottom: 10px;
+  width: 50%;
+  max-width: 150px;
+  border-bottom: solid 2px rgba(127, 127, 127, 0.271);
+  cursor: pointer;
+  transition: all 0.5s, opacity 0.1s;
+}
+header button:hover {
+  color: var(--accent-color) !important;
+}
+header button:hover .icon {
+  stroke: var(--accent-color) !important;
+}
+
+header button .icon {
+  width: 20px;
+  height: 20px;
+  stroke: var(--text-color) !important;
+  fill: none !important;
+  transition: all 0.5s;
+}
+main {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Custom Cursor */
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: background-color 0.3s, transform 0.1s, border 0.5s;
+  z-index: 9999;
+}
+.cursor.active {
+  background-color: var(--accent-color);
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: all 0.1s;
+}
+
+.profileimg {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+.signature-container {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 50px); /* calc must be added when calculation in css debugged #1 */
+  width: 100px;
+  height: 50px;
+  z-index: 300;
+  justify-content: center;
+  transition: all 0.5s;
+}
+
+.Lthree {
+  position: absolute;
+  bottom: -5px;
+  left: -15px;
+  height: 20px;
+  width: 20px;
+}
+.Lthree .lineone {
+  width: 20px; 
+  height: 3px;
+  position: absolute;
+  background-color: var(--accent-color);
+  bottom: 0;
+  transition: all 0.5s;
+}
+.Lthree .linetwo {
+  height: 20px; 
+  width: 3px;
+  position: absolute;
+  background-color: var(--accent-color);
+  left: 0;
+  transition: all 0.5s;
+}
+
+.Lfour {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: -5px;
+  transform: rotate(180deg);
+  right: -15px;
+}
+.Lfour .lineone {
+  width: 20px; 
+  height: 3px;
+  position: absolute;
+  background-color: var(--accent-color);
+  bottom: 0;
+  transition: all 0.5s;
+}
+.Lfour .linetwo {
+  height: 20px; 
+  width: 3px;
+  position: absolute;
+  background-color: var(--accent-color);
+  left: 0;
+  transition: all 0.5s;
+}
+
+.signimg {
+  position: absolute;
+  width: 100px;
+  object-fit: contain;
+  transition: transform 0.3s ease-in-out;
+}
+.signimg.active {
+  filter: invert(1) brightness(2);
+}
+
+.profileimg:hover {
+  transform: scale(1.05); /* Slightly enlarges the image on hover for a dynamic effect */
+}
+.upperbutton {
+  width: 40px;
+  height: 40px;
+  background: none;
+  background-color: var(--header-color);
+  border: none;
+  border-radius: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10px;
+  right: 10px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.upperbutton img {
+  width: 80%;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Sliding div styles */
+.settings-panel {
+  position: fixed;
+  top: 0;
+  right: -260px; /* Start offscreen */
+  top: 10px;
+  width: 250px;
+  height: 90px;
+  background-color: var(--bg-color);
+  box-shadow: -5px 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  border-radius: 10px;
+  z-index: 1000;
+  padding: 2px;
+  overflow-y: auto;
+}
+.settings-panel p {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+.settings-panel button {
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.button-container {
+  margin-bottom: 10px;
+  width: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Active sliding div (on button click) */
+.settings-panel.active {
+  right: 10px; /* Slide into view */
+}
+
+/* Push buttons when div is active */
+.upperbutton {
+  transition: transform 0.4s ease;
+}
+
+.upperbutton.push {
+  transform: translateX(-270px); /* Adjust based on sliding div width */
+}
+.upperbutton img {
+  width: 80%;
+  transition: all 0.5s;
+}
+.icon {
+  transition: all 0.5s;
+  filter: invert(0) brightness(0);
+}
+.icon.active {
+  filter: invert(1) brightness(2);
+}
+header button .icon {
+  filter: none !important;
+}
+.lightmode {
+  top: 60px;
+  transition: all 0.5s;
+}
+.settings {
+  transition: all 0.5s;
+}
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/*trans header*/
+header.trans {
+  top: 15px;
+  height: 80px;
+  border-bottom: solid 2px rgba(127, 127, 127, 0.271);
+}
+header button.trans {
+  opacity: 0;
+}
+.signature-container.trans {
+  top: 13px;
+  left: 60px;
+}
+.lightmode.trans {
+  top: 110px;
+  right: 30px;
+}
+.settings.trans {
+  top: 110px;
+  right: 80px;
+}
+.settings-panel.trans {
+  top: 110px;
+}
+/*transtwo*/
+header button.transtwo {
+  opacity: 1;
+  width: 150px;
+}
+header.transtwo {
+  height: 80px;
+  width: 96%;
+  right: 2%;
+  left: 2%;
+  border-bottom: solid 2px rgba(127, 127, 127, 0.271);
+  flex-direction: row;
+}
+header.transthree {
+  flex-direction: row;
+}
+/* Initial state: invisible and positioned to the left */
+.scroll-content {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.5s;
+}
+.scrolls {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.5s;
+}
+.scrolls.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Active state: visible and in its final position */
+.scroll-content.active {
+  opacity: 1;
+  transform: translateX(0); /* Return to original position */
+}
+
+/*phone*/
+@media (max-width: 1000px) {
+  .home-content {
+    flex-direction: column !important;
+    width: 100% !important;
+    left: 0 !important;
+    top: 150px !important;
+    height: auto !important;
+  }
+  .about-content {
+    height: auto;
+  }
+  .scrolls {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  header button {
+    opacity: 1;
+    width: 100px;
+  }
+  header {
+    height: 80px;
+    width: 96%;
+    right: 2%;
+    left: 2%;
+    top: 17px;
+    border-bottom: solid 2px rgba(127, 127, 127, 0.271);
+    flex-direction: row;
+  }
+  .profileimg {
+    width: 400px;
+    height: 400px;
+  }
+  .signature-container {
+    top: 13px;
+    left: 60px;
+  }
+  .settings-panel {
+    top: 90px;
+  }
+  .lightmode {
+    top: 110px;
+    right: 30px;
+  }
+  .settings {
+    top: 110px;
+    right: 80px;
+  }
+  .cursor {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,217 @@
+.contact-content {
+  background-color: var(--bg-colorfive);
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: 10;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding-bottom: 100px;
+  flex-direction: column;
+  justify-content: center;
+  clip-path: polygon(0 0, 100% 100px, 100% 100%, 0 100%);
+  transition: all 0.5s;
+}
+.contact-title {
+  position: absolute;
+  top: 50px;
+  opacity: 0;
+  left: 0;
+  width: 146px;
+  height: 55px;
+  transition: all 0.5s;
+}
+@media (max-width: 1000px) {
+  .contact-title {
+    left: 10px;
+    opacity: 1;
+  }
+}
+.contact-title.trans {
+  opacity: 1;
+  left: 10px;
+}
+.contact-title p {
+  font-size: 2rem;
+  color: var(--text-colortwo);
+}
+.underlines,
+.underlinetwos {
+  height: 5px;
+  background-color: var(--accent-color);
+  display: block;
+  margin-top: 1px;
+}
+
+.double-underlines {
+  display: inline-block;
+  position: relative;
+  height: 15px; /* Adjust to fit the height of both underlines */
+}
+
+.double-underlines .underlines {
+  position: relative;
+  left: 0;
+  width: 100px;
+  right: 46px;
+  bottom: 5px; /* Adjust the gap between the lines */
+}
+
+.double-underlines .underlinetwos {
+  position: relative;
+  width: 50px;
+  right: 96px;
+  left: 0;
+  bottom: 0;
+}
+
+.contact-main {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  gap: 60px;
+  margin-top: 120px;
+  width: 100%;
+}
+
+.contact-info {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 30px;
+  padding: 40px 30px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 2rem;
+}
+
+.contact-icon {
+  width: 28px;
+  height: 28px;
+  filter: grayscale(1) brightness(1.5);
+}
+
+.contact-info a, .contact-info span {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.contact-info a:hover {
+  color: var(--accent-color);
+}
+
+.info-row-report {
+  background: var(--bg-colorthree);
+  border-left: 4px solid var(--accent-color);
+  border-radius: 12px;
+  padding: 18px 18px 18px 12px;
+  gap: 18px;
+  align-items: flex-start;
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.report-icon-wrap {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 2px;
+}
+
+.report-icon {
+  width: 32px;
+  height: 32px;
+  filter: grayscale(0) brightness(1.2);
+}
+
+.report-text {
+  line-height: 1.5;
+  display: block;
+  font-size: 1.1rem;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 600px;
+  background: var(--bg-colorthree);
+  border-radius: 30px;
+  padding: 40px 30px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form h2 {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--accent-color);
+  background: var(--bg-colorfive);
+  color: var(--text-color);
+  font-size: 1rem;
+  resize: none;
+  transition: border 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border: 2px solid var(--accent-color);
+}
+
+.contact-form textarea {
+  min-height: 100px;
+  max-height: 220px;
+}
+
+.send-btn {
+  background: var(--accent-color);
+  color: var(--text-colortwo);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.send-btn:hover {
+  background: var(--text-color);
+  color: var(--accent-color);
+}
+
+@media (max-width: 900px) {
+  .contact-main {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 80px;
+  }
+  .contact-info, .contact-form {
+    min-width: 220px;
+    width: 90%;
+    padding: 25px 10px;
+  }
+}

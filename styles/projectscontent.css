@@ -1,0 +1,215 @@
+.projects-content {
+  background-color: var(--bg-colorfour);
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: 3;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 400%;
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  clip-path: polygon(0 100px, 100% 0, 100% 100%, 0 100%);
+  transition: all 0.5s;
+}
+.projects-title {
+  position: absolute;
+  opacity: 0;
+  top: 50px;
+  right: 0;
+  width: 120px;
+  height: 50px;
+  transition: all 0.5s;
+}
+@media (max-width: 1000px) {
+  .projects-title {
+    right: 20px;
+    opacity: 1;
+  }
+}
+.projects-title.trans {
+  opacity: 1;
+  right: 20px;
+}
+.projects-title p {
+  font-size: 2rem;
+  color: var(--text-colortwo);
+  transition: all 0.5s;
+}
+.underline,
+.underlinetwo {
+  height: 5px;
+  background-color: var(--accent-color);
+  display: block;
+  margin-top: 1px;
+  transition: all 0.5s;
+}
+
+.double-underline {
+  display: inline-block;
+  position: relative;
+  height: 15px; /* Adjust to fit the height of both underlines */
+  transition: all 0.5s;
+}
+
+.double-underline .underline {
+  position: relative;
+  left: 0;
+  width: 100px;
+  left: 30px;
+  bottom: 5px; /* Adjust the gap between the lines */
+  transition: all 0.5s;
+}
+
+.double-underline .underlinetwo {
+  position: relative;
+  width: 50px;
+  left: 80px;
+  bottom: 0;
+}
+.projects-projects {
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  padding-bottom: 30px;
+  padding-right: 50px;
+  padding-left: 50px;
+  position: relative;
+  transition: all 0.5s;
+}
+.projects-column {
+  display: flex;
+  flex-direction: row;
+  gap: 190px;
+  transition: all 0.5s;
+}
+
+@media (max-width: 1450px) {
+  .projects-projects {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .projects-column {
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+.projects-item,
+.studio-item {
+  background-color: var(--accent-color);
+  display: flex;
+  padding: 5px;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.project-date {
+  color: var(--text-colortwo);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: 10px;
+  position: absolute;
+  bottom: -15px;
+  background-color: var(--accent-color);
+  border-radius: 20px;
+  z-index: 450;
+}
+
+.projects-item.trans {
+  width: 400px;
+  transition: all 0.5s;
+}
+
+.projects-item .window.active {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.projects-item img {
+  position: relative;
+  height: 200px;
+  width: 350px;
+  transition: all 0.5s;
+}
+
+.project-window {
+  position: absolute;
+  top: 0;
+  background-color: var(--accent-color);
+  width: 100%;
+  height: 6px;
+  z-index: 400;
+  justify-content: center;
+  transition: all 0.5s;
+}
+
+.project-window.active {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.project-window .web-name,
+.project-window .web-disc,
+.project-window .web-button {
+  opacity: 0;
+  transform: translate(-50%, -40px);
+  color: var(--text-colortwo);
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  transition:
+    opacity 0.5s cubic-bezier(.4,0,.2,1),
+    transform 0.5s cubic-bezier(.4,0,.2,1);
+}
+
+.project-window .web-name {
+  top: 30%;
+  z-index: 2;
+}
+.project-window .web-disc {
+  top: 45%;
+  z-index: 2;
+  text-align: center;
+  font-size: 0.9rem;
+}
+.project-window .web-button {
+  top: 70%;
+  z-index: 2;
+  background-color: var(--accent-color);
+  padding: 3px 8px;
+  border-radius: 15px;
+}
+
+/* When .window is active, these effects will happen */
+.project-window.active .web-name {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition-delay: 0.1s;
+  pointer-events: auto;
+}
+.project-window.active .web-disc {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition-delay: 0.25s;
+  pointer-events: auto;
+}
+.project-window.active .web-button {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  transition-delay: 0.4s;
+  pointer-events: auto;
+}

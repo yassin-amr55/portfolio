@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art Studio</title>
+    <link rel="stylesheet" href="pixelStyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Pixel Animation Studio</h1>
+            <div class="header-controls">
+                <button id="save-btn" title="Save Project"><i class="fas fa-save"></i></button>
+                <button id="export-gif-btn" title="Export GIF"><i class="fas fa-file-export"></i></button>
+                <button id="clear-btn" title="Clear project"><i class="fas fa-trash"></i></button>
+                <button id="go-back" title="Go back" onclick="window.location.assign('../../index.html');"><i class="fas fa-arrow-left"></i></button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <div class="tools-panel">
+                <div class="tool-section">
+                    <h3>Tools</h3>
+                    <div class="tool-buttons">
+                        <button class="tool-btn active" data-tool="pencil" title="Pencil (P)"><i class="fas fa-pencil-alt"></i></button>
+                        <button class="tool-btn" data-tool="eraser" title="Eraser (E)"><i class="fas fa-eraser"></i></button>
+                        <button class="tool-btn" id="undo-btn" title="Undo (Ctrl+Z)"><i class="fas fa-undo"></i></button>
+                        <button class="tool-btn" id="redo-btn" title="Redo (Ctrl+Y)"><i class="fas fa-redo"></i></button>
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h3>Colors</h3>
+                    <div class="color-picker">
+                        <input type="color" id="color-selector" value="#000000">
+                        <div class="color-palette" id="color-palette">
+                            <!-- Colors will be added here by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h3>Canvas Size</h3>
+                    <div class="canvas-size-controls">
+                        <select id="grid-size">
+                            <option value="16">16x16</option>
+                            <option value="32" selected>32x32</option>
+                            <option value="64">64x64</option>
+                        </select>
+                        <button id="resize-btn">Apply</button>
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h3>Frames</h3>
+                    <div class="frame-controls">
+                        <button id="add-frame-btn" title="Add Frame"><i class="fas fa-plus"></i></button>
+                        <button id="delete-frame-btn" title="Delete Frame"><i class="fas fa-trash"></i></button>
+                        <button id="duplicate-frame-btn" title="Duplicate Frame"><i class="fas fa-copy"></i></button>
+                    </div>
+                    <div class="frames-container" id="frames-container">
+                        <!-- Frames will be added here by JS -->
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h3>Animation</h3>
+                    <div class="animation-controls">
+                        <input type="range" id="fps-slider" min="1" max="24" value="12">
+                        <span id="fps-value">12 FPS</span>
+                        <button id="play-btn" title="Play Animation"><i class="fas fa-play"></i></button>
+                        <button id="stop-btn" title="Stop Animation" disabled><i class="fas fa-stop"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="canvas-container">
+                <div class="canvas-wrapper">
+                    <canvas id="pixel-canvas"></canvas>
+                </div>
+                <div class="zoom-controls">
+                    <button id="zoom-in" title="Zoom In"><i class="fas fa-search-plus"></i></button>
+                    <button id="zoom-out" title="Zoom Out"><i class="fas fa-search-minus"></i></button>
+                    <span id="zoom-level">100%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="export-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Export Options</h2>
+            <div class="export-options">
+                <div class="export-option">
+                    <h3>Export as GIF</h3>
+                    <button id="generate-gif-btn">Generate GIF</button>
+                    <div class="gif-preview" id="gif-preview">
+                        <p>Preview will appear here</p>
+                    </div>
+                    <a id="download-gif-btn" class="hidden" download="pixel-art.gif">Download GIF</a>
+                </div>
+                <div class="export-option">
+                    <h3>Export as Image</h3>
+                    <button id="export-png-btn">Export PNG</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js"></script>
+    <script src="pixelScript.js"></script>
+</body>
+</html>

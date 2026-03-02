@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta property="og:title" content="Yassin" />
+    <meta property="og:description" content="Yassin Amr - Full-stack developer creating amazing websites and applications for all your digital needs." />
+    <meta property="og:url" content="https://yassinamr.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://yassinamr.com/images/yassin.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yuji+Mai&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icon.png" />
+    <link rel="shortcut icon" href="images/icon.png" />
+    <title>Yassin Amr - Full-Stack Developer | Web & Mobile Apps | Egypt</title>
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/aboutcontent.css" />
+    <link rel="stylesheet" href="styles/homecontent.css" />
+    <link rel="stylesheet" href="styles/projectscontent.css" />
+    <link rel="stylesheet" href="styles/services.css" />
+    <link rel="stylesheet" href="styles/contactcontent.css" />
+  </head>
+  <body>
+    <div class="loading-screen">
+      <p>
+        Welcome with <span class="highlite-one">Yassin Amr</span>
+        <span class="dots">...</span>
+      </p>
+    </div>
+
+    <div class="behind-screen"></div>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
+    <header>
+      <div class="signature-container">
+        <img src="icons/signature.png" class="signimg" alt="Yassin Amr signature logo" />
+        <div class="Lthree">
+          <span class="lineone"></span>
+          <span class="linetwo"></span>
+        </div>
+
+        <div class="Lfour">
+          <span class="lineone"></span>
+          <span class="linetwo"></span>
+        </div>
+      </div>
+
+      <button onclick="document.querySelector('.home-content').scrollIntoView({ behavior: 'smooth' });">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg> Home</button>
+      <button onclick="document.querySelector('.about-content').scrollIntoView({ behavior: 'smooth' });">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg> About
+      </button>
+      <button onclick="document.querySelector('.services-content').scrollIntoView({ behavior: 'smooth' });">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+        </svg> Services
+      </button>
+      <button onclick="document.querySelector('.projects-content').scrollIntoView({ behavior: 'smooth' });">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg> Projects
+      </button>
+      <button onclick="document.querySelector('.contact-content').scrollIntoView({ behavior: 'smooth' });">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg> Contact
+      </button>
+    </header>
+
+    <button class="upperbutton settings" style="z-index: 100">
+      <img
+        src="icons/setting.png"
+        class="icon"
+        style="animation: rotate 2s linear infinite"
+      />
+    </button>
+    <button class="upperbutton lightmode" style="z-index: 100">
+      <img src="icons/sun.png" class="icon" />
+    </button>
+    <div class="settings-panel">
+      <p>Theme Color</p>
+      <div class="button-container">
+        <button
+          style="background-color: red"
+          onclick="themeColor('red')"
+        ></button>
+        <button
+          style="background-color: orange"
+          onclick="themeColor('orange')"
+        ></button>
+        <button
+          style="background-color: lightblue"
+          onclick="themeColor('lightblue')"
+        ></button>
+        <button
+          style="background-color: lightgreen"
+          onclick="themeColor('lightgreen')"
+        ></button>
+        <button
+          style="background-color: purple"
+          onclick="themeColor('purple')"
+        ></button>
+      </div>
+    </div>
+
+    <section class="home-content">
+      <div class="text-content">
+        <p>Hello, my name is <span class="highlite-one">Yassin Amr</span></p>
+        <p>
+          I'm a <span class="highlite-two">Full-Stack Developer</span
+          ><strong>I</strong>
+        </p>
+        <p class="disc discone">
+          <!-- discone text -->
+        </p>
+      </div>
+
+      <div class="image-container">
+        <img src="images/yassin.png" class="profileimg" alt="Yassin Amr - Full-Stack Developer profile picture" />
+        <div class="Lone">
+          <span class="lineone"></span>
+          <span class="linetwo"></span>
+        </div>
+        <div class="Ltwo">
+          <span class="lineone"></span>
+          <span class="linetwo"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-content" id="about-content">
+      <div class="about-title">
+        <p class="about scrolls" style="transition: all 0.5s">About Me</p>
+        <div class="double-underline scrolls" style="transition: all 0.5s">
+          <span class="underline"></span>
+          <span class="underlinetwo"></span>
+        </div>
+      </div>
+      <div class="about-text-content">
+        <p>
+          I'm Yassin Amr and I am a
+          <span class="highlite-two">Full-Stack Developer</span>
+        </p>
+        <br />
+        <p class="disc disctwo" style="font-size: 1.2rem">
+          <!-- disctwo text -->
+        </p>
+      </div>
+      <div class="more-info">
+        <div class="info-column">
+          <p><strong>Birthday:</strong> 10 December 2009</p>
+          <p><strong>Age:</strong> <span id="dynamic-age">15</span></p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:yassin5amr55@gmail.com">yassin5amr55@gmail.com</a>
+          </p>
+          <p>
+            <strong>Whatsapp:</strong> <a href="https://wa.me/201066004890">01066004890</a>
+          </p>
+        </div>
+        <div class="info-column">
+          <p><strong>Freelance:</strong> Available</p>
+          <p>
+            <strong>Location:</strong>
+            <a href="https://maps.app.goo.gl/zmjqNV1cFJiTuof18"
+              >Giza Governorate, Egypt</a
+            >
+          </p>
+          <p><strong>Education:</strong> Self-taught</p>
+          <p class="experienceinfo"> <!-- experienceinfo here --> </p>
+        </div>
+      </div>
+
+      <div class="path">
+        <h1>Path</h1>
+        <div class="path-container">
+
+          <div class="path-left">
+            
+          </div>
+
+          <div class="path-right">
+            
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="services-content">
+      <div class="services-title">
+        <p class="services scrolls" style="transition: all 0.5s">services</p>
+        <div class="double-underlines scrolls" style="transition: all 0.5s">
+          <span class="underlines"></span>
+          <span class="underlinetwos"></span>
+        </div>
+      </div>
+
+      <div class="services-services">
+        <div class="upper-services service-column">
+          <div class="service-item">
+            <img class="icon" src="icons/user.png" alt="Web and mobile apps icon">
+            <h1>Web & Mobile Apps</h1>
+            <p>I create amazing websites and mobile applications with stunning designs and powerful functionality tailored to your needs.</p>
+          </div>
+          <div class="service-item">
+            <img class="icon" src="icons/briefcase.png" alt="Business solutions icon">
+            <h1>Business Solutions</h1>
+            <p>I help businesses build custom applications and websites designed to grow their brand and attract more customers.</p>
+          </div>
+        </div>
+        <div class="lower-services service-column">
+          <div class="service-item">
+            <img class="icon" src="icons/code.png" alt="Interactive applications icon">
+            <h1>Interactive Applications</h1>
+            <p>I build highly interactive apps with animations, real-time features, and cutting-edge technology that make your project stand out.</p>
+          </div>
+          <div class="service-item">
+            <img class="icon" src="icons/chat.png" alt="Development partner icon">
+            <h1>Development Partner</h1>
+            <p>I collaborate with developers and teams to build innovative applications and bring ambitious projects to life.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-content">
+      <div class="projects-title">
+        <p class="projects scrolls" style="transition: all 0.5s">Projects</p>
+        <div class="double-underline scrolls" style="transition: all 0.5s">
+          <span class="underline"></span>
+          <span class="underlinetwo"></span>
+        </div>
+      </div>
+      
+      <div class="projects-projects">
+        <div class="upper-services projects-column">
+          <div class="projects-item">
+            <div class="project-window">
+              <p class="web-name">Summit Tecs</p>
+              <p class="web-disc">A website for a contracting company</p>
+              <a href="https://summittecs.com/" target="_blank"><button class="web-button">Open website</button></a>
+            </div>
+            <img src="projects/summit.png" alt="Summit Tecs contracting company website screenshot">
+            <p class="project-date">January 2025</p>
+          </div>
+
+          <div class="projects-item">
+            <div class="project-window">
+              <p class="web-name">Pixel animation studio</p>
+              <p class="web-disc">A simple 2d pixel animations studio.</p>
+              <button class="web-button studio-button">Open studio</button>
+            </div>
+            <img src="projects/pixel.png" alt="Pixel animation studio interface screenshot">
+            <p class="project-date">June 2025</p>
+          </div>
+
+          <div class="projects-item">
+            <div class="project-window">
+              <p class="web-name">HydroNative</p>
+              <p class="web-disc">Online US store for selling Loofahs.</p>
+              <a href="https://hydronative.com/" target="_blank"><button class="web-button">Open website</button></a>
+            </div>
+            <img src="projects/hydronative.png" alt="HydroNative e-commerce store for loofahs screenshot">
+            <p class="project-date">August 2025</p>
+          </div>
+        </div>
+        <div class="lower-services projects-column">
+            <div class="projects-item">
+              <div class="project-window">
+                <p class="web-name">Daily apps</p>
+                <p class="web-disc">An android app company create life simplifing apps.</p>
+                <a href="https://daily-apps-official.netlify.app/" target="_blank"><button class="web-button">Open website</button></a>
+              </div>
+              <img src="projects/daily apps.png" alt="Todo Master android todo application screenshot">
+              <p class="project-date">October 2025</p>
+            </div>
+
+            <div class="projects-item">
+              <div class="project-window">
+                <p class="web-name">Goal Defender</p>
+                <p class="web-disc">Fast-paced arcade game with skill-based ball deflection mechanics.</p>
+                <a href="https://goal-defender.netlify.app/" target="_blank"><button class="web-button">Play Game</button></a>
+              </div>
+              <img src="projects/goal-defender.png" alt="Goal Defender arcade game screenshot">
+              <p class="project-date">November 2025</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-content">
+      <div class="contact-title">
+        <p class="contact scrolls" style="transition: all 0.5s">Contact</p>
+        <div class="double-underline scrolls" style="transition: all 0.5s">
+          <span class="underline"></span>
+          <span class="underlinetwo"></span>
+        </div>
+      </div>
+      <div class="contact-main">
+        <div class="contact-info">
+          <div class="info-row">
+            <img src="icons/email.png" alt="Email" class="contact-icon icon" />
+            <a href="mailto:yassin5amr55@gmail.com">yassin5amr55@gmail.com</a>
+          </div>
+          <div class="info-row">
+            <img src="icons/whatsapp.png" alt="WhatsApp" class="contact-icon icon" />
+            <a href="https://wa.me/201066004890" target="_blank">+20 106 600 4890</a>
+          </div>
+          <div class="info-row info-row-report">
+            <div class="report-icon-wrap">
+              <img src="icons/caution.png" alt="Report" class="contact-icon report-icon icon" />
+            </div>
+            <span class="report-text">
+              Please contact me if there are any problems with the website or if you want to report anything about it.
+            </span>
+          </div>
+        </div>
+        <form class="contact-form" action="https://formspree.io/f/movwakzv" method="POST">
+          <h2>Get in contact</h2>
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit" class="send-btn">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <script src="data/paths.js"></script>
+    <script src="scripts/sectionPositioning.js"></script>
+    <script src="scripts/loadingScreen.js"></script>
+    <script src="scripts/scrollEffects.js"></script>
+    <script src="scripts/otherEffects.js"></script>
+    <script src="scripts/theme.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/generator.js"></script>
+  </body>
+</html>

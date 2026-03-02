@@ -1,0 +1,2 @@
+<p>Summit Tecs is a company and is my first client. <a href="https://summittecs.com/">summittecs.com</a> is one of my greatest projects with multiple pages and over 9000 lines of code taking a month to complete.</p>
+            <a href="https://summittecs.com/" class="projectsTitle"><h1>Summit Tecs</h1></a>
