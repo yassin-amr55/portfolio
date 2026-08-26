@@ -251,57 +251,23 @@
       </div>
       
       <div class="projects-projects">
-        <div class="upper-services projects-column">
-          <div class="projects-item">
-            <div class="project-window">
-              <p class="web-name">Summit Tecs</p>
-              <p class="web-disc">A website for a contracting company</p>
-              <a href="https://summittecs.com/" target="_blank"><button class="web-button">Open website</button></a>
-            </div>
-            <img src="projects/summit.png" alt="Summit Tecs contracting company website screenshot">
-            <p class="project-date">January 2025</p>
+        <!-- Desktop: diagonal / staggered 2-row layout, horizontally scrollable -->
+        <div class="projects-desktop">
+          <div class="projects-scroll">
+            <div class="projects-row projects-row-top"></div>
+            <div class="projects-row projects-row-bottom"></div>
           </div>
-
-          <div class="projects-item">
-            <div class="project-window">
-              <p class="web-name">Pixel animation studio</p>
-              <p class="web-disc">A simple 2d pixel animations studio.</p>
-              <button class="web-button studio-button">Open studio</button>
-            </div>
-            <img src="projects/pixel.png" alt="Pixel animation studio interface screenshot">
-            <p class="project-date">June 2025</p>
-          </div>
-
-          <div class="projects-item">
-            <div class="project-window">
-              <p class="web-name">HydroNative</p>
-              <p class="web-disc">Online US store for selling Loofahs.</p>
-              <a href="https://hydronative.com/" target="_blank"><button class="web-button">Open website</button></a>
-            </div>
-            <img src="projects/hydronative.png" alt="HydroNative e-commerce store for loofahs screenshot">
-            <p class="project-date">August 2025</p>
-          </div>
+          <button type="button" class="projects-arrow projects-arrow-prev is-hidden" aria-label="Scroll projects left">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button type="button" class="projects-arrow projects-arrow-next is-hidden" aria-label="Scroll projects right">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
         </div>
-        <div class="lower-services projects-column">
-            <div class="projects-item">
-              <div class="project-window">
-                <p class="web-name">Daily apps</p>
-                <p class="web-disc">An android app company create life simplifing apps.</p>
-                <a href="https://daily-apps-official.netlify.app/" target="_blank"><button class="web-button">Open website</button></a>
-              </div>
-              <img src="projects/daily apps.png" alt="Todo Master android todo application screenshot">
-              <p class="project-date">October 2025</p>
-            </div>
 
-            <div class="projects-item">
-              <div class="project-window">
-                <p class="web-name">Goal Defender</p>
-                <p class="web-disc">Fast-paced arcade game with skill-based ball deflection mechanics.</p>
-                <a href="https://goal-defender.netlify.app/" target="_blank"><button class="web-button">Play Game</button></a>
-              </div>
-              <img src="projects/goal-defender.png" alt="Goal Defender arcade game screenshot">
-              <p class="project-date">November 2025</p>
-            </div>
+        <!-- Mobile: staggered masonry columns (3 / 2 / 3 / 2 ...), horizontally scrollable -->
+        <div class="projects-mobile">
+          <div class="projects-mobile-track"></div>
         </div>
       </div>
     </section>
@@ -344,6 +310,7 @@
     </section>
 
     <script src="data/paths.js"></script>
+    <script src="data/projects.js"></script>
     <script src="scripts/sectionPositioning.js"></script>
     <script src="scripts/loadingScreen.js"></script>
     <script src="scripts/scrollEffects.js"></script>
@@ -351,5 +318,6 @@
     <script src="scripts/theme.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/generator.js"></script>
+    <script src="scripts/projectsRenderer.js"></script>
   </body>
 </html>

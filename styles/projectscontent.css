@@ -74,36 +74,121 @@
   bottom: 0;
 }
 .projects-projects {
-  border-radius: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 70px;
-  padding-bottom: 30px;
-  padding-right: 50px;
-  padding-left: 50px;
   position: relative;
   transition: all 0.5s;
 }
-.projects-column {
-  display: flex;
-  flex-direction: row;
-  gap: 190px;
-  transition: all 0.5s;
+
+/* ================= Desktop: diagonal / staggered 2-row layout ================= */
+.projects-desktop {
+  --proj-card-w: 350px;
+  --proj-card-h: 200px;
+  --proj-gap: 60px;
+  position: relative;
+  padding: 10px 75px;
 }
 
-@media (max-width: 1450px) {
-  .projects-projects {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 50px;
-  }
-  .projects-column {
-    flex-direction: column;
-    gap: 50px;
-  }
+.projects-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  padding: 15px 4px 35px;
 }
+.projects-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.projects-row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--proj-gap);
+  width: max-content;
+}
+
+.projects-row-bottom {
+  margin-left: calc((var(--proj-card-w) + var(--proj-gap)) / 2);
+}
+
+.projects-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 100%;
+  border: none;
+  background-color: var(--accent-color);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 4px 14px var(--shadow-color);
+  opacity: 1;
+  transition: opacity 0.3s ease, transform 0.25s ease, background-color 0.5s;
+}
+.projects-arrow svg {
+  width: 22px;
+  height: 22px;
+  stroke: #fff;
+}
+.projects-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+.projects-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+.projects-arrow.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) scale(0.7);
+}
+.projects-arrow-prev {
+  left: 15px;
+}
+.projects-arrow-next {
+  right: 15px;
+}
+
+/* ================= Mobile: staggered masonry columns ================= */
+.projects-mobile {
+  display: none;
+}
+.projects-mobile-track {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 15px 20px 40px;
+}
+.projects-mobile-track::-webkit-scrollbar {
+  display: none;
+}
+.projects-mobile-col {
+  --proj-card-w: 220px;
+  --proj-card-h: 126px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  flex-shrink: 0;
+}
+.projects-mobile-col.col-short {
+  margin-top: calc((126px + 40px) / 2);
+}
+
+/* ================= Shared project card ================= */
 .projects-item,
 .studio-item {
   background-color: var(--accent-color);
@@ -114,6 +199,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  flex-shrink: 0;
   transition: all 0.5s;
 }
 
@@ -127,6 +213,13 @@
   background-color: var(--accent-color);
   border-radius: 20px;
   z-index: 450;
+  white-space: nowrap;
+}
+
+.projects-mobile-col .project-date {
+  font-size: 0.75rem;
+  padding: 7px 10px;
+  bottom: -12px;
 }
 
 .projects-item.trans {
@@ -141,8 +234,10 @@
 
 .projects-item img {
   position: relative;
-  height: 200px;
-  width: 350px;
+  height: var(--proj-card-h, 200px);
+  width: var(--proj-card-w, 350px);
+  object-fit: cover;
+  border-radius: 6px;
   transition: all 0.5s;
 }
 
@@ -171,13 +266,15 @@
   pointer-events: none;
   position: absolute;
   left: 50%;
+  max-width: calc(100% - 30px);
+  text-align: center;
   transition:
     opacity 0.5s cubic-bezier(.4,0,.2,1),
     transform 0.5s cubic-bezier(.4,0,.2,1);
 }
 
 .project-window .web-name {
-  top: 30%;
+  top: 25%;
   z-index: 2;
 }
 .project-window .web-disc {
@@ -187,11 +284,12 @@
   font-size: 0.9rem;
 }
 .project-window .web-button {
-  top: 70%;
+  top: 72%;
   z-index: 2;
   background-color: var(--accent-color);
   padding: 3px 8px;
   border-radius: 15px;
+  white-space: nowrap;
 }
 
 /* When .window is active, these effects will happen */
@@ -212,4 +310,24 @@
   transform: translate(-50%, 0);
   transition-delay: 0.4s;
   pointer-events: auto;
+}
+
+@media (max-width: 1000px) {
+  .projects-desktop {
+    display: none;
+  }
+  .projects-mobile {
+    display: block;
+  }
+  .projects-mobile-col .web-name {
+    font-size: 0.85rem;
+  }
+  .projects-mobile-col .web-disc {
+    font-size: 0.68rem;
+    line-height: 1.25;
+  }
+  .projects-mobile-col .web-button {
+    font-size: 0.7rem;
+    padding: 2px 7px;
+  }
 }

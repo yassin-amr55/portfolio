@@ -59,23 +59,6 @@ function typeEffect() {
   setTimeout(typeEffect, typingSpeed);
 }
 typeEffect();
-// Project Item Hover Effect
-const projectItems = document.querySelectorAll(".projects-item");
-
-projectItems.forEach(item => {
-  const projectWindow = item.querySelector(".project-window");
-  item.addEventListener("mouseenter", () => {
-    projectWindow.classList.add("active");
-  });
-  item.addEventListener("mouseleave", () => {
-    projectWindow.classList.remove("active");
-  });
-});
-
-//open studio
-const studioButton = document.querySelector(".studio-button");
-
-  studioButton.addEventListener('click', () => {
-    window.location.assign('projects/animation studio/pixelAnimationStudio.html');
-  })
+// Project card hover/tap reveal + the studio button navigation are wired up
+// in scripts/projectsRenderer.js, once the project cards are generated.
 
