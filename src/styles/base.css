@@ -1,9 +1,15 @@
-html, body {
+html {
   height: 100%;
-
   overflow-x: hidden;
 }
 body {
+  height: 100%;
+  /* Every section is position:absolute with no positioned ancestor, which
+     falls back to the ambiguous "initial containing block" — while the
+     fixed header always resolves against the real viewport. Giving body
+     an explicit containing block removes that fallback, so both agree on
+     the same width. */
+  position: relative;
   background-color: var(--bg-color);
 }
 * {
