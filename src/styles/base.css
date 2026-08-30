@@ -554,6 +554,17 @@ header.transthree button .icon {
     top: 13px;
     left: 60px;
   }
+  /* The corner brackets extend +-15px beyond the signature by default,
+     which is fine against the tall desktop sidebar but pokes past the
+     compact 80px mobile bar's rounded corner. Pull them in. */
+  .signature-container .Lthree {
+    left: -4px;
+    bottom: -4px;
+  }
+  .signature-container .Lfour {
+    right: -4px;
+    top: -4px;
+  }
   .settings-panel {
     top: 90px;
   }
