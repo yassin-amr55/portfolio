@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap");
+/* Fonts are loaded via <link> in index.html (preconnect + stylesheet),
+   not @import here — @import blocks CSS parsing until it resolves, while a
+   <link> in <head> lets the browser discover and fetch it immediately
+   during the initial HTML scan. */
 
 /* ---------- design tokens ---------- */
 :root {
