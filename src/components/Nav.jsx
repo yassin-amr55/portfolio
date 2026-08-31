@@ -19,6 +19,13 @@ export default function Nav({ isDark, onToggleTheme }) {
 
   function handleLinkClick(id) {
     setMenuOpen(false);
+    if (id === "home") {
+      // scrollIntoView aligns #home's top edge with the viewport top, but
+      // #home sits right after the nav in normal flow -- so that leaves
+      // scrollY at the nav's own height, not 0. Go to the true top instead.
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   }
 
