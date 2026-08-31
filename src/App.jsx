@@ -1,4 +1,5 @@
 import Nav from "./components/Nav";
+import Cursor from "./components/Cursor";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
@@ -12,6 +13,7 @@ export default function App() {
 
   return (
     <>
+      <Cursor />
       <Nav isDark={isDark} onToggleTheme={toggleTheme} />
       <main>
         <Hero />

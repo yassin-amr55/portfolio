@@ -54,6 +54,9 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  /* Kill the default mobile blue tap-flash — the focus-visible outline
+     below covers keyboard users, and :active states cover touch feedback. */
+  -webkit-tap-highlight-color: transparent;
 }
 html {
   -webkit-text-size-adjust: 100%;
@@ -115,6 +118,25 @@ input:focus-visible,
 textarea:focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
+}
+
+/* ---------- custom scrollbar ---------- */
+html {
+  scrollbar-color: var(--focus) var(--paper-raised);
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper-raised);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--focus);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tick);
 }
 
 /* ---------- shared utility classes ---------- */
@@ -207,6 +229,31 @@ textarea:focus-visible {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+}
+
+/* ---------- custom cursor (desktop / real-mouse only) ---------- */
+.cursor-ring {
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .cursor-ring {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--focus);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: background-color 0.3s ease, transform 0.15s ease, border-color 0.3s ease;
+  }
+  .cursor-ring.active {
+    background-color: var(--focus);
+    transform: translate(-50%, -50%) scale(0.55);
   }
 }
 
