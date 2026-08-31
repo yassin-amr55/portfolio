@@ -9,13 +9,32 @@ import { useLayoutEffect } from "react";
 // squashed all of them narrower than the header. Setting body's width
 // explicitly, in JS, from window.innerWidth keeps both permanently in
 // agreement regardless of whatever unit-resolution quirk the browser has.
+//
+// window.innerWidth can also *settle* to a different value shortly after
+// first paint without ever firing a "resize" event -- mobile browsers do
+// this while the address bar collapses/expands or the viewport meta
+// finishes reflowing. A single mount-time read plus a resize listener
+// missed that. Re-checking on a few short delays, and on visualViewport's
+// own resize event (which fires for cases window's doesn't), catches it.
 export function useSyncBodyWidth() {
   useLayoutEffect(() => {
     function sync() {
-      document.body.style.width = `${window.innerWidth}px`;
+      const width = window.innerWidth;
+      if (document.body.style.width !== `${width}px`) {
+        document.body.style.width = `${width}px`;
+      }
     }
+
     sync();
+    const settleTimers = [100, 300, 600, 1200].map((delay) => setTimeout(sync, delay));
+
     window.addEventListener("resize", sync);
-    return () => window.removeEventListener("resize", sync);
+    window.visualViewport?.addEventListener("resize", sync);
+
+    return () => {
+      settleTimers.forEach(clearTimeout);
+      window.removeEventListener("resize", sync);
+      window.visualViewport?.removeEventListener("resize", sync);
+    };
   }, []);
 }
