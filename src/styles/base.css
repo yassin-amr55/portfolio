@@ -10,11 +10,15 @@ html {
 body {
   height: 100%;
   /* Every section is position:absolute with no positioned ancestor, which
-     falls back to the ambiguous "initial containing block" — while the
-     fixed header always resolves against the real viewport. Giving body
-     an explicit containing block removes that fallback, so both agree on
-     the same width. */
+     falls back to the ambiguous "initial containing block" for sizing —
+     while the fixed header always resolves against the real viewport via
+     its own %, and those two were disagreeing on real devices. Forcing
+     body's own box to an explicit 100vw (the one unit spec'd to always
+     match the true viewport) makes it the containing block AND guarantees
+     every percentage-sized section inside it resolves against that same
+     real width the header uses. */
   position: relative;
+  width: 100vw;
   background-color: var(--bg-color);
 }
 * {
