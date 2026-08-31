@@ -1,12 +1,16 @@
+import { useReveal } from "../hooks/useReveal";
+
 export default function Contact() {
+  const { ref, visible } = useReveal();
+
   return (
     <section id="contact" className="contact">
       <div className="container">
         <p className="eyebrow">Let's Talk</p>
         <h2 className="section-title">Contact</h2>
 
-        <div className="contact-grid">
-          <div className="contact-info">
+        <div ref={ref} className={`contact-grid ${visible ? "is-visible" : ""}`}>
+          <div className="contact-info reveal-item" style={{ "--i": 0 }}>
             <a className="contact-row" href="mailto:yassin5amr55@gmail.com">
               <img src="/icons/email.png" alt="" className="contact-icon" />
               yassin5amr55@gmail.com
@@ -26,7 +30,12 @@ export default function Contact() {
           </div>
 
           {/* Formspree endpoint — do not change */}
-          <form className="contact-form" action="https://formspree.io/f/movwakzv" method="POST">
+          <form
+            className="contact-form reveal-item"
+            style={{ "--i": 1 }}
+            action="https://formspree.io/f/movwakzv"
+            method="POST"
+          >
             <h3>Get in contact</h3>
             <input type="text" name="name" placeholder="Your Name" required />
             <input type="email" name="email" placeholder="Your Email" required />

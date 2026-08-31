@@ -1,14 +1,16 @@
 import { useTypingEffect } from "../hooks/useTypingEffect";
 import { calculateExperience } from "../utils/experience";
+import { useReveal } from "../hooks/useReveal";
 
 export default function Hero() {
   const typedRole = useTypingEffect();
   const experience = calculateExperience();
+  const { ref, visible } = useReveal();
 
   return (
     <section id="home" className="hero">
-      <div className="container hero-grid">
-        <div className="hero-copy">
+      <div ref={ref} className={`container hero-grid ${visible ? "is-visible" : ""}`}>
+        <div className="hero-copy reveal-item" style={{ "--i": 0 }}>
           <p className="eyebrow">Self-taught &middot; Full-Stack</p>
           <h1 className="hero-name">Hello, my name is Yassin Amr</h1>
           <p className="hero-role">
@@ -43,7 +45,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-portrait-wrap">
+        <div className="hero-portrait-wrap reveal-item" style={{ "--i": 1 }}>
           <div className="hero-portrait crop-frame">
             <span className="crop tl"></span>
             <span className="crop tr"></span>

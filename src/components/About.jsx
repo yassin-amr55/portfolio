@@ -25,6 +25,7 @@ export default function About() {
   const age = calculateAge();
   const info = INFO(age, experience);
   const { ref: bioRef, visible: bioVisible } = useReveal();
+  const { ref: infoRef, visible: infoVisible } = useReveal();
 
   return (
     <section id="about" className="about">
@@ -36,9 +37,9 @@ export default function About() {
           {BIO(experience)}
         </p>
 
-        <dl className="about-info">
-          {info.map((item) => (
-            <div className="about-info-row" key={item.label}>
+        <dl ref={infoRef} className={`about-info ${infoVisible ? "is-visible" : ""}`}>
+          {info.map((item, i) => (
+            <div className="about-info-row reveal-item" style={{ "--i": i }} key={item.label}>
               <dt>{item.label}</dt>
               <dd>{item.href ? <a href={item.href}>{item.value}</a> : item.value}</dd>
             </div>

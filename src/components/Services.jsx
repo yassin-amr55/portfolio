@@ -1,3 +1,5 @@
+import { useReveal } from "../hooks/useReveal";
+
 const SERVICES = [
   {
     icon: "/icons/user.png",
@@ -26,15 +28,17 @@ const SERVICES = [
 ];
 
 export default function Services() {
+  const { ref, visible } = useReveal();
+
   return (
     <section id="services" className="services">
       <div className="container">
         <p className="eyebrow">What I Do</p>
         <h2 className="section-title">Services</h2>
 
-        <div className="services-grid">
-          {SERVICES.map((service) => (
-            <div className="service-card" key={service.title}>
+        <div ref={ref} className={`services-grid ${visible ? "is-visible" : ""}`}>
+          {SERVICES.map((service, i) => (
+            <div className="service-card reveal-item" style={{ "--i": i }} key={service.title}>
               <img className="service-icon" src={service.icon} alt={service.alt} />
               <h3>{service.title}</h3>
               <p>{service.disc}</p>

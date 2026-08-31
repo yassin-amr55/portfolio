@@ -186,6 +186,30 @@ textarea:focus-visible {
   border-color: var(--ink);
 }
 
+/* ---------- scroll reveal ----------
+   One consistent motion language, used everywhere instead of a different
+   effect per section: fade + rise, staggered by a --i index set per child.
+   The parent gets .is-visible (via useReveal's IntersectionObserver) and
+   every .reveal-item inside cascades in. */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: calc(var(--i, 0) * 70ms);
+}
+.is-visible > .reveal-item,
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-item {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* ---------- crop-mark "in focus" frame — the site's signature element ---------- */
 .crop-frame {
   position: relative;
