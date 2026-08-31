@@ -8,9 +8,11 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { useTheme } from "./hooks/useTheme";
+import { useConsoleEasterEgg } from "./hooks/useConsoleEasterEgg";
 
 export default function App() {
   const { isDark, toggleTheme } = useTheme();
+  useConsoleEasterEgg();
 
   return (
     <>
