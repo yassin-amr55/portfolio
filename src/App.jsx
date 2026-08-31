@@ -13,8 +13,10 @@ import { useTheme } from "./hooks/useTheme";
 import { useHeaderTransition } from "./hooks/useHeaderTransition";
 import { useScrollReveals } from "./hooks/useScrollReveals";
 import { useSectionPositioning } from "./hooks/useSectionPositioning";
+import { useSyncBodyWidth } from "./hooks/useSyncBodyWidth";
 
 export default function App() {
+  useSyncBodyWidth();
   const { loadingDone, behindDone } = useLoadingScreen();
   const { lightMode, toggleLightMode, changeAccentColor } = useTheme();
   const [settingsOpen, setSettingsOpen] = useState(false);
