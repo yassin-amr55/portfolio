@@ -16,11 +16,27 @@
   padding: 10px;
   background: var(--paper-raised);
   border: 1px solid var(--line);
+  overflow: hidden;
 }
 .project-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* The crop marks lock onto the project like a camera finding focus:
+   they tighten inward and the image eases into a subtle zoom. */
+.project-image .crop {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.project-card:hover .project-image img {
+  transform: scale(1.06);
+}
+.project-card:hover .project-image .crop.tl {
+  transform: translate(6px, 6px);
+}
+.project-card:hover .project-image .crop.br {
+  transform: translate(-6px, -6px);
 }
 .project-body {
   padding: 18px 2px 0;

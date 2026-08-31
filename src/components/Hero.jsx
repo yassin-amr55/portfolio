@@ -1,11 +1,13 @@
 import { useTypingEffect } from "../hooks/useTypingEffect";
 import { calculateExperience } from "../utils/experience";
 import { useReveal } from "../hooks/useReveal";
+import { useMagnetic } from "../hooks/useMagnetic";
 
 export default function Hero() {
   const typedRole = useTypingEffect();
   const experience = calculateExperience();
   const { ref, visible } = useReveal();
+  const primaryRef = useMagnetic();
 
   return (
     <section id="home" className="hero">
@@ -23,6 +25,7 @@ export default function Hero() {
           </p>
           <div className="cta-row">
             <a
+              ref={primaryRef}
               className="btn btn-primary"
               href="#projects"
               onClick={(e) => {
@@ -43,6 +46,9 @@ export default function Hero() {
               Get in touch
             </a>
           </div>
+          <p className="status-line">
+            <span className="status-dot"></span> Available for freelance work
+          </p>
         </div>
 
         <div className="hero-portrait-wrap reveal-item" style={{ "--i": 1 }}>

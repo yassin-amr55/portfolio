@@ -1,7 +1,9 @@
 import { useReveal } from "../hooks/useReveal";
+import { useMagnetic } from "../hooks/useMagnetic";
 
 export default function Contact() {
   const { ref, visible } = useReveal();
+  const sendRef = useMagnetic();
 
   return (
     <section id="contact" className="contact">
@@ -40,7 +42,7 @@ export default function Contact() {
             <input type="text" name="name" placeholder="Your Name" required />
             <input type="email" name="email" placeholder="Your Email" required />
             <textarea name="message" placeholder="Your Message" required rows="5"></textarea>
-            <button type="submit" className="btn btn-primary send-btn">
+            <button ref={sendRef} type="submit" className="btn btn-primary send-btn">
               Send
             </button>
           </form>
