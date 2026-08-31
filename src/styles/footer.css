@@ -1,0 +1,28 @@
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 28px 0;
+}
+.footer-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.footer-signature {
+  height: 22px;
+  width: auto;
+  opacity: 0.8;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .footer-signature {
+    filter: invert(1) brightness(1.7);
+  }
+}
+:root[data-theme="dark"] .footer-signature {
+  filter: invert(1) brightness(1.7);
+}
+.footer-row p {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+}

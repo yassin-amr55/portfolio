@@ -1,0 +1,80 @@
+.projects {
+  padding: clamp(56px, 9vw, 100px) 0;
+  border-top: 1px solid var(--line);
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
+.project-image {
+  aspect-ratio: 16 / 10;
+  padding: 10px;
+  background: var(--paper-raised);
+  border: 1px solid var(--line);
+}
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.project-body {
+  padding: 18px 2px 0;
+}
+.project-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.project-heading h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.project-date {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--tick);
+  white-space: nowrap;
+}
+.project-body p {
+  color: var(--ink-soft);
+  font-size: 0.94rem;
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+.project-link {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--focus);
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s ease;
+}
+.project-link:hover {
+  gap: 10px;
+}
+
+@media (max-width: 980px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

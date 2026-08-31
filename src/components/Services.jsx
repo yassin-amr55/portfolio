@@ -1,9 +1,3 @@
-import { forwardRef } from "react";
-
-function cx(...parts) {
-  return parts.filter(Boolean).join(" ");
-}
-
 const SERVICES = [
   {
     icon: "/icons/user.png",
@@ -31,41 +25,23 @@ const SERVICES = [
   },
 ];
 
-function ServiceItem({ service }) {
+export default function Services() {
   return (
-    <div className="service-item">
-      <img className="icon" src={service.icon} alt={service.alt} />
-      <h1>{service.title}</h1>
-      <p>{service.disc}</p>
-    </div>
-  );
-}
+    <section id="services" className="services">
+      <div className="container">
+        <p className="eyebrow">What I Do</p>
+        <h2 className="section-title">Services</h2>
 
-const Services = forwardRef(function Services({ titleTrans, scrollsActive }, ref) {
-  return (
-    <section className="services-content" ref={ref}>
-      <div className={cx("services-title", titleTrans && "trans")}>
-        <p className={cx("services", "scrolls", scrollsActive && "active")} style={{ transition: "all 0.5s" }}>
-          Services
-        </p>
-        <div className={cx("double-underlines", "scrolls", scrollsActive && "active")} style={{ transition: "all 0.5s" }}>
-          <span className="underlines"></span>
-          <span className="underlinetwos"></span>
-        </div>
-      </div>
-
-      <div className="services-services">
-        <div className="upper-services service-column">
-          <ServiceItem service={SERVICES[0]} />
-          <ServiceItem service={SERVICES[1]} />
-        </div>
-        <div className="lower-services service-column">
-          <ServiceItem service={SERVICES[2]} />
-          <ServiceItem service={SERVICES[3]} />
+        <div className="services-grid">
+          {SERVICES.map((service) => (
+            <div className="service-card" key={service.title}>
+              <img className="service-icon" src={service.icon} alt={service.alt} />
+              <h3>{service.title}</h3>
+              <p>{service.disc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
-});
-
-export default Services;
+}
