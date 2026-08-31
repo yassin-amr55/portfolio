@@ -1,6 +1,11 @@
 html {
   height: 100%;
   overflow-x: hidden;
+  /* Stop Android Chrome's "font boosting" from auto-zooming the page on
+     load (it decides text looks too small and inflates the whole layout
+     until the user manually zooms, which is what was happening here). */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 body {
   height: 100%;
