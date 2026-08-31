@@ -1,5 +1,6 @@
 import { useCallback, useRef, useState } from "react";
 import LoadingScreen from "./components/LoadingScreen";
+import DebugOverlay from "./components/DebugOverlay";
 import Cursor from "./components/Cursor";
 import Header from "./components/Header";
 import ThemeControls from "./components/ThemeControls";
@@ -53,6 +54,7 @@ export default function App() {
   return (
     <>
       <LoadingScreen loadingDone={loadingDone} behindDone={behindDone} />
+      <DebugOverlay />
       <Cursor />
 
       <Header
