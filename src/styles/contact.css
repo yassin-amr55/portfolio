@@ -103,6 +103,41 @@
   align-self: flex-start;
   border: none;
 }
+.contact-form input:disabled,
+.contact-form textarea:disabled,
+.send-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.form-status {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  animation: status-in 0.3s ease;
+}
+.form-status-success {
+  background: color-mix(in srgb, var(--focus) 12%, var(--paper));
+  border: 1px solid color-mix(in srgb, var(--focus) 35%, transparent);
+  color: var(--ink);
+}
+.form-status-error {
+  background: color-mix(in srgb, var(--tick) 12%, var(--paper));
+  border: 1px solid color-mix(in srgb, var(--tick) 35%, transparent);
+  color: var(--ink);
+}
+@keyframes status-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 @media (max-width: 780px) {
   .contact-grid {
