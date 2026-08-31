@@ -38,7 +38,7 @@ export const projects = [
   {
     id: "daily-apps",
     title: "Daily apps",
-    disc: "An android app company create life simplifing apps.",
+    disc: "ToDo Master, a streamlined to-do list app, and SecureVault, a local password manager — both live on the Play Store.",
     img: "/projects/daily apps.png",
     alt: "Todo Master android todo application screenshot",
     date: "October 2025",
