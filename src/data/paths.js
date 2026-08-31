@@ -40,8 +40,13 @@ export const paths = [
     disc: 'I learnt react from the course made by <a href="https://youtu.be/-L0BSSQBWOI?si=9e-XKGpt7lMzZu68">SuperSimpleDev</a> then decided to start a business with my friend so I used react and started creating an ecomerce website.'
   },
   {
-    date: '9/2025 - now',
+    date: '9/2025',
     title: 'AI',
     disc: 'I became a master of using AI to build with all programming languages and making beautiful websites.'
+  },
+  {
+    date: '6/2026 - 9/2026',
+    title: 'Ecommerce stores & redesigns',
+    disc: 'I created multiple ecommerce websites, like a US loofah store, <a href="https://hydronative.com/">HydroNative</a>, and an Egyptian school-supplies store, <a href="https://craft-corner-plum.vercel.app/">Craft Corner</a>. I also updated the design of my older projects, including this portfolio.'
   }
 ];
