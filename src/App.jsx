@@ -3,6 +3,7 @@ import Cursor from "./components/Cursor";
 import ScrollProgress from "./components/ScrollProgress";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Skills from "./components/Skills";
 import Services from "./components/Services";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
@@ -22,6 +23,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <Skills />
         <Services />
         <Projects />
         <Contact />

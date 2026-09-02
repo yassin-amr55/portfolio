@@ -4,6 +4,7 @@ import "./styles/tokens.css";
 import "./styles/nav.css";
 import "./styles/hero.css";
 import "./styles/about.css";
+import "./styles/skills.css";
 import "./styles/services.css";
 import "./styles/projects.css";
 import "./styles/contact.css";
