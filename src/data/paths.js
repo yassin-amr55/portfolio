@@ -37,7 +37,7 @@ export const paths = [
   {
     date: '7/2025',
     title: 'React',
-    disc: 'I learnt react from the course made by <a href="https://youtu.be/-L0BSSQBWOI?si=9e-XKGpt7lMzZu68">SuperSimpleDev</a> then decided to start a business with my friend so I used react and started creating an ecomerce website.'
+    disc: 'I learnt react from the course made by <a href="https://youtu.be/-L0BSSQBWOI?si=9e-XKGpt7lMzZu68">SuperSimpleDev</a> then decided to start a business with my friend so I used react and started creating an ecommerce website.'
   },
   {
     date: '9/2025',

@@ -60,7 +60,7 @@ export const projects = [
   {
     id: "craft-corner",
     title: "Craft Corner",
-    disc: "Egyptian school suppliance store",
+    disc: "Egyptian school supplies store",
     img: "/projects/craft-corner.png",
     alt: "Craft Corner Egyptian school supplies store screenshot",
     date: "August 2026",
