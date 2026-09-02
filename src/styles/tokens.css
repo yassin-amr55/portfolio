@@ -9,7 +9,7 @@
   --paper-raised: #e9e6db;
   --ink: #17140f;
   --ink-soft: #55503f;
-  --ink-faint: #8a8570;
+  --ink-faint: #6d6752; /* darkened from #8a8570 -- that failed WCAG AA (3.2:1) for the footer/placeholder text it's used on */
   --focus: #2b4fe0;
   --focus-ink: #ffffff;
   --tick: #a5651e;
@@ -31,7 +31,7 @@
     --paper-raised: #1b1c22;
     --ink: #ece9df;
     --ink-soft: #a6a296;
-    --ink-faint: #5c5a4f;
+    --ink-faint: #8c8574; /* lightened from #5c5a4f -- that failed WCAG AA (2.6:1) against the dark paper */
     --focus: #7d97ff;
     --focus-ink: #0c1030;
     --tick: #e3a95c;
@@ -44,7 +44,7 @@
   --paper-raised: #1b1c22;
   --ink: #ece9df;
   --ink-soft: #a6a296;
-  --ink-faint: #5c5a4f;
+  --ink-faint: #8c8574;
   --focus: #7d97ff;
   --focus-ink: #0c1030;
   --tick: #e3a95c;

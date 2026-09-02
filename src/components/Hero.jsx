@@ -57,7 +57,7 @@ export default function Hero() {
             <span className="crop tr"></span>
             <span className="crop bl"></span>
             <span className="crop br"></span>
-            <img src="/images/yassin.png" alt="Portrait of Yassin Amr, full-stack developer" />
+            <img src="/images/yassin.png" alt="Portrait of Yassin Amr, full-stack developer" width="720" height="720" />
           </div>
           <div className="focus-tag">
             <span className="focus-dot"></span> in focus

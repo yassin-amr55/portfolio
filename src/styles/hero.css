@@ -63,21 +63,32 @@
   color: var(--ink-soft);
 }
 .status-dot {
+  position: relative;
   width: 7px;
   height: 7px;
   border-radius: 50%;
   background: var(--focus);
-  animation: status-pulse 2s ease-in-out infinite;
+}
+/* A pulsing ring via a pseudo-element animating only transform + opacity
+   (GPU-composited, no per-frame main-thread repaint) instead of animating
+   box-shadow directly, which Lighthouse flags as a non-composited
+   animation. */
+.status-dot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--focus);
+  animation: status-pulse 2s ease-out infinite;
 }
 @keyframes status-pulse {
-  0%,
-  100% {
-    opacity: 1;
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--focus) 45%, transparent);
+  0% {
+    opacity: 0.55;
+    transform: scale(1);
   }
-  50% {
-    opacity: 0.7;
-    box-shadow: 0 0 0 4px transparent;
+  100% {
+    opacity: 0;
+    transform: scale(2.8);
   }
 }
 

@@ -4,7 +4,7 @@ export default function ProjectCard({ project }) {
       <div className="project-image crop-frame">
         <span className="crop tl"></span>
         <span className="crop br"></span>
-        <img src={project.img} alt={project.alt} loading="lazy" />
+        <img src={project.img} alt={project.alt} loading="lazy" width="640" height="400" />
       </div>
       <div className="project-body">
         <div className="project-heading">

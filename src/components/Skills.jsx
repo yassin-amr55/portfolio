@@ -15,7 +15,7 @@ import {
   SiFirebase,
   SiSupabase,
 } from "react-icons/si";
-import { TbDeviceGamepad2 } from "react-icons/tb";
+import { TbDeviceGamepad2, TbArtboard } from "react-icons/tb";
 import { VscVscode } from "react-icons/vsc";
 import { useReveal } from "../hooks/useReveal";
 
@@ -30,6 +30,7 @@ const SKILLS = [
   { name: "Next.js", Icon: SiNextdotjs },
   { name: "Tailwind CSS", Icon: SiTailwindcss },
   { name: "Vite", Icon: SiVite },
+  { name: "HTML5 Canvas", Icon: TbArtboard },
 ];
 
 const BACKEND = [
