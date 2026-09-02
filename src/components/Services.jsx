@@ -9,8 +9,8 @@ const SERVICES = [
   },
   {
     icon: "/icons/briefcase.png",
-    alt: "Business solutions icon",
-    title: "Business Solutions",
+    alt: "Website solutions icon",
+    title: "Website Solutions",
     disc: "I help businesses build custom applications and websites designed to grow their brand and attract more customers.",
   },
   {
