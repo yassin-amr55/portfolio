@@ -19,7 +19,15 @@ export function useReveal() {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.15 }
+      // threshold: 0.15 required 15% of the *target's own height* to be
+      // visible before firing -- fine for a short element, but for a tall
+      // one (a whole grid, a whole info list) that 15% could be hundreds
+      // of pixels, so the reveal didn't fire until the element was already
+      // most of the way up the screen. Firing on any overlap at all, with
+      // a small negative bottom margin so it triggers just before the
+      // element's top actually reaches the viewport, is independent of
+      // how tall the target is.
+      { threshold: 0, rootMargin: "0px 0px -60px 0px" }
     );
 
     observer.observe(el);
