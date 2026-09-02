@@ -7,10 +7,7 @@ export default function ProjectCard({ project }) {
         <img src={project.img} alt={project.alt} loading="lazy" width="640" height="400" />
       </div>
       <div className="project-body">
-        <div className="project-heading">
-          <h3>{project.title}</h3>
-          <span className="project-date">{project.date}</span>
-        </div>
+        <h3>{project.title}</h3>
         <p>{project.disc}</p>
         {project.studio ? (
           <button

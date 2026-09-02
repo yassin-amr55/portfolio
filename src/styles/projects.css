@@ -41,23 +41,10 @@
 .project-body {
   padding: 18px 2px 0;
 }
-.project-heading {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-.project-heading h3 {
+.project-body h3 {
   font-size: 1.1rem;
   font-weight: 700;
-}
-.project-date {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.04em;
-  color: var(--tick);
-  white-space: nowrap;
+  margin-bottom: 8px;
 }
 .project-body p {
   color: var(--ink-soft);
