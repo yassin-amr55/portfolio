@@ -10,7 +10,7 @@ const SERVICES = [
   {
     Icon: TbBriefcase,
     title: "Website Solutions",
-    disc: "I help businesses build custom applications and websites designed to grow their brand and attract more customers.",
+    disc: "I find and fix what's holding your website back — from performance and usability issues to missing features — and build the solutions to solve them.",
   },
   {
     Icon: TbCode,
