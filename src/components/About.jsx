@@ -1,13 +1,11 @@
-import { calculateAge, calculateExperience } from "../utils/experience";
+import { calculateExperience } from "../utils/experience";
 import { useReveal } from "../hooks/useReveal";
 import PathTimeline from "./PathTimeline";
 
 const BIO = (experience) =>
   `I am a self-taught full-stack developer with a strong passion for coding and creating impactful digital experiences. Over the past ${experience} year(s), I have dedicated myself to learning and mastering development through hands-on projects, self-directed study, and constant practice. Despite being relatively new to this field, my skills and experience reflect a high level of competence and attention to detail. I thrive on working collaboratively with clients and team members to bring their vision to life by building user-friendly, visually appealing, and functional websites and applications. From interactive web apps to mobile solutions, I create amazing digital products that solve real problems. My dedication to continuous learning and problem-solving has allowed me to develop a deep understanding of modern technologies in a short period. I am eager to take on new challenges, grow my expertise, and contribute meaningfully to innovative projects.`;
 
-const INFO = (age, experience) => [
-  { label: "Birthday", value: "10 December 2009" },
-  { label: "Age", value: age },
+const INFO = (experience) => [
   { label: "Freelance", value: "Available" },
   { label: "Education", value: "Self-taught" },
   { label: "Experience", value: `${experience} years` },
@@ -22,8 +20,7 @@ const INFO = (age, experience) => [
 
 export default function About() {
   const experience = calculateExperience();
-  const age = calculateAge();
-  const info = INFO(age, experience);
+  const info = INFO(experience);
   const { ref: bioRef, visible: bioVisible } = useReveal();
   const { ref: infoRef, visible: infoVisible } = useReveal();
 

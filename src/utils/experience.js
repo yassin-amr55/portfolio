@@ -10,16 +10,3 @@ export function calculateExperience() {
 
   return Math.floor(diffYears * 10) / 10; // Round to 1 decimal place
 }
-
-export function calculateAge() {
-  const birthDate = new Date("2009-12-10");
-  const today = new Date();
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const monthDiff = today.getMonth() - birthDate.getMonth();
-
-  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
-    age--;
-  }
-
-  return age;
-}
