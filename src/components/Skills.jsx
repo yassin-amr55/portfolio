@@ -11,6 +11,7 @@ import {
   SiGithub,
   SiNetlify,
   SiVercel,
+  SiClaude,
 } from "react-icons/si";
 import { TbDeviceGamepad2 } from "react-icons/tb";
 import { VscVscode } from "react-icons/vsc";
@@ -35,6 +36,7 @@ const TOOLS = [
   { name: "Netlify", Icon: SiNetlify },
   { name: "Vercel", Icon: SiVercel },
   { name: "VS Code", Icon: VscVscode },
+  { name: "Claude", Icon: SiClaude },
 ];
 
 function SkillGroup({ title, items }) {
