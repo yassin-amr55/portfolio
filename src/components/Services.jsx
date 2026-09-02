@@ -1,27 +1,24 @@
+import { TbDevices, TbBriefcase, TbCode, TbUsersGroup } from "react-icons/tb";
 import { useReveal } from "../hooks/useReveal";
 
 const SERVICES = [
   {
-    icon: "/icons/user.png",
-    alt: "Web and mobile apps icon",
+    Icon: TbDevices,
     title: "Web & Mobile Apps",
-    disc: "I create amazing websites and mobile applications with stunning designs and powerful functionality tailored to your needs.",
+    disc: "I build fast, polished websites and mobile apps with clean design and reliable functionality, tailored to what you actually need.",
   },
   {
-    icon: "/icons/briefcase.png",
-    alt: "Website solutions icon",
+    Icon: TbBriefcase,
     title: "Website Solutions",
     disc: "I help businesses build custom applications and websites designed to grow their brand and attract more customers.",
   },
   {
-    icon: "/icons/code.png",
-    alt: "Interactive applications icon",
+    Icon: TbCode,
     title: "Interactive Applications",
     disc: "I build highly interactive apps with animations, real-time features, and cutting-edge technology that make your project stand out.",
   },
   {
-    icon: "/icons/chat.png",
-    alt: "Development partner icon",
+    Icon: TbUsersGroup,
     title: "Development Partner",
     disc: "I collaborate with developers and teams to build innovative applications and bring ambitious projects to life.",
   },
@@ -39,7 +36,7 @@ export default function Services() {
         <div ref={ref} className={`services-grid ${visible ? "is-visible" : ""}`}>
           {SERVICES.map((service, i) => (
             <div className="service-card reveal-item" style={{ "--i": i }} key={service.title}>
-              <img className="service-icon" src={service.icon} alt={service.alt} />
+              <service.Icon className="service-icon" aria-hidden="true" />
               <h3>{service.title}</h3>
               <p>{service.disc}</p>
             </div>

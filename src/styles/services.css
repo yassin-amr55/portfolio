@@ -22,14 +22,7 @@
   width: 30px;
   height: 30px;
   margin-bottom: 20px;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .service-icon {
-    filter: invert(1) brightness(1.7);
-  }
-}
-:root[data-theme="dark"] .service-icon {
-  filter: invert(1) brightness(1.7);
+  color: var(--ink);
 }
 .service-card h3 {
   font-size: 1.06rem;

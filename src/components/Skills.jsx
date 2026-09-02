@@ -12,6 +12,8 @@ import {
   SiNetlify,
   SiVercel,
   SiClaude,
+  SiFirebase,
+  SiSupabase,
 } from "react-icons/si";
 import { TbDeviceGamepad2 } from "react-icons/tb";
 import { VscVscode } from "react-icons/vsc";
@@ -28,6 +30,11 @@ const SKILLS = [
   { name: "Next.js", Icon: SiNextdotjs },
   { name: "Tailwind CSS", Icon: SiTailwindcss },
   { name: "Vite", Icon: SiVite },
+];
+
+const BACKEND = [
+  { name: "Firebase", Icon: SiFirebase },
+  { name: "Supabase", Icon: SiSupabase },
 ];
 
 const TOOLS = [
@@ -64,6 +71,7 @@ export default function Skills() {
         <h2 className="section-title">Skills &amp; Tools</h2>
 
         <SkillGroup title="Languages & Frameworks" items={SKILLS} />
+        <SkillGroup title="Backend" items={BACKEND} />
         <SkillGroup title="Tools" items={TOOLS} />
       </div>
     </section>
