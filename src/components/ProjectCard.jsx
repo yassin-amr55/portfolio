@@ -1,15 +1,15 @@
 export default function ProjectCard({ project }) {
   return (
     <article className="project-card">
-      <div className={`project-image crop-frame${project.portrait ? " is-portrait" : ""}`}>
+      <div className="project-image crop-frame">
         <span className="crop tl"></span>
         <span className="crop br"></span>
         <img
           src={project.img}
           alt={project.alt}
           loading="lazy"
-          width={project.portrait ? 700 : 640}
-          height={project.portrait ? 990 : 400}
+          width={640}
+          height={400}
         />
       </div>
       <div className="project-body">

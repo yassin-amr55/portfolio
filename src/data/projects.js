@@ -66,11 +66,10 @@ export const projects = [
     id: "fraso",
     title: "Fraso",
     disc: "A live progress tracker for Fraso, an original fantasy story I'm writing — chapter completion, production stages, and manuscript stats, updated as the book comes together.",
-    img: "/projects/fraso.jpg",
-    alt: "Fraso — official cover art, a hand-drawn illustration for the fantasy story \"A Hero Fights Cruelty\"",
+    img: "/projects/fraso.png",
+    alt: "Fraso website screenshot, showing overall completion progress and cover art for the fantasy story \"A Hero Fights Cruelty\"",
     link: "https://fraso-elent.vercel.app/",
     linkText: "Follow the progress",
     external: true,
-    portrait: true,
   },
 ];
