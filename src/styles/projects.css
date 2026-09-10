@@ -18,6 +18,15 @@
   border: 1px solid var(--line);
   overflow: hidden;
 }
+/* Fraso's cover art is a portrait book cover, not a landscape website
+   screenshot -- force-cropping it into the 16:10 box would cut off the
+   title and byline. A taller box matching its own ratio shows it whole. */
+.project-image.is-portrait {
+  aspect-ratio: 7 / 10;
+  width: 100%;
+  max-width: 320px;
+  margin-inline: auto;
+}
 .project-image img {
   width: 100%;
   height: 100%;
