@@ -5,12 +5,36 @@
 .footer-row {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-brand {
+  display: flex;
+  align-items: center;
   gap: 16px;
 }
 .footer-signature {
   height: 22px;
   width: auto;
   opacity: 0.8;
+}
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.footer-social a {
+  display: flex;
+  color: var(--ink-faint);
+  transition: color 0.2s ease;
+}
+.footer-social a:hover {
+  color: var(--focus);
+}
+.footer-social svg {
+  width: 18px;
+  height: 18px;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .footer-signature {
