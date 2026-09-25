@@ -11,6 +11,7 @@ import {
   SiGithub,
   SiNetlify,
   SiVercel,
+  SiCloudflare,
   SiClaude,
   SiFirebase,
   SiSupabase,
@@ -43,6 +44,7 @@ const TOOLS = [
   { name: "GitHub", Icon: SiGithub },
   { name: "Netlify", Icon: SiNetlify },
   { name: "Vercel", Icon: SiVercel },
+  { name: "Cloudflare", Icon: SiCloudflare },
   { name: "VS Code", Icon: VscVscode },
   { name: "Claude", Icon: SiClaude },
 ];
