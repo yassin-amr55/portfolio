@@ -72,4 +72,14 @@ export const projects = [
     linkText: "Follow the progress",
     external: true,
   },
+  {
+    id: "edict",
+    title: "Edict",
+    disc: "A browser strategy game where the laws are sentences carved in stone. Rewrite them to bend the world, and win.",
+    img: "/projects/edict.png",
+    alt: "Edict browser strategy game screenshot, showing the new match setup screen with a world map and law tablet",
+    link: "https://edict.yassin5amr55.workers.dev/",
+    linkText: "Play Game",
+    external: true,
+  },
 ];
