@@ -58,7 +58,7 @@ export const projects = [
     disc: "Egyptian school supplies store",
     img: "/projects/craft-corner.png",
     alt: "Craft Corner Egyptian school supplies store screenshot",
-    link: "https://craft-corner-plum.vercel.app/",
+    link: "https://www.craftcorner.net/",
     linkText: "Open website",
     external: true,
   },
