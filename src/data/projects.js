@@ -45,10 +45,10 @@ export const projects = [
   {
     id: "goal-defender",
     title: "Goal Defender",
-    disc: "Fast-paced arcade game with skill-based ball deflection mechanics.",
+    disc: "Fast-paced itch.io arcade game with skill-based ball deflection mechanics.",
     img: "/projects/goal-defender.png",
     alt: "Goal Defender arcade game screenshot",
-    link: "https://goal-defender.vercel.app/",
+    link: "https://yassin-amr55.itch.io/goal-defender/",
     linkText: "Play Game",
     external: true,
   },
