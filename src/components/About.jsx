@@ -15,7 +15,7 @@ const INFO = (experience) => [
     href: "https://maps.app.goo.gl/zmjqNV1cFJiTuof18",
   },
   { label: "Email", value: "yassin5amr55@gmail.com", href: "mailto:yassin5amr55@gmail.com" },
-  { label: "Whatsapp", value: "01066004890", href: "https://wa.me/201066004890" },
+  { label: "Whatsapp", value: "+201066004890", href: "https://wa.me/201066004890" },
 ];
 
 export default function About() {
